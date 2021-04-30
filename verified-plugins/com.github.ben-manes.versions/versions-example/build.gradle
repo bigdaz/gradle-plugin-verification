@@ -1,0 +1,21 @@
+plugins {
+    id "com.github.ben-manes.versions" version "0.36.0"
+}
+defaultTasks("clean", "dependencyUpdates")
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+}
+project(":sub1") {
+    dependencies {
+        implementation group: 'log4j', name: 'log4j', version: '1.2.14'
+    }
+}
+project(":sub2") {
+    dependencies {
+        implementation group: 'junit', name: 'junit', version: '4.10'
+    }
+}
