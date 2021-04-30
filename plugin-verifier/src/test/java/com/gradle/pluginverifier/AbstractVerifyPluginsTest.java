@@ -1,18 +1,18 @@
 package com.gradle.pluginverifier;
 
-import org.gradle.testkit.runner.BuildResult;
 import org.gradle.testkit.runner.GradleRunner;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
 
-public class VerifyPluginsTest {
-    @Test public void validatePlugin() throws IOException {
+public abstract class AbstractVerifyPluginsTest {
+    @Test
+    public void validatePlugin() throws IOException {
         // Run the validateExternalPlugins task
         GradleRunner.create()
             .forwardOutput()
-            .withProjectDir(getExampleBuild())
+            .withProjectDir(getProjectDir())
             .withArguments("-I", "../../init.gradle", "validateExternalPlugins")
             .build();
     }
@@ -21,17 +21,15 @@ public class VerifyPluginsTest {
         // Run the build with configuration-cache
         GradleRunner.create()
             .forwardOutput()
-            .withProjectDir(getExampleBuild())
-            .withArguments("-I", "../../init.gradle", "--configuration-cache", "clean", "build")
+            .withProjectDir(getProjectDir())
+            .withArguments("-I", "../../init.gradle", "--configuration-cache")
             .build();
     }
 
-    private File getExampleBuild() {
+    private File getProjectDir() {
         File root = new File("../verified-plugins");
-        return new File(root, getExampleBuildLocation());
+        return new File(root, getExampleBuild());
     }
 
-    private String getExampleBuildLocation() {
-        return "com.github.spotbugs/spotbugs-example";
-    }
+    protected abstract String getExampleBuild();
 }
