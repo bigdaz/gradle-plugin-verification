@@ -9,6 +9,6 @@ public class VerifyShadow extends AbstractVerifyPluginsTest {
 
     @Override
     protected String getTask() {
-        return "shadowJar";
+        return ":shadowJar";
     }
 }

@@ -9,6 +9,11 @@ public class VerifyDependencyVersions extends AbstractVerifyPluginsTest {
 
     @Override
     protected String getTask() {
-        return "dependencyUpdates";
+        return ":dependencyUpdates";
+    }
+
+    @Override
+    protected boolean isIncremental() {
+        return false;
     }
 }

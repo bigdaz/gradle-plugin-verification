@@ -9,6 +9,6 @@ public class VerifySpotbugs extends AbstractVerifyPluginsTest {
 
     @Override
     protected String getTask() {
-        return "spotbugsMain";
+        return ":spotbugsMain";
     }
 }
