@@ -1,0 +1,27 @@
+import com.gradle.enterprise.gradleplugin.GradleEnterprisePlugin
+
+initscript {
+    def gradleEnterprisePluginVersion = "3.6.1"
+    def commonCustomUserDataPluginVersion = "1.2.1"
+
+    repositories {
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath("com.gradle:gradle-enterprise-gradle-plugin:${gradleEnterprisePluginVersion}")
+        classpath("com.gradle:common-custom-user-data-gradle-plugin:${commonCustomUserDataPluginVersion}")
+    }
+}
+beforeSettings { settings ->
+    settings.pluginManager.apply(GradleEnterprisePlugin)
+    settings.extensions["gradleEnterprise"].buildScan.with {
+        publishAlways()
+        termsOfServiceUrl = "https://gradle.com/terms-of-service"
+        termsOfServiceAgree = "yes"
+    }
+}
+
+rootProject {
+    pluginManager.apply("validate-external-gradle-plugin")
+}

@@ -16,7 +16,7 @@ public class VerifyPluginsTest {
         BuildResult result = GradleRunner.create()
             .forwardOutput()
             .withProjectDir(projectDir)
-            .withArguments("validateExternalPlugins", "-I", "../../init.gradle.kts")
+            .withArguments("-I", "../../init.gradle", "validateExternalPlugins")
             .build();
     }
 }
