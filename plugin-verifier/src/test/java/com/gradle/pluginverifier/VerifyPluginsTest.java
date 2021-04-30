@@ -9,13 +9,14 @@ import java.io.IOException;
 
 public class VerifyPluginsTest {
     @Test public void runPluginValidation() throws IOException {
-        File projectDir = new File("../verified-plugins/com.github.spotbugs/spotbugs-example");
+        File root = new File("../verified-plugins");
+        File projectDir = new File(root, "com.github.spotbugs/spotbugs-example");
 
         // Run the build
         BuildResult result = GradleRunner.create()
             .forwardOutput()
             .withProjectDir(projectDir)
-            .withArguments("validateExternalPlugins")
+            .withArguments("validateExternalPlugins", "-I", "../../init.gradle.kts")
             .build();
     }
 }
