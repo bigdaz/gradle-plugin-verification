@@ -6,4 +6,9 @@ public class VerifyDependencyVersions extends AbstractVerifyPluginsTest {
     protected String getExampleBuild() {
         return "com.github.ben-manes.versions/versions-example";
     }
+
+    @Override
+    protected String getTask() {
+        return "dependencyUpdates";
+    }
 }

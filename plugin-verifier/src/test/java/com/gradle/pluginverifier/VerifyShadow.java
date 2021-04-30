@@ -6,4 +6,9 @@ public class VerifyShadow extends AbstractVerifyPluginsTest {
     protected String getExampleBuild() {
         return "com.github.johnrengelman.shadow/shadow-example";
     }
+
+    @Override
+    protected String getTask() {
+        return "shadowJar";
+    }
 }

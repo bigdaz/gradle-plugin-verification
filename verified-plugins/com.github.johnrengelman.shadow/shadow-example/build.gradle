@@ -19,5 +19,3 @@ shadowJar {
         attributes 'Test-Entry': 'PASSED'
     }
 }
-
-assemble.dependsOn shadowJar

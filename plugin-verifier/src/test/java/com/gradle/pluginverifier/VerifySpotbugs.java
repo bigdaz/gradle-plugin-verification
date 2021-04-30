@@ -6,4 +6,9 @@ public class VerifySpotbugs extends AbstractVerifyPluginsTest {
     protected String getExampleBuild() {
         return "com.github.spotbugs/spotbugs-example";
     }
+
+    @Override
+    protected String getTask() {
+        return "spotbugsMain";
+    }
 }

@@ -22,7 +22,7 @@ public abstract class AbstractVerifyPluginsTest {
         GradleRunner.create()
             .forwardOutput()
             .withProjectDir(getProjectDir())
-            .withArguments("-I", "../../init.gradle", "--configuration-cache")
+            .withArguments("-I", "../../init.gradle", "--configuration-cache", "clean", getTask())
             .build();
     }
 
@@ -32,4 +32,6 @@ public abstract class AbstractVerifyPluginsTest {
     }
 
     protected abstract String getExampleBuild();
+
+    protected abstract String getTask();
 }

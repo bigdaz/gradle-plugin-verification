@@ -22,6 +22,6 @@ beforeSettings { settings ->
     }
 }
 
-rootProject {
+allprojects {
     pluginManager.apply("validate-external-gradle-plugin")
 }
