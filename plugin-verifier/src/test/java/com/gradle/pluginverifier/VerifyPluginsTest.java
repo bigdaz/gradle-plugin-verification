@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class VerifyPluginsTest {
     @Test public void runPluginValidation() throws IOException {
-        File projectDir = new File("/Users/daz/dev/playground/plugin-verification/verified-plugins/com.github.spotbugs/spotbugs-example");
+        File projectDir = new File("../verified-plugins/com.github.spotbugs/spotbugs-example");
 
         // Run the build
         BuildResult result = GradleRunner.create()
