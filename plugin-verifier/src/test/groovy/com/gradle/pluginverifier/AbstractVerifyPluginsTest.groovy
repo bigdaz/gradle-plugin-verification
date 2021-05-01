@@ -13,7 +13,7 @@ abstract class AbstractVerifyPluginsTest extends Specification {
 
     def "plugin properties are correctly annotated"() {
         expect:
-        runBuild("-I", "../../validate-plugin-init.gradle", "validateExternalPlugins")
+        runBuild("-I", "../validate-plugin-init.gradle", "validateExternalPlugins")
     }
 
     def "works with configuration cache"() {
@@ -63,7 +63,7 @@ abstract class AbstractVerifyPluginsTest extends Specification {
     }
 
     def gradleRunner(List<String> arguments) {
-//        def args = ["-I", "../../build-scan-init.gradle", "--build-cache"] + arguments.toList()
+//        def args = ["-I", "../build-scan-init.gradle", "--build-cache"] + arguments.toList()
         def args = ["--build-cache"] + arguments
 
         return GradleRunner.create()
@@ -73,18 +73,18 @@ abstract class AbstractVerifyPluginsTest extends Specification {
     }
 
     private File getProjectDir() {
-        return new File("build/verified-plugins", getExampleBuild())
+        return new File("build/verified-plugins", getPluginId())
     }
 
     private String latestPluginVersion() {
         getPluginVersions().sort().last()
     }
 
-    protected abstract String getExampleBuild()
-
-    protected abstract String getTask()
+    protected abstract String getPluginId()
 
     protected abstract List<String> getPluginVersions()
+
+    protected abstract String getTask()
 
     protected static boolean isIncremental() {
         return true
