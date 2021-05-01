@@ -11,4 +11,9 @@ class VerifySpotbugs extends AbstractVerifyPluginsTest {
     protected String getTask() {
         return ":spotbugsMain"
     }
+
+    @Override
+    protected List<String> getPluginVersions() {
+        ["4.6.0"]
+    }
 }

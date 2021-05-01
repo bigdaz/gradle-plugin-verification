@@ -1,7 +1,5 @@
 package com.gradle.pluginverifier
 
-import spock.lang.Ignore;
-
 class VerifyDependencyVersions extends AbstractVerifyPluginsTest {
 
     @Override
@@ -12,6 +10,11 @@ class VerifyDependencyVersions extends AbstractVerifyPluginsTest {
     @Override
     protected String getTask() {
         return ":dependencyUpdates"
+    }
+
+    @Override
+    protected List<String> getPluginVersions() {
+        ["0.36.0"]
     }
 
     protected static boolean isIncremental() {

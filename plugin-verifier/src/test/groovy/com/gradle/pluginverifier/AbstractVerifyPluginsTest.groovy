@@ -44,25 +44,27 @@ abstract class AbstractVerifyPluginsTest extends Specification {
     }
 
     @Unroll
-    def "works with Gradle #gradleVersion"() {
+    def "version #pluginVersion works with Gradle #gradleVersion"() {
         when:
-        def gradleRunner = gradleRunner("clean", task)
+        def args = ["-PpluginVersion=" + pluginVersion, "clean", task]
+        def gradleRunner = gradleRunner(args)
                 .withGradleVersion(gradleVersion)
 
         then:
         gradleRunner.build()
 
         where:
-        gradleVersion << gradleVersions
+        [pluginVersion, gradleVersion] << [pluginVersions, gradleVersions].combinations()
     }
 
     def runBuild(String... arguments) {
-        return gradleRunner(arguments).build()
+        def args = ["-PpluginVersion=" + latestPluginVersion()] + arguments.toList()
+        return gradleRunner(args).build()
     }
 
-    def gradleRunner(String... arguments) {
+    def gradleRunner(List<String> arguments) {
 //        def args = ["-I", "../../build-scan-init.gradle", "--build-cache"] + arguments.toList()
-        def args = ["--build-cache"] + arguments.toList()
+        def args = ["--build-cache"] + arguments
 
         return GradleRunner.create()
                 .forwardOutput()
@@ -74,9 +76,15 @@ abstract class AbstractVerifyPluginsTest extends Specification {
         return new File("build/verified-plugins", getExampleBuild())
     }
 
+    private String latestPluginVersion() {
+        getPluginVersions().sort().last()
+    }
+
     protected abstract String getExampleBuild()
 
     protected abstract String getTask()
+
+    protected abstract List<String> getPluginVersions()
 
     protected static boolean isIncremental() {
         return true

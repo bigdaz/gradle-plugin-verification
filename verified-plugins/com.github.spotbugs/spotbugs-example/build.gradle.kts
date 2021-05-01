@@ -1,6 +1,6 @@
 plugins {
     java
-    id("com.github.spotbugs") version "4.6.0"
+    id("com.github.spotbugs")
 }
 repositories {
     // Use Maven Central for resolving dependencies.
