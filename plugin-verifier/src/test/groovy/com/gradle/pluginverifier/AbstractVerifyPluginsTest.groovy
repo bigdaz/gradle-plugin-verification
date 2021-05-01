@@ -1,21 +1,27 @@
 package com.gradle.pluginverifier
 
+import org.gradle.testkit.runner.BuildResult
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.testkit.runner.TaskOutcome
 import spock.lang.Specification
+import spock.lang.Unroll
 
 abstract class AbstractVerifyPluginsTest extends Specification {
-    def "validate plugin properties"() {
-        expect:
-        runBuild("validateExternalPlugins")
+    static List<String> getGradleVersions() {
+        ["5.6.4", "6.8.3", "7.0"]
     }
 
-    def "validate configuration cache"() {
+    def "plugin properties are correctly annotated"() {
+        expect:
+        runBuild("-I", "../../validate-plugin-init.gradle", "validateExternalPlugins")
+    }
+
+    def "works with configuration cache"() {
         expect:
         runBuild("--configuration-cache", "clean", task)
     }
 
-    def "validate build cache"() {
+    def "works with build cache"() {
         if (!incremental) {
             // TODO: This should be SKIPPED (not PASSED) in this case
             return
@@ -26,7 +32,7 @@ abstract class AbstractVerifyPluginsTest extends Specification {
 
         // Without clean, task should be UP-TO-DATE
         when:
-        def result = runBuild(task)
+        BuildResult result = runBuild(task)
         then:
         result.task(task).outcome == TaskOutcome.UP_TO_DATE
 
@@ -37,14 +43,31 @@ abstract class AbstractVerifyPluginsTest extends Specification {
         result.task(task).outcome == TaskOutcome.FROM_CACHE
     }
 
+    @Unroll
+    def "works with Gradle #gradleVersion"() {
+        when:
+        def gradleRunner = gradleRunner("clean", task)
+                .withGradleVersion(gradleVersion)
+
+        then:
+        gradleRunner.build()
+
+        where:
+        gradleVersion << gradleVersions
+    }
+
     def runBuild(String... arguments) {
+        return gradleRunner(arguments).build()
+    }
+
+    def gradleRunner(String... arguments) {
+//        def args = ["-I", "../../build-scan-init.gradle", "--build-cache"] + arguments.toList()
+        def args = ["--build-cache"] + arguments.toList()
+
         return GradleRunner.create()
                 .forwardOutput()
-                .withProjectDir(projectDir)
-                .withArguments(
-                        ["-I", "../../init.gradle", "--build-cache"] + arguments.toList()
-                )
-                .build()
+                .withProjectDir(getProjectDir())
+                .withArguments(args)
     }
 
     private File getProjectDir() {
