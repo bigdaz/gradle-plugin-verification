@@ -20,6 +20,7 @@ public class PluginVerifier {
     }
 
     public void runChecks(PrintWriter resultsWriter) {
+        writeHeader(resultsWriter);
         checkPluginValidation(resultsWriter);
         checkConfigurationCache(resultsWriter);
         if (plugin.isIncremental()) {
@@ -40,7 +41,7 @@ public class PluginVerifier {
      * Check configuration-cache validation with the latest version of Gradle.
      */
     public void checkConfigurationCache(PrintWriter resultsWriter) {
-        VerificationResult result = runBuild("--configuration-cache", "clean", plugin.getTask());
+        VerificationResult result = runBuild("--configuration-cache", "--no-build-cache", "clean", plugin.getTask());
         writeResults(resultsWriter, "CONFIGURATION CACHE COMPATIBILITY", result.passed, result.getOutput());
     }
 
@@ -50,35 +51,30 @@ public class PluginVerifier {
         }
         String task = plugin.getTask();
 
-        // Run an initial clean build
-        runBuild("--no-scan", "clean", task);
+        // Run an initial clean build and populate the build cache
+        runBuild("--no-scan", "--build-cache", "clean", task);
 
         // Without clean, task should be UP-TO-DATE
         VerificationResult result = runBuild(task);
-        writeResults(resultsWriter, "INCREMENTAL BUILD", result.getTaskOutcome(task) == TaskOutcome.UP_TO_DATE, result.getOutput());
+        boolean passed = result.passed && result.getTaskOutcome(task) == TaskOutcome.UP_TO_DATE;
+        writeResults(resultsWriter, "INCREMENTAL BUILD", passed, result.getOutput());
 
         // With clean, task should be FROM_CACHE
-        result = runBuild("clean", task);
-        writeResults(resultsWriter, "BUILD CACHE", result.getTaskOutcome(task) == TaskOutcome.FROM_CACHE, result.getOutput());
+        result = runBuild("--build-cache", "clean", task);
+        passed = result.passed && result.getTaskOutcome(task) == TaskOutcome.FROM_CACHE;
+        writeResults(resultsWriter, "BUILD CACHE", passed, result.getOutput());
     }
 
     public void checkVersionCompatibility(PrintWriter resultsWriter) {
         String task = plugin.getTask();
         for (String gradleVersion : GradleVersions.getAllTested()) {
-            for (String pluginVersion : plugin.getPluginVersions()) {
-                String title = "CHECKING PLUGIN VERSION " + pluginVersion + " WITH GRADLE VERSION " + gradleVersion;
-
-                GradleRunner gradleRunner = gradleRunner(args(pluginVersion, "clean", task)).withGradleVersion(gradleVersion);
-                VerificationResult result = runBuild(gradleRunner);
-                writeResults(resultsWriter, title, result.passed, result.getOutput());
-            }
+            VerificationResult result = runBuild(gradleRunner("clean", task).withGradleVersion(gradleVersion));
+            writeResults(resultsWriter, "COMPATIBLE with GRADLE " + gradleVersion, result.passed, result.getOutput());
         }
     }
 
     private VerificationResult runBuild(String... arguments) {
-        List<String> buildArgs = args(plugin.latestPluginVersion(), arguments);
-        GradleRunner gradleRunner = gradleRunner(buildArgs);
-
+        GradleRunner gradleRunner = gradleRunner(arguments);
         return runBuild(gradleRunner);
     }
 
@@ -91,22 +87,24 @@ public class PluginVerifier {
         }
     }
 
-    private List<String> args(String pluginVersion, String... arguments) {
+    private GradleRunner gradleRunner(String... arguments) {
         List<String> argumentList = new ArrayList<>();
         if (publishBuildScans) {
             argumentList.add("-I");
             argumentList.add("../build-scan-init.gradle");
         }
-        argumentList.add("--build-cache");
-        argumentList.add("-PpluginVersion=" + pluginVersion);
+        argumentList.add("-PpluginVersion=" + plugin.getPluginVersion());
         argumentList.addAll(Arrays.asList(arguments));
-        return argumentList;
-    }
 
-    private GradleRunner gradleRunner(List<String> arguments) {
         return GradleRunner.create()
                 .withProjectDir(plugin.getSampleProject())
-                .withArguments(arguments);
+                .withArguments(argumentList);
+    }
+
+    private void writeHeader(PrintWriter resultWriter) {
+        resultWriter.println("=================================");
+        resultWriter.println("Plugin verification: " + plugin.getPluginId() + ":" + plugin.getPluginVersion());
+        resultWriter.println("=================================");
     }
 
     private void writeResults(PrintWriter resultWriter, String title, boolean passed, String output) {

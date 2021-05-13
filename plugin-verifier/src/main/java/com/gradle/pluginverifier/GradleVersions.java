@@ -7,7 +7,7 @@ public class GradleVersions {
     private static List<String> versions = Arrays.asList("7.0", "6.8.3", "5.6.4");
 
     public static String getLatest() {
-        return versions.get(versions.size() - 1);
+        return versions.get(0);
     }
 
     public static List<String> getAllTested() {

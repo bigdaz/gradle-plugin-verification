@@ -7,14 +7,13 @@ import java.util.List;
 
 public class PluginSample {
     private final File sampleDir;
-    private final List<String> pluginVersions;
+    private final String pluginVersion;
     private final String task;
     private final boolean incremental;
 
-    public PluginSample(File sampleDir, List<String> pluginVersions, String task, boolean incremental) {
+    public PluginSample(File sampleDir, String pluginVersion, String task, boolean incremental) {
         this.sampleDir = sampleDir;
-        this.pluginVersions = new ArrayList<>(pluginVersions);
-        this.pluginVersions.sort(Comparator.reverseOrder());
+        this.pluginVersion = pluginVersion;
         this.task = task;
         this.incremental = incremental;
     }
@@ -23,8 +22,8 @@ public class PluginSample {
         return sampleDir.getName();
     }
 
-    public List<String> getPluginVersions() {
-        return pluginVersions;
+    public String getPluginVersion() {
+        return pluginVersion;
     }
 
     public String getTask() {
@@ -37,10 +36,6 @@ public class PluginSample {
 
     public File getSampleProject() {
         return sampleDir;
-    }
-
-    public String latestPluginVersion() {
-        return pluginVersions.get(0);
     }
 }
 
