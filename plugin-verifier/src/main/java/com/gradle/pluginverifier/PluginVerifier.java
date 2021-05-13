@@ -3,7 +3,9 @@ package com.gradle.pluginverifier;
 import org.gradle.testkit.runner.BuildResult;
 import org.gradle.testkit.runner.GradleRunner;
 import org.gradle.testkit.runner.TaskOutcome;
+import org.gradle.testkit.runner.UnexpectedBuildFailure;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,53 +19,76 @@ public class PluginVerifier {
         this.publishBuildScans = publishBuildScans;
     }
 
-    public void runChecks() {
-        checkPluginValidation();
-        checkConfigurationCache();
+    public void runChecks(PrintWriter resultsWriter) {
+        checkPluginValidation(resultsWriter);
+        checkConfigurationCache(resultsWriter);
         if (plugin.isIncremental()) {
-            checkBuildCache();
+            checkBuildCache(resultsWriter);
         }
-        checkVersionCompatibility();
+        checkVersionCompatibility(resultsWriter);
     }
 
-    public void checkPluginValidation() {
-        System.out.println("CHECKING PLUGIN VALIDATION");
-        runBuild("-I", "../validate-plugin-init.gradle", "validateExternalPlugins");
+    /**
+     * Plugin validation with the latest version of Gradle.
+     */
+    public void checkPluginValidation(PrintWriter resultWriter) {
+        VerificationResult result = runBuild("-I", "../validate-plugin-init.gradle", "validateExternalPlugins");
+        writeResults(resultWriter, "PLUGIN VALIDATION", result.passed, result.getOutput());
     }
 
-    public void checkConfigurationCache() {
-        System.out.println("CHECKING CONFIGURATION CACHE COMPATIBILITY");
-        runBuild("--configuration-cache", "clean", plugin.getTask());
+    /**
+     * Check configuration-cache validation with the latest version of Gradle.
+     */
+    public void checkConfigurationCache(PrintWriter resultsWriter) {
+        VerificationResult result = runBuild("--configuration-cache", "clean", plugin.getTask());
+        writeResults(resultsWriter, "CONFIGURATION CACHE COMPATIBILITY", result.passed, result.getOutput());
     }
 
-    public void checkBuildCache() {
-        System.out.println("CHECKING INCREMENTAL BUILD AND BUILD CACHE");
+    public void checkBuildCache(PrintWriter resultsWriter) {
+        if (!plugin.isIncremental()) {
+            return;
+        }
         String task = plugin.getTask();
 
         // Run an initial clean build
         runBuild("--no-scan", "clean", task);
 
         // Without clean, task should be UP-TO-DATE
-        BuildResult result = runBuild(task);
-        assert result.task(task).getOutcome() == TaskOutcome.UP_TO_DATE;
+        VerificationResult result = runBuild(task);
+        writeResults(resultsWriter, "INCREMENTAL BUILD", result.getTaskOutcome(task) == TaskOutcome.UP_TO_DATE, result.getOutput());
 
         // With clean, task should be FROM_CACHE
         result = runBuild("clean", task);
-        assert result.task(task).getOutcome() == TaskOutcome.FROM_CACHE;
+        writeResults(resultsWriter, "BUILD CACHE", result.getTaskOutcome(task) == TaskOutcome.FROM_CACHE, result.getOutput());
     }
 
-    public void checkVersionCompatibility() {
+    public void checkVersionCompatibility(PrintWriter resultsWriter) {
         String task = plugin.getTask();
         for (String gradleVersion : GradleVersions.getAllTested()) {
             for (String pluginVersion : plugin.getPluginVersions()) {
-                System.out.println("CHECKING PLUGIN VERSION " + pluginVersion + " WITH GRADLE VERSION " + gradleVersion);
-                gradleRunner(args(pluginVersion, "clean", task)).withGradleVersion(gradleVersion).build();
+                String title = "CHECKING PLUGIN VERSION " + pluginVersion + " WITH GRADLE VERSION " + gradleVersion;
+
+                GradleRunner gradleRunner = gradleRunner(args(pluginVersion, "clean", task)).withGradleVersion(gradleVersion);
+                VerificationResult result = runBuild(gradleRunner);
+                writeResults(resultsWriter, title, result.passed, result.getOutput());
             }
         }
     }
 
-    private BuildResult runBuild(String... arguments) {
-        return gradleRunner(args(plugin.latestPluginVersion(), arguments)).build();
+    private VerificationResult runBuild(String... arguments) {
+        List<String> buildArgs = args(plugin.latestPluginVersion(), arguments);
+        GradleRunner gradleRunner = gradleRunner(buildArgs);
+
+        return runBuild(gradleRunner);
+    }
+
+    private VerificationResult runBuild(GradleRunner gradleRunner) {
+        try {
+            BuildResult result = gradleRunner.build();
+            return new VerificationResult(true, result);
+        } catch (UnexpectedBuildFailure unexpectedBuildFailure) {
+            return new VerificationResult(false, unexpectedBuildFailure.getBuildResult());
+        }
     }
 
     private List<String> args(String pluginVersion, String... arguments) {
@@ -80,9 +105,36 @@ public class PluginVerifier {
 
     private GradleRunner gradleRunner(List<String> arguments) {
         return GradleRunner.create()
-                .forwardOutput()
                 .withProjectDir(plugin.getSampleProject())
                 .withArguments(arguments);
+    }
+
+    private void writeResults(PrintWriter resultWriter, String title, boolean passed, String output) {
+        resultWriter.println("--------------------------");
+        resultWriter.println(title);
+        resultWriter.println(passed ? "SUCCESS" : "FAILED");
+        resultWriter.println("--------------------------");
+        resultWriter.print(output);
+        resultWriter.println("--------------------------");
+        resultWriter.println();
+    }
+
+    private static class VerificationResult {
+        public final boolean passed;
+        public final BuildResult buildResult;
+
+        private VerificationResult(boolean passed, BuildResult buildResult) {
+            this.passed = passed;
+            this.buildResult = buildResult;
+        }
+
+        public String getOutput() {
+            return buildResult.getOutput();
+        }
+
+        public TaskOutcome getTaskOutcome(String task) {
+            return buildResult.task(task).getOutcome();
+        }
     }
 
 }

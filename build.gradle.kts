@@ -12,6 +12,7 @@ plugins {
 }
 
 val samplesWorkingDir = project.layout.buildDirectory.dir("verified-plugins")
+val resultsDir = project.layout.buildDirectory.dir("verification-results")
 val copyPluginProjects = tasks.register<Copy>("copyPluginProjects") {
     from("verified-plugins")
     into(samplesWorkingDir)
@@ -19,10 +20,12 @@ val copyPluginProjects = tasks.register<Copy>("copyPluginProjects") {
 
 project.file("verified-plugins").listFiles(File::isDirectory)!!.forEach { sample ->
     val sampleWorkingDir = samplesWorkingDir.map { s -> s.dir(sample.name) }
+    val sampleResultsFile = resultsDir.map { d -> d.file(sample.name + ".txt") }
 
     tasks.register<com.gradle.pluginverifier.VerifyPluginTask>("verify_" + sample.name.replace('.', '_')) {
         dependsOn(copyPluginProjects)
         sampleDir.set(sampleWorkingDir)
+        resultsFile.set(sampleResultsFile)
     }
 }
 
