@@ -9,11 +9,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PluginVerifier {
-    private static final List<String> FIXED_ARGS = Arrays.asList("-I", "../build-scan-init.gradle", "--build-cache");
     private final PluginSample plugin;
+    private final boolean publishBuildScans;
 
-    public PluginVerifier(PluginSample plugin) {
+    public PluginVerifier(PluginSample plugin, boolean publishBuildScans) {
         this.plugin = plugin;
+        this.publishBuildScans = publishBuildScans;
     }
 
     public void runChecks() {
@@ -67,7 +68,11 @@ public class PluginVerifier {
 
     private List<String> args(String pluginVersion, String... arguments) {
         List<String> argumentList = new ArrayList<>();
-        argumentList.addAll(FIXED_ARGS);
+        if (publishBuildScans) {
+            argumentList.add("-I");
+            argumentList.add("../build-scan-init.gradle");
+        }
+        argumentList.add("--build-cache");
         argumentList.add("-PpluginVersion=" + pluginVersion);
         argumentList.addAll(Arrays.asList(arguments));
         return argumentList;

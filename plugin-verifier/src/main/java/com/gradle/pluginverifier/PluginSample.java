@@ -11,16 +11,16 @@ public class PluginSample {
     private final String task;
     private final boolean incremental;
 
-    public PluginSample(File sampleDir, List<String> pluginVersions, String task) {
-        this(sampleDir, pluginVersions, task, true);
-    }
-
     public PluginSample(File sampleDir, List<String> pluginVersions, String task, boolean incremental) {
         this.sampleDir = sampleDir;
         this.pluginVersions = new ArrayList<>(pluginVersions);
         this.pluginVersions.sort(Comparator.reverseOrder());
         this.task = task;
         this.incremental = incremental;
+    }
+
+    public String getPluginId() {
+        return sampleDir.getName();
     }
 
     public List<String> getPluginVersions() {
