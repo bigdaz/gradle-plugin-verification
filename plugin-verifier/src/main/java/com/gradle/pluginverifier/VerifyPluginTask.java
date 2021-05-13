@@ -7,6 +7,7 @@ import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 
@@ -30,6 +31,9 @@ public abstract class VerifyPluginTask extends DefaultTask {
     @OutputFile
     public abstract RegularFileProperty getResultsFile();
 
+    @Internal
+    public abstract DirectoryProperty getWorkingDir();
+
     public VerifyPluginTask() {
         getPublishBuildScans().convention(false);
     }
@@ -44,7 +48,7 @@ public abstract class VerifyPluginTask extends DefaultTask {
         PrintWriter resultsWriter = new PrintWriter(getResultsFile().get().getAsFile());
         for (String pluginVersion : pluginVersions) {
             PluginSample pluginSample = new PluginSample(getSampleDir().get().getAsFile(), pluginVersion, sampleTask, incremental);
-            new PluginVerifier(pluginSample, getPublishBuildScans().get()).runChecks(resultsWriter);
+            new PluginVerifier(pluginSample, getWorkingDir().get().getAsFile(), getPublishBuildScans().get()).runChecks(resultsWriter);
         }
         resultsWriter.flush();
         resultsWriter.close();

@@ -5,6 +5,7 @@ import org.gradle.testkit.runner.GradleRunner;
 import org.gradle.testkit.runner.TaskOutcome;
 import org.gradle.testkit.runner.UnexpectedBuildFailure;
 
+import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,10 +13,12 @@ import java.util.List;
 
 public class PluginVerifier {
     private final PluginSample plugin;
+    private final File workingDir;
     private final boolean publishBuildScans;
 
-    public PluginVerifier(PluginSample plugin, boolean publishBuildScans) {
+    public PluginVerifier(PluginSample plugin, File workingDir, boolean publishBuildScans) {
         this.plugin = plugin;
+        this.workingDir = workingDir;
         this.publishBuildScans = publishBuildScans;
     }
 
@@ -93,6 +96,8 @@ public class PluginVerifier {
             argumentList.add("-I");
             argumentList.add("../build-scan-init.gradle");
         }
+        argumentList.add("--gradle-user-home");
+        argumentList.add(new File(workingDir, "gradle-user-home").getAbsolutePath());
         argumentList.add("-PpluginVersion=" + plugin.getPluginVersion());
         argumentList.addAll(Arrays.asList(arguments));
 

@@ -13,7 +13,8 @@ plugins {
 
 val samplesWorkingDir = project.layout.buildDirectory.dir("verified-plugins")
 val resultsDir = project.layout.buildDirectory.dir("verification-results")
-val copyPluginProjects = tasks.register<Copy>("copyPluginProjects") {
+val workDir = project.layout.buildDirectory.dir("work")
+val copyPluginProjects = tasks.register<Sync>("copyPluginProjects") {
     from("verified-plugins")
     into(samplesWorkingDir)
 }
@@ -26,6 +27,7 @@ project.file("verified-plugins").listFiles(File::isDirectory)!!.forEach { sample
         dependsOn(copyPluginProjects)
         sampleDir.set(sampleWorkingDir)
         resultsFile.set(sampleResultsFile)
+        workingDir.set(workDir)
     }
 }
 
