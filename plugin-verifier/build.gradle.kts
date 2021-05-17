@@ -10,6 +10,7 @@ repositories {
 }
 dependencies {
     implementation(gradleTestKit())
+    implementation("com.google.code.gson:gson:2.8.6")
 
     testImplementation("org.codehaus.groovy:groovy:3.0.7")
     testImplementation("org.spockframework:spock-core:2.0-M4-groovy-3.0")

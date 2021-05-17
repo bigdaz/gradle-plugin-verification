@@ -1,39 +1,35 @@
 package com.gradle.pluginverifier;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PluginVerificationReport {
-    public final PluginSample plugin;
-    public VerificationResult pluginValidationCheck;
-    public VerificationResult configurationCacheCheck;
-    public List<GradleVersionCompatibility> gradleVersionChecks = new ArrayList<>();
+    public final String pluginId;
+    public final List<PluginVersionVerification> pluginVersions = new ArrayList<>();
 
-    public PluginVerificationReport(PluginSample plugin) {
-        this.plugin = plugin;
+    public PluginVerificationReport(String pluginId) {
+        this.pluginId = pluginId;
     }
 
-    public GradleVersionCompatibility checkGradleVersion(String gradleVersion) {
-        GradleVersionCompatibility compatibility = new GradleVersionCompatibility(gradleVersion);
-        gradleVersionChecks.add(compatibility);
-        return compatibility;
+    public PluginVersionVerification checkPluginVersion(String pluginVersion) {
+        PluginVersionVerification pluginVersionVerification = new PluginVersionVerification(pluginVersion);
+        pluginVersions.add(pluginVersionVerification);
+        return pluginVersionVerification;
     }
 
-    public static class GradleVersionCompatibility {
-        public final String gradleVersion;
-
-        private GradleVersionCompatibility(String gradleVersion) {
-            this.gradleVersion = gradleVersion;
+    public void writeJson(File reportFile) throws IOException {
+        try (PrintWriter writer = new PrintWriter(reportFile)) {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(this);
+            writer.write(json);
         }
-
-        public VerificationResult compatibilityCheck;
-        public VerificationResult incrementalBuildCheck;
-        public VerificationResult buildCacheCheck;
-    }
-
-    public interface VerificationResult {
-        String getTitle();
-        boolean getPassed();
-        String getOutput();
     }
 }

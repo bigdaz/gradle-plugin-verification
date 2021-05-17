@@ -11,6 +11,7 @@ import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -39,20 +40,22 @@ public abstract class VerifyPluginTask extends DefaultTask {
     }
 
     @TaskAction
-    public void verifyPlugin() throws FileNotFoundException {
+    public void verifyPlugin() throws IOException {
         Properties props = loadSampleProperties();
         String sampleTask = props.getProperty("task");
         List<String> pluginVersions = Arrays.stream(props.getProperty("pluginVersions").split(",")).map(String::trim).collect(Collectors.toList());
         boolean incremental = Boolean.parseBoolean(props.getProperty("incremental", "true"));
 
-        PluginVerificationReportWriter reportWriter = new PluginVerificationReportWriter(getResultsFile().get().getAsFile());
+        File pluginSampleDir = getSampleDir().get().getAsFile();
+        String pluginId = pluginSampleDir.getName();
+
+        PluginVerificationReport report = new PluginVerificationReport(pluginId);
         for (String pluginVersion : pluginVersions) {
-            PluginSample pluginSample = new PluginSample(getSampleDir().get().getAsFile(), pluginVersion, sampleTask, incremental);
+            PluginSample pluginSample = new PluginSample(pluginSampleDir, pluginVersion, sampleTask, incremental);
             PluginVerifier pluginVerifier = new PluginVerifier(pluginSample, getWorkingDir().get().getAsFile(), getPublishBuildScans().get());
-            PluginVerificationReport pluginVerificationReport = pluginVerifier.runChecks();
-            reportWriter.writeReport(pluginVerificationReport);
+            pluginVerifier.runChecks(report);
         }
-        reportWriter.close();
+        report.writeJson(getResultsFile().get().getAsFile());
     }
 
     private Properties loadSampleProperties() {

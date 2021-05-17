@@ -21,49 +21,49 @@ public class PluginVerifier {
         this.publishBuildScans = publishBuildScans;
     }
 
-    public PluginVerificationReport runChecks() {
-        PluginVerificationReport report = new PluginVerificationReport(plugin);
+    public void runChecks(PluginVerificationReport pluginVerificationReport) {
+        PluginVersionVerification report = pluginVerificationReport.checkPluginVersion(plugin.getPluginVersion());
         checkPluginValidation(report);
         checkConfigurationCache(report);
         for (String gradleVersion : GradleVersions.getAllTested()) {
-            PluginVerificationReport.GradleVersionCompatibility compatibility = report.checkGradleVersion(gradleVersion);
-            checkGradleVersionCompatibility(gradleVersion, compatibility);
+            checkGradleVersionCompatibility(gradleVersion, report);
         }
-        return report;
     }
 
     /**
      * Plugin validation with the latest version of Gradle.
      * @param report
      */
-    public void checkPluginValidation(PluginVerificationReport report) {
+    public void checkPluginValidation(PluginVersionVerification report) {
         BuildOutcome result = runBuild("-I", "../validate-plugin-init.gradle", "validateExternalPlugins");
-        report.pluginValidationCheck = new BuildSuccessVerificationResult("PLUGIN VALIDATION", result);
+        report.validationCheck = buildSuccessVerificationResult(result);
     }
 
     /**
      * Check configuration-cache validation with the latest version of Gradle.
      * @param report
      */
-    public void checkConfigurationCache(PluginVerificationReport report) {
+    public void checkConfigurationCache(PluginVersionVerification report) {
         BuildOutcome result = runBuild("--configuration-cache", "--no-build-cache", "clean", plugin.getTask());
-        report.configurationCacheCheck = new BuildSuccessVerificationResult("CONFIGURATION CACHE COMPATIBILITY", result);
+        report.configurationCacheCheck = buildSuccessVerificationResult(result);
     }
 
-    private void checkGradleVersionCompatibility(String gradleVersion, PluginVerificationReport.GradleVersionCompatibility report) {
+    private void checkGradleVersionCompatibility(String gradleVersion, PluginVersionVerification report) {
+        PluginVersionVerification.GradleVersionCompatibility gradleVersionCheck = report.checkGradleVersion(gradleVersion);
+
         String task = plugin.getTask();
 
         BuildOutcome result = runBuild(gradleRunner("clean", task).withGradleVersion(gradleVersion));
-        report.compatibilityCheck = new BuildSuccessVerificationResult("COMPATIBLE with GRADLE " + gradleVersion, result);
+        gradleVersionCheck.compatibilityCheck = buildSuccessVerificationResult(result);
 
         if (result.passed && plugin.isIncremental()) {
             // Without clean, task should be UP-TO-DATE
             result = runBuild(gradleRunner(task).withGradleVersion(gradleVersion));
-            report.incrementalBuildCheck = new TaskOutcomeVerificationResult("INCREMENTAL BUILD with GRADLE " + gradleVersion, result, task, TaskOutcome.UP_TO_DATE);
+            gradleVersionCheck.incrementalBuildCheck = taskOutcomeVerificationResult(result, TaskOutcome.UP_TO_DATE);
 
             // With clean, task should be FROM_CACHE
             result = runBuild(gradleRunner("--build-cache", "clean", task).withGradleVersion(gradleVersion));
-            report.buildCacheCheck = new TaskOutcomeVerificationResult("BUILD CACHE with GRADLE " + gradleVersion, result, task, TaskOutcome.FROM_CACHE);
+            gradleVersionCheck.buildCacheCheck = taskOutcomeVerificationResult(result, TaskOutcome.FROM_CACHE);
         }
     }
 
@@ -107,58 +107,12 @@ public class PluginVerifier {
         }
     }
 
-    private static class BuildSuccessVerificationResult implements PluginVerificationReport.VerificationResult {
-        private final String title;
-        private final BuildOutcome buildOutcome;
-
-        private BuildSuccessVerificationResult(String title, BuildOutcome buildOutcome) {
-            this.title = title;
-            this.buildOutcome = buildOutcome;
-        }
-
-        @Override
-        public String getTitle() {
-            return title;
-        }
-
-        @Override
-        public boolean getPassed() {
-            return buildOutcome.passed;
-        }
-
-        @Override
-        public String getOutput() {
-            return buildOutcome.buildResult.getOutput();
-        }
+    private PluginVersionVerification.VerificationResult buildSuccessVerificationResult(BuildOutcome buildOutcome) {
+        return new PluginVersionVerification.VerificationResult(buildOutcome.passed, buildOutcome.buildResult.getOutput());
     }
 
-    private static class TaskOutcomeVerificationResult implements PluginVerificationReport.VerificationResult {
-        private final String title;
-        private final BuildOutcome buildOutcome;
-        private final String task;
-        private final TaskOutcome expectedOutcome;
-
-        private TaskOutcomeVerificationResult(String title, BuildOutcome buildOutcome, String task, TaskOutcome expectedOutcome) {
-            this.title = title;
-            this.buildOutcome = buildOutcome;
-            this.task = task;
-            this.expectedOutcome = expectedOutcome;
-        }
-
-        @Override
-        public String getTitle() {
-            return title;
-        }
-
-        @Override
-        public boolean getPassed() {
-            return buildOutcome.buildResult.task(task).getOutcome() == expectedOutcome;
-        }
-
-        @Override
-        public String getOutput() {
-            return buildOutcome.buildResult.getOutput();
-        }
+    private PluginVersionVerification.VerificationResult taskOutcomeVerificationResult(BuildOutcome buildOutcome, TaskOutcome expectedOutcome) {
+        boolean success = buildOutcome.buildResult.task(plugin.getTask()).getOutcome() == expectedOutcome;
+        return new PluginVersionVerification.VerificationResult(success, buildOutcome.buildResult.getOutput());
     }
-
 }

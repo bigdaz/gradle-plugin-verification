@@ -21,7 +21,7 @@ val copyPluginProjects = tasks.register<Sync>("copyPluginProjects") {
 
 project.file("verified-plugins").listFiles(File::isDirectory)!!.forEach { sample ->
     val sampleWorkingDir = samplesWorkingDir.map { s -> s.dir(sample.name) }
-    val sampleResultsFile = resultsDir.map { d -> d.file(sample.name + ".txt") }
+    val sampleResultsFile = resultsDir.map { d -> d.file(sample.name + ".json") }
 
     tasks.register<com.gradle.pluginverifier.VerifyPluginTask>("verify_" + sample.name.replace('.', '_')) {
         dependsOn(copyPluginProjects)
