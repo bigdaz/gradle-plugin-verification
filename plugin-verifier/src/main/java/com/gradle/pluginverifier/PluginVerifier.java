@@ -25,10 +25,9 @@ public class PluginVerifier {
         report.writeHeader(plugin);
         checkPluginValidation(report);
         checkConfigurationCache(report);
-        if (plugin.isIncremental()) {
-            checkBuildCache(report);
+        for (String gradleVersion : GradleVersions.getAllTested()) {
+            checkGradleVersionCompatibility(gradleVersion, report);
         }
-        checkVersionCompatibility(report);
     }
 
     /**
@@ -47,31 +46,22 @@ public class PluginVerifier {
         report.writeResults("CONFIGURATION CACHE COMPATIBILITY", result.passed, result.getOutput());
     }
 
-    public void checkBuildCache(PluginVerificationReport report) {
-        if (!plugin.isIncremental()) {
-            return;
-        }
+    private void checkGradleVersionCompatibility(String gradleVersion, PluginVerificationReport report) {
         String task = plugin.getTask();
 
-        // Run an initial clean build and populate the build cache
-        runBuild("--no-scan", "--build-cache", "clean", task);
+        VerificationResult result = runBuild(gradleRunner("clean", task).withGradleVersion(gradleVersion));
+        report.writeResults("COMPATIBLE with GRADLE " + gradleVersion, result.passed, result.getOutput());
 
-        // Without clean, task should be UP-TO-DATE
-        VerificationResult result = runBuild(task);
-        boolean passed = result.passed && result.getTaskOutcome(task) == TaskOutcome.UP_TO_DATE;
-        report.writeResults("INCREMENTAL BUILD", passed, result.getOutput());
+        if (result.passed && plugin.isIncremental()) {
+            // Without clean, task should be UP-TO-DATE
+            result = runBuild(gradleRunner(task).withGradleVersion(gradleVersion));
+            boolean passed = result.passed && result.getTaskOutcome(task) == TaskOutcome.UP_TO_DATE;
+            report.writeResults("INCREMENTAL BUILD with GRADLE " + gradleVersion, passed, result.getOutput());
 
-        // With clean, task should be FROM_CACHE
-        result = runBuild("--build-cache", "clean", task);
-        passed = result.passed && result.getTaskOutcome(task) == TaskOutcome.FROM_CACHE;
-        report.writeResults("BUILD CACHE", passed, result.getOutput());
-    }
-
-    public void checkVersionCompatibility(PluginVerificationReport report) {
-        String task = plugin.getTask();
-        for (String gradleVersion : GradleVersions.getAllTested()) {
-            VerificationResult result = runBuild(gradleRunner("clean", task).withGradleVersion(gradleVersion));
-            report.writeResults("COMPATIBLE with GRADLE " + gradleVersion, result.passed, result.getOutput());
+            // With clean, task should be FROM_CACHE
+            result = runBuild(gradleRunner("--build-cache", "clean", task).withGradleVersion(gradleVersion));
+            passed = result.passed && result.getTaskOutcome(task) == TaskOutcome.FROM_CACHE;
+            report.writeResults("BUILD CACHE with GRADLE " + gradleVersion, passed, result.getOutput());
         }
     }
 
