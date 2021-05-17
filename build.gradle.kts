@@ -13,7 +13,7 @@ plugins {
 
 val samplesWorkingDir = project.layout.buildDirectory.dir("verified-plugins")
 val resultsDir = project.layout.buildDirectory.dir("verification-results")
-val workDir = project.layout.buildDirectory.dir("work")
+val workDir = project.layout.projectDirectory.dir("build-work")
 val copyPluginProjects = tasks.register<Sync>("copyPluginProjects") {
     from("verified-plugins")
     into(samplesWorkingDir)
@@ -28,6 +28,7 @@ project.file("verified-plugins").listFiles(File::isDirectory)!!.forEach { sample
         sampleDir.set(sampleWorkingDir)
         resultsFile.set(sampleResultsFile)
         workingDir.set(workDir)
+//        publishBuildScans.set(true)
     }
 }
 
