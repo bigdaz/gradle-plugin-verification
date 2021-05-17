@@ -21,45 +21,49 @@ public class PluginVerifier {
         this.publishBuildScans = publishBuildScans;
     }
 
-    public void runChecks(PluginVerificationReportWriter report) {
-        report.writeHeader(plugin);
+    public PluginVerificationReport runChecks() {
+        PluginVerificationReport report = new PluginVerificationReport(plugin);
         checkPluginValidation(report);
         checkConfigurationCache(report);
         for (String gradleVersion : GradleVersions.getAllTested()) {
-            checkGradleVersionCompatibility(gradleVersion, report);
+            PluginVerificationReport.GradleVersionCompatibility compatibility = report.checkGradleVersion(gradleVersion);
+            checkGradleVersionCompatibility(gradleVersion, compatibility);
         }
+        return report;
     }
 
     /**
      * Plugin validation with the latest version of Gradle.
+     * @param report
      */
-    public void checkPluginValidation(PluginVerificationReportWriter report) {
+    public void checkPluginValidation(PluginVerificationReport report) {
         BuildOutcome result = runBuild("-I", "../validate-plugin-init.gradle", "validateExternalPlugins");
-        report.writeResults(new BuildSuccessVerificationResult("PLUGIN VALIDATION", result));
+        report.pluginValidationCheck = new BuildSuccessVerificationResult("PLUGIN VALIDATION", result);
     }
 
     /**
      * Check configuration-cache validation with the latest version of Gradle.
+     * @param report
      */
-    public void checkConfigurationCache(PluginVerificationReportWriter report) {
+    public void checkConfigurationCache(PluginVerificationReport report) {
         BuildOutcome result = runBuild("--configuration-cache", "--no-build-cache", "clean", plugin.getTask());
-        report.writeResults(new BuildSuccessVerificationResult("CONFIGURATION CACHE COMPATIBILITY", result));
+        report.configurationCacheCheck = new BuildSuccessVerificationResult("CONFIGURATION CACHE COMPATIBILITY", result);
     }
 
-    private void checkGradleVersionCompatibility(String gradleVersion, PluginVerificationReportWriter report) {
+    private void checkGradleVersionCompatibility(String gradleVersion, PluginVerificationReport.GradleVersionCompatibility report) {
         String task = plugin.getTask();
 
         BuildOutcome result = runBuild(gradleRunner("clean", task).withGradleVersion(gradleVersion));
-        report.writeResults(new BuildSuccessVerificationResult("COMPATIBLE with GRADLE " + gradleVersion, result));
+        report.compatibilityCheck = new BuildSuccessVerificationResult("COMPATIBLE with GRADLE " + gradleVersion, result);
 
         if (result.passed && plugin.isIncremental()) {
             // Without clean, task should be UP-TO-DATE
             result = runBuild(gradleRunner(task).withGradleVersion(gradleVersion));
-            report.writeResults(new TaskOutcomeVerificationResult("INCREMENTAL BUILD with GRADLE " + gradleVersion, result, task, TaskOutcome.UP_TO_DATE));
+            report.incrementalBuildCheck = new TaskOutcomeVerificationResult("INCREMENTAL BUILD with GRADLE " + gradleVersion, result, task, TaskOutcome.UP_TO_DATE);
 
             // With clean, task should be FROM_CACHE
             result = runBuild(gradleRunner("--build-cache", "clean", task).withGradleVersion(gradleVersion));
-            report.writeResults(new TaskOutcomeVerificationResult("BUILD CACHE with GRADLE " + gradleVersion, result, task, TaskOutcome.FROM_CACHE));
+            report.buildCacheCheck = new TaskOutcomeVerificationResult("BUILD CACHE with GRADLE " + gradleVersion, result, task, TaskOutcome.FROM_CACHE);
         }
     }
 
@@ -103,7 +107,7 @@ public class PluginVerifier {
         }
     }
 
-    private static class BuildSuccessVerificationResult implements PluginVerificationResult {
+    private static class BuildSuccessVerificationResult implements PluginVerificationReport.VerificationResult {
         private final String title;
         private final BuildOutcome buildOutcome;
 
@@ -128,7 +132,7 @@ public class PluginVerifier {
         }
     }
 
-    private static class TaskOutcomeVerificationResult implements PluginVerificationResult {
+    private static class TaskOutcomeVerificationResult implements PluginVerificationReport.VerificationResult {
         private final String title;
         private final BuildOutcome buildOutcome;
         private final String task;
