@@ -6,7 +6,6 @@ import org.gradle.testkit.runner.TaskOutcome;
 import org.gradle.testkit.runner.UnexpectedBuildFailure;
 
 import java.io.File;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,33 +21,33 @@ public class PluginVerifier {
         this.publishBuildScans = publishBuildScans;
     }
 
-    public void runChecks(PrintWriter resultsWriter) {
-        writeHeader(resultsWriter);
-        checkPluginValidation(resultsWriter);
-        checkConfigurationCache(resultsWriter);
+    public void runChecks(PluginVerificationReport report) {
+        report.writeHeader(plugin);
+        checkPluginValidation(report);
+        checkConfigurationCache(report);
         if (plugin.isIncremental()) {
-            checkBuildCache(resultsWriter);
+            checkBuildCache(report);
         }
-        checkVersionCompatibility(resultsWriter);
+        checkVersionCompatibility(report);
     }
 
     /**
      * Plugin validation with the latest version of Gradle.
      */
-    public void checkPluginValidation(PrintWriter resultWriter) {
+    public void checkPluginValidation(PluginVerificationReport report) {
         VerificationResult result = runBuild("-I", "../validate-plugin-init.gradle", "validateExternalPlugins");
-        writeResults(resultWriter, "PLUGIN VALIDATION", result.passed, result.getOutput());
+        report.writeResults("PLUGIN VALIDATION", result.passed, result.getOutput());
     }
 
     /**
      * Check configuration-cache validation with the latest version of Gradle.
      */
-    public void checkConfigurationCache(PrintWriter resultsWriter) {
+    public void checkConfigurationCache(PluginVerificationReport report) {
         VerificationResult result = runBuild("--configuration-cache", "--no-build-cache", "clean", plugin.getTask());
-        writeResults(resultsWriter, "CONFIGURATION CACHE COMPATIBILITY", result.passed, result.getOutput());
+        report.writeResults("CONFIGURATION CACHE COMPATIBILITY", result.passed, result.getOutput());
     }
 
-    public void checkBuildCache(PrintWriter resultsWriter) {
+    public void checkBuildCache(PluginVerificationReport report) {
         if (!plugin.isIncremental()) {
             return;
         }
@@ -60,19 +59,19 @@ public class PluginVerifier {
         // Without clean, task should be UP-TO-DATE
         VerificationResult result = runBuild(task);
         boolean passed = result.passed && result.getTaskOutcome(task) == TaskOutcome.UP_TO_DATE;
-        writeResults(resultsWriter, "INCREMENTAL BUILD", passed, result.getOutput());
+        report.writeResults("INCREMENTAL BUILD", passed, result.getOutput());
 
         // With clean, task should be FROM_CACHE
         result = runBuild("--build-cache", "clean", task);
         passed = result.passed && result.getTaskOutcome(task) == TaskOutcome.FROM_CACHE;
-        writeResults(resultsWriter, "BUILD CACHE", passed, result.getOutput());
+        report.writeResults("BUILD CACHE", passed, result.getOutput());
     }
 
-    public void checkVersionCompatibility(PrintWriter resultsWriter) {
+    public void checkVersionCompatibility(PluginVerificationReport report) {
         String task = plugin.getTask();
         for (String gradleVersion : GradleVersions.getAllTested()) {
             VerificationResult result = runBuild(gradleRunner("clean", task).withGradleVersion(gradleVersion));
-            writeResults(resultsWriter, "COMPATIBLE with GRADLE " + gradleVersion, result.passed, result.getOutput());
+            report.writeResults("COMPATIBLE with GRADLE " + gradleVersion, result.passed, result.getOutput());
         }
     }
 
@@ -104,22 +103,6 @@ public class PluginVerifier {
         return GradleRunner.create()
                 .withProjectDir(plugin.getSampleProject())
                 .withArguments(argumentList);
-    }
-
-    private void writeHeader(PrintWriter resultWriter) {
-        resultWriter.println("=================================");
-        resultWriter.println("Plugin verification: " + plugin.getPluginId() + ":" + plugin.getPluginVersion());
-        resultWriter.println("=================================");
-    }
-
-    private void writeResults(PrintWriter resultWriter, String title, boolean passed, String output) {
-        resultWriter.println("--------------------------");
-        resultWriter.println(title);
-        resultWriter.println(passed ? "SUCCESS" : "FAILED");
-        resultWriter.println("--------------------------");
-        resultWriter.print(output);
-        resultWriter.println("--------------------------");
-        resultWriter.println();
     }
 
     private static class VerificationResult {

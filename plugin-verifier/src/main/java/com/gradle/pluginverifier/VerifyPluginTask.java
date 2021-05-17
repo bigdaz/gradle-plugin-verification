@@ -46,9 +46,11 @@ public abstract class VerifyPluginTask extends DefaultTask {
         boolean incremental = Boolean.parseBoolean(props.getProperty("incremental", "true"));
 
         PrintWriter resultsWriter = new PrintWriter(getResultsFile().get().getAsFile());
+        PluginVerificationReport report = new PluginVerificationReport(resultsWriter);
         for (String pluginVersion : pluginVersions) {
             PluginSample pluginSample = new PluginSample(getSampleDir().get().getAsFile(), pluginVersion, sampleTask, incremental);
-            new PluginVerifier(pluginSample, getWorkingDir().get().getAsFile(), getPublishBuildScans().get()).runChecks(resultsWriter);
+            PluginVerifier pluginVerifier = new PluginVerifier(pluginSample, getWorkingDir().get().getAsFile(), getPublishBuildScans().get());
+            pluginVerifier.runChecks(report);
         }
         resultsWriter.flush();
         resultsWriter.close();
