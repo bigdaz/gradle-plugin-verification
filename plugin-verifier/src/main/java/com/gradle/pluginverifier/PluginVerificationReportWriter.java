@@ -2,10 +2,10 @@ package com.gradle.pluginverifier;
 
 import java.io.PrintWriter;
 
-public class PluginVerificationReport {
+public class PluginVerificationReportWriter {
     private final PrintWriter resultWriter;
 
-    public PluginVerificationReport(PrintWriter resultWriter) {
+    public PluginVerificationReportWriter(PrintWriter resultWriter) {
         this.resultWriter = resultWriter;
     }
 
@@ -15,12 +15,12 @@ public class PluginVerificationReport {
         resultWriter.println("=================================");
     }
 
-    public void writeResults(String title, boolean passed, String output) {
+    public void writeResults(PluginVerificationResult result) {
         resultWriter.println("--------------------------");
-        resultWriter.println(title);
-        resultWriter.println(passed ? "SUCCESS" : "FAILED");
+        resultWriter.println(result.getTitle());
+        resultWriter.println(result.getPassed() ? "SUCCESS" : "FAILED");
         resultWriter.println("--------------------------");
-        resultWriter.print(output);
+        resultWriter.print(result.getOutput());
         resultWriter.println("--------------------------");
         resultWriter.println();
     }
