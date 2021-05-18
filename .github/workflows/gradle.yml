@@ -22,5 +22,4 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build with Gradle
-      run: ./gradlew clean build --scan
-      working-directory: plugin-verifier
+      run: ./gradlew verifyPlugins --scan
