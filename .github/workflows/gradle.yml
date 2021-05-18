@@ -17,8 +17,18 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: Cache Gradle packages
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches/build-cache-1
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+
     - name: Build with Gradle
-      run: ./gradlew verifyPlugins --scan
+      run: ./gradlew report --scan --build-cache
     - name: Save verification results
       uses: actions/upload-artifact@v2
       with:
