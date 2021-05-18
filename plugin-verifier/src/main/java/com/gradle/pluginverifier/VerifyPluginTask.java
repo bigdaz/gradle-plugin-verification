@@ -26,6 +26,9 @@ public abstract class VerifyPluginTask extends DefaultTask {
     @InputDirectory
     public abstract DirectoryProperty getSampleDir();
 
+    @Internal
+    public abstract DirectoryProperty getSampleWorkingDir();
+
     @Input
     public abstract Property<Boolean> getPublishBuildScans();
 
@@ -48,7 +51,7 @@ public abstract class VerifyPluginTask extends DefaultTask {
         List<String> pluginVersions = Arrays.stream(props.getProperty("pluginVersions").split(",")).map(String::trim).collect(Collectors.toList());
         boolean incremental = Boolean.parseBoolean(props.getProperty("incremental", "true"));
 
-        File pluginSampleDir = getSampleDir().get().getAsFile();
+        File pluginSampleDir = getSampleWorkingDir().get().getAsFile();
         String pluginId = pluginSampleDir.getName();
 
         PluginVerificationReport report = new PluginVerificationReport(pluginId);
