@@ -1,0 +1,6 @@
+plugins {
+    id "org.asciidoctor.jvm.convert" version "${pluginVersion}"
+}
+repositories {
+    mavenCentral()
+}
