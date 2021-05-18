@@ -2,6 +2,7 @@ package com.gradle.pluginverifier;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
+import org.gradle.api.Task;
 import org.gradle.api.file.Directory;
 import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.Sync;
@@ -35,6 +36,12 @@ public class VerifyPluginsPlugin implements Plugin<Project> {
             });
         }
 
-        project.getTasks().register("verifyPlugins", v -> v.dependsOn(project.getTasks().withType(VerifyPluginTask.class)));
+        TaskProvider<Task> verifyPlugins = project.getTasks().register("verifyPlugins", v -> v.dependsOn(project.getTasks().withType(VerifyPluginTask.class)));
+
+        project.getTasks().register("report", VerificationReportTask.class, v -> {
+            v.dependsOn(verifyPlugins);
+            v.getResultFiles().set(resultsDir);
+            v.getReportDir().set(project.getLayout().getBuildDirectory().dir("report"));
+        });
     }
 }
