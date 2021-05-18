@@ -34,10 +34,12 @@ public class PluginVersionVerification {
     public static class VerificationResult {
         public final boolean passed;
         public final String output;
+        public final String buildScanId;
 
-        public VerificationResult(boolean passed, String output) {
+        public VerificationResult(boolean passed, String output, String buildScanId) {
             this.passed = passed;
             this.output = output;
+            this.buildScanId = buildScanId;
         }
     }
 }

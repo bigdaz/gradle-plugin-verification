@@ -6,6 +6,8 @@ import org.gradle.testkit.runner.TaskOutcome;
 import org.gradle.testkit.runner.UnexpectedBuildFailure;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -108,11 +110,23 @@ public class PluginVerifier {
     }
 
     private PluginVersionVerification.VerificationResult buildSuccessVerificationResult(BuildOutcome buildOutcome) {
-        return new PluginVersionVerification.VerificationResult(buildOutcome.passed, buildOutcome.buildResult.getOutput());
+        return new PluginVersionVerification.VerificationResult(buildOutcome.passed, buildOutcome.buildResult.getOutput(), getScanId());
     }
 
     private PluginVersionVerification.VerificationResult taskOutcomeVerificationResult(BuildOutcome buildOutcome, TaskOutcome expectedOutcome) {
         boolean success = buildOutcome.buildResult.task(plugin.getTask()).getOutcome() == expectedOutcome;
-        return new PluginVersionVerification.VerificationResult(success, buildOutcome.buildResult.getOutput());
+        return new PluginVersionVerification.VerificationResult(success, buildOutcome.buildResult.getOutput(), getScanId());
+    }
+
+    private String getScanId() {
+        if (!publishBuildScans) {
+            return null;
+        }
+        File scanIdFile = new File(plugin.getSampleProject(), "build-scan-id.txt");
+        try {
+            return Files.readString(scanIdFile.toPath());
+        } catch (IOException e) {
+            return "ERROR";
+        }
     }
 }

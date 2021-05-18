@@ -43,6 +43,11 @@ void configureExtension(extension) {
             publishAlways()
             termsOfServiceUrl = "https://gradle.com/terms-of-service"
             termsOfServiceAgree = "yes"
+
+            buildScanPublished { buildScan ->
+                def scanFile = new File(gradle.getRootProject().getProjectDir(), "build-scan-id.txt")
+                scanFile.text = buildScan.buildScanId
+            }
         }
     }
 }
