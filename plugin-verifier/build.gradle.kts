@@ -1,6 +1,7 @@
 plugins {
     java
     groovy
+    `java-gradle-plugin`
 }
 group = "com.gradle"
 version = "0.1"
@@ -11,18 +12,13 @@ repositories {
 dependencies {
     implementation(gradleTestKit())
     implementation("com.google.code.gson:gson:2.8.6")
-
-    testImplementation("org.codehaus.groovy:groovy:3.0.7")
-    testImplementation("org.spockframework:spock-core:2.0-M4-groovy-3.0")
-    testImplementation("junit:junit:4.13.1")
 }
 
-tasks.register<Copy>("copyPluginProjects") {
-    from("../verified-plugins")
-    into("build/verified-plugins")
-}
-
-tasks.test {
-    dependsOn("copyPluginProjects")
-    useJUnitPlatform()
+gradlePlugin {
+    plugins {
+        create("verifyPlugins") {
+            id = "com.gradle.plugin-verifier"
+            implementationClass = "com.gradle.pluginverifier.VerifyPluginsPlugin"
+        }
+    }
 }
