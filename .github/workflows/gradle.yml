@@ -28,7 +28,7 @@ jobs:
           ${{ runner.os }}-gradle-
 
     - name: Build with Gradle
-      run: ./gradlew report --scan --build-cache
+      run: ./gradlew report --scan
     - name: Save verification results
       uses: actions/upload-artifact@v2
       with:
