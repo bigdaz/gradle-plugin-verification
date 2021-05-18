@@ -14,14 +14,15 @@ plugins {
 val samplesWorkingDir = project.layout.buildDirectory.dir("verified-plugins")
 val resultsDir = project.layout.buildDirectory.dir("verification-results")
 
-val copyPluginProjects = tasks.register<Sync>("copyPluginProjects") {
+val copySampleInitScripts = tasks.register<Sync>("copySampleInitScripts") {
     from("verified-plugins")
+    include("*-init.gradle")
     into(samplesWorkingDir)
 }
 
 project.file("verified-plugins").listFiles(File::isDirectory)!!.forEach { sample ->
     tasks.register<com.gradle.pluginverifier.VerifyPluginTask>("verify_" + sample.name.replace('.', '_')) {
-        dependsOn(copyPluginProjects)
+        dependsOn(copySampleInitScripts)
         sampleDir.set(sample)
         sampleWorkingDir.set(samplesWorkingDir.map { d -> d.dir(sample.name) })
         resultsFile.set(resultsDir.map { d -> d.file(sample.name + ".json") })

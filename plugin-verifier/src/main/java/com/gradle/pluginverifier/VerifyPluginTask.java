@@ -3,6 +3,7 @@ package com.gradle.pluginverifier;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.DirectoryProperty;
+import org.gradle.api.file.FileSystemOperations;
 import org.gradle.api.file.ProjectLayout;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
@@ -44,8 +45,13 @@ public abstract class VerifyPluginTask extends DefaultTask {
         getSampleGradleUserHome().convention(projectLayout.getProjectDirectory().dir("build-gradle-user-home"));
     }
 
+    @Inject
+    protected abstract FileSystemOperations getFileSystemOperations();
+
     @TaskAction
     public void verifyPlugin() throws IOException {
+        copySampleToWorkingDir();
+
         Properties props = loadSampleProperties();
         String sampleTask = props.getProperty("task");
         List<String> pluginVersions = Arrays.stream(props.getProperty("pluginVersions").split(",")).map(String::trim).collect(Collectors.toList());
@@ -61,6 +67,13 @@ public abstract class VerifyPluginTask extends DefaultTask {
             pluginVerifier.runChecks(report);
         }
         report.writeJson(getResultsFile().get().getAsFile());
+    }
+
+    private void copySampleToWorkingDir() {
+        getFileSystemOperations().copy(copySpec -> {
+            copySpec.from(getSampleDir());
+            copySpec.into(getSampleWorkingDir());
+        });
     }
 
     private Properties loadSampleProperties() {
