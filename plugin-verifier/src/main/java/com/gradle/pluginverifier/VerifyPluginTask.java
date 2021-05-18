@@ -3,6 +3,7 @@ package com.gradle.pluginverifier;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.DirectoryProperty;
+import org.gradle.api.file.ProjectLayout;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.Input;
@@ -11,12 +12,11 @@ import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 
+import javax.inject.Inject;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
@@ -33,10 +33,12 @@ public abstract class VerifyPluginTask extends DefaultTask {
     public abstract RegularFileProperty getResultsFile();
 
     @Internal
-    public abstract DirectoryProperty getWorkingDir();
+    public abstract DirectoryProperty getSampleGradleUserHome();
 
-    public VerifyPluginTask() {
+    @Inject
+    public VerifyPluginTask(ProjectLayout projectLayout) {
         getPublishBuildScans().convention(false);
+        getSampleGradleUserHome().convention(projectLayout.getProjectDirectory().dir("build-gradle-user-home"));
     }
 
     @TaskAction
@@ -52,7 +54,7 @@ public abstract class VerifyPluginTask extends DefaultTask {
         PluginVerificationReport report = new PluginVerificationReport(pluginId);
         for (String pluginVersion : pluginVersions) {
             PluginSample pluginSample = new PluginSample(pluginSampleDir, pluginVersion, sampleTask, incremental);
-            PluginVerifier pluginVerifier = new PluginVerifier(pluginSample, getWorkingDir().get().getAsFile(), getPublishBuildScans().get());
+            PluginVerifier pluginVerifier = new PluginVerifier(pluginSample, getSampleGradleUserHome().get().getAsFile(), getPublishBuildScans().get());
             pluginVerifier.runChecks(report);
         }
         report.writeJson(getResultsFile().get().getAsFile());

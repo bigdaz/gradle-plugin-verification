@@ -12,12 +12,12 @@ import java.util.List;
 
 public class PluginVerifier {
     private final PluginSample plugin;
-    private final File workingDir;
+    private final File gradleUserHome;
     private final boolean publishBuildScans;
 
-    public PluginVerifier(PluginSample plugin, File workingDir, boolean publishBuildScans) {
+    public PluginVerifier(PluginSample plugin, File gradleUserHome, boolean publishBuildScans) {
         this.plugin = plugin;
-        this.workingDir = workingDir;
+        this.gradleUserHome = gradleUserHome;
         this.publishBuildScans = publishBuildScans;
     }
 
@@ -88,7 +88,7 @@ public class PluginVerifier {
             argumentList.add("../build-scan-init.gradle");
         }
         argumentList.add("--gradle-user-home");
-        argumentList.add(new File(workingDir, "gradle-user-home").getAbsolutePath());
+        argumentList.add(gradleUserHome.getAbsolutePath());
         argumentList.add("-PpluginVersion=" + plugin.getPluginVersion());
         argumentList.addAll(Arrays.asList(arguments));
 
