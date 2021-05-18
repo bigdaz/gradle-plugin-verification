@@ -47,7 +47,7 @@ public abstract class VerifyPluginTask extends DefaultTask {
     @Inject
     public VerifyPluginTask(ProjectLayout projectLayout) {
         getPublishBuildScans().convention(false);
-        getSampleGradleUserHome().convention(projectLayout.getProjectDirectory().dir("build-gradle-user-home"));
+        getSampleGradleUserHome().convention(projectLayout.getBuildDirectory().dir("gradle-user-home").get());
     }
 
     @Inject

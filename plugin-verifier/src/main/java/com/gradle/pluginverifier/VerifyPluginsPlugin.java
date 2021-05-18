@@ -16,8 +16,8 @@ public class VerifyPluginsPlugin implements Plugin<Project> {
         project.getPlugins().apply("base");
 
         Directory samplesSourceDir = project.getLayout().getProjectDirectory().dir("verified-plugins");
-        Provider<Directory> samplesWorkingDir = project.getLayout().getBuildDirectory().dir("verified-plugins");
-        Provider<Directory> resultsDir = project.getLayout().getBuildDirectory().dir("verification-results");
+        Provider<Directory> samplesWorkingDir = project.getLayout().getBuildDirectory().dir("plugins");
+        Provider<Directory> resultsDir = project.getLayout().getBuildDirectory().dir("results");
 
         TaskProvider<Sync> copySampleInitScripts = project.getTasks().register("copySampleInitScripts", Sync.class, sync -> {
             sync.from(samplesSourceDir);
