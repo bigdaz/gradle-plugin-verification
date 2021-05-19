@@ -32,7 +32,7 @@ public class VerifyPluginsPlugin implements Plugin<Project> {
                 v.getSampleDir().set(sample);
                 v.getSampleWorkingDir().set(samplesWorkingDir.map(d -> d.dir(sample.getName())));
                 v.getResultsFile().set(resultsDir.map(d -> d.file(sample.getName() + ".json")));
-//                v.getPublishBuildScans().set(true);
+                v.getPublishBuildScans().set(true);
             });
         }
 
