@@ -12,6 +12,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public abstract class VerificationReportTask extends DefaultTask {
     @InputDirectory
@@ -24,23 +29,44 @@ public abstract class VerificationReportTask extends DefaultTask {
     public void generate() throws FileNotFoundException {
         File reportFile = getReportDir().file("index.html").get().getAsFile();
         PrintWriter writer = new PrintWriter(reportFile);
+        writer.println("<html>" +
+                "<head><style>table, th, td {border: 1px solid black;}</style></head>" +
+                "<body>");
+        writer.println("<h1>Plugin compatibility report</h1>");
+        writer.println("<table>" +
+                "<tr><th>Plugin</th><th>Annotations</th><th>Config Cache</th><th>Gradle 7.0.2</th><th>Gradle 6.8.3</th><th>gradle 5.6.4</th></tr>");
+
+        File[] resultFiles = getResultFiles().get().getAsFile().listFiles();
+        for (File resultFile : Arrays.stream(resultFiles).sorted().collect(Collectors.toList())) {
+            PluginVerificationReport pluginReport = new Gson().fromJson(Files.newReader(resultFile, Charset.defaultCharset()), PluginVerificationReport.class);
+            writeDetailedPluginReport(pluginReport);
+            for (PluginVersionVerification versionReport : pluginReport.pluginVersions) {
+                writer.println("<tr><td><a href=\"" + pluginReport.pluginId + ".html\">" + pluginReport.pluginId + ":" + versionReport.pluginVersion+ "</a></td>" + passed(versionReport.validationCheck) + passed(versionReport.configurationCacheCheck));
+                Map<String, String> gradleVersionSummary = gradleVersionSummary(versionReport.gradleVersionChecks);
+                writer.println("<td>" + gradleVersionSummary.get("7.0.2") + "</td><td>" + gradleVersionSummary.get("6.8.3") + "</td><td>" + gradleVersionSummary.get("5.6.4") + "</td></tr>");
+            }
+        }
+        writer.println("</table>");
+        writer.println("</body></html>");
+        writer.close();
+    }
+
+    private void writeDetailedPluginReport(PluginVerificationReport pluginReport) throws FileNotFoundException {
+        File reportFile = getReportDir().file(pluginReport.pluginId + ".html").get().getAsFile();
+        PrintWriter writer = new PrintWriter(reportFile);
         writer.println("<html><body>");
 
-        for (File resultFile : getResultFiles().get().getAsFile().listFiles()) {
-            Gson gson = new Gson();
-            PluginVerificationReport pluginReport = gson.fromJson(Files.newReader(resultFile, Charset.defaultCharset()), PluginVerificationReport.class);
-            writer.println("<h1>Plugin: " + pluginReport.pluginId + "</h1>");
-            for (PluginVersionVerification versionReport : pluginReport.pluginVersions) {
-                writer.println("<h2>Version: " + versionReport.pluginVersion + "</h2>");
-                printCheck(writer, "Validation check", versionReport.validationCheck);
-                printCheck(writer, "Configuration cache", versionReport.configurationCacheCheck);
+        writer.println("<h1>Plugin: " + pluginReport.pluginId + "</h1>");
+        for (PluginVersionVerification versionReport : pluginReport.pluginVersions) {
+            writer.println("<h2>Version: " + versionReport.pluginVersion + "</h2>");
+            printCheck(writer, "Validation check", versionReport.validationCheck);
+            printCheck(writer, "Configuration cache", versionReport.configurationCacheCheck);
 
-                for (PluginVersionVerification.GradleVersionCompatibility gradleVersionReport : versionReport.gradleVersionChecks) {
-                    writer.println("<h3>Gradle Version: " + gradleVersionReport.gradleVersion + "</h3>");
-                    printCheck(writer, "Base compatibility", gradleVersionReport.compatibilityCheck);
-                    printCheck(writer, "Incremental build", gradleVersionReport.incrementalBuildCheck);
-                    printCheck(writer, "Build cache", gradleVersionReport.buildCacheCheck);
-                }
+            for (PluginVersionVerification.GradleVersionCompatibility gradleVersionReport : versionReport.gradleVersionChecks) {
+                writer.println("<h3>Gradle Version: " + gradleVersionReport.gradleVersion + "</h3>");
+                printCheck(writer, "Base compatibility", gradleVersionReport.compatibilityCheck);
+                printCheck(writer, "Incremental build", gradleVersionReport.incrementalBuildCheck);
+                printCheck(writer, "Build cache", gradleVersionReport.buildCacheCheck);
             }
         }
 
@@ -58,5 +84,25 @@ public abstract class VerificationReportTask extends DefaultTask {
             }
             writer.println("<pre>" + validationCheck.output + "</pre>");
         }
+    }
+
+    private String passed(PluginVersionVerification.VerificationResult result) {
+        return result.passed ? "<td>OK</td>" : "<td>FAIL</td>";
+    }
+
+    private Map<String, String> gradleVersionSummary(List<PluginVersionVerification.GradleVersionCompatibility> gradleVersionChecks) {
+        Map<String, String> map = new LinkedHashMap<>();
+        for (PluginVersionVerification.GradleVersionCompatibility gradleVersionCheck : gradleVersionChecks) {
+            if (gradleVersionCheck.buildCacheCheck != null && gradleVersionCheck.buildCacheCheck.passed) {
+                map.put(gradleVersionCheck.gradleVersion, "CACHED");
+            } else if (gradleVersionCheck.incrementalBuildCheck != null && gradleVersionCheck.incrementalBuildCheck.passed) {
+                map.put(gradleVersionCheck.gradleVersion, "INCREMENTAL");
+            } else if (gradleVersionCheck.compatibilityCheck.passed) {
+                map.put(gradleVersionCheck.gradleVersion, "OK");
+            } else {
+                map.put(gradleVersionCheck.gradleVersion, "FAIL");
+            }
+        }
+        return map;
     }
 }

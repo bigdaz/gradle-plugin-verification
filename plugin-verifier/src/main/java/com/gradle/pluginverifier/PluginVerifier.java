@@ -55,7 +55,7 @@ public class PluginVerifier {
 
         String task = plugin.getTask();
 
-        BuildOutcome result = runBuild(gradleRunner("clean", task).withGradleVersion(gradleVersion));
+        BuildOutcome result = runBuild(gradleRunner("--build-cache", "clean", task).withGradleVersion(gradleVersion));
         gradleVersionCheck.compatibilityCheck = buildSuccessVerificationResult(result);
 
         if (result.passed && plugin.isIncremental()) {
