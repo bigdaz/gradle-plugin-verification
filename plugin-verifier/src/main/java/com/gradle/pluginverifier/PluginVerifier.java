@@ -114,7 +114,9 @@ public class PluginVerifier {
     }
 
     private PluginVersionVerification.VerificationResult taskOutcomeVerificationResult(BuildOutcome buildOutcome, TaskOutcome expectedOutcome) {
-        boolean success = buildOutcome.buildResult.task(plugin.getTask()).getOutcome() == expectedOutcome;
+        String task = plugin.getTask();
+        task = task.startsWith(":") ? task : ":" + task;
+        boolean success = buildOutcome.buildResult.task(task).getOutcome() == expectedOutcome;
         return new PluginVersionVerification.VerificationResult(success, buildOutcome.buildResult.getOutput(), getScanId());
     }
 
