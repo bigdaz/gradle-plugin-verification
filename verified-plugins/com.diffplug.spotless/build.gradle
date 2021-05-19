@@ -1,0 +1,10 @@
+plugins {
+    id "java-library"
+    id "com.diffplug.spotless" version "${pluginVersion}"
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+    }
+}
