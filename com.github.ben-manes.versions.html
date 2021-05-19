@@ -1,0 +1,143 @@
+<html><body>
+<h1>Plugin: com.github.ben-manes.versions</h1>
+<h2>Version: 0.36.0</h2>
+<h5>Validation check - OK</h5>
+<pre>> Task :validatePluginWithId_com_github_ben-manes_versions
+> Task :validateExternalPlugins
+> Task :sub1:validateExternalPlugins UP-TO-DATE
+> Task :sub2:validateExternalPlugins UP-TO-DATE
+
+BUILD SUCCESSFUL in 12s
+1 actionable task: 1 executed
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean :dependencyUpdates
+> Task :sub1:clean UP-TO-DATE
+> Task :sub2:clean UP-TO-DATE
+
+> Task :dependencyUpdates
+
+------------------------------------------------------------
+: Project Dependency Updates (report to plain text file)
+------------------------------------------------------------
+
+The following dependencies have later milestone versions:
+ - com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin [0.36.0 -> 0.38.0]
+ - junit:junit [4.10 -> 4.13.2]
+     http://junit.org
+ - log4j:log4j [1.2.14 -> 1.2.17]
+     http://logging.apache.org/log4j/1.2/
+
+Gradle release-candidate updates:
+ - Gradle: [7.0.2: UP-TO-DATE]
+
+Generated report file build/dependencyUpdates/report.txt
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Configuration cache problems found in this build.
+
+2 problems were found storing the configuration cache, 1 of which seems unique.
+- Task `:dependencyUpdates` of type `com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask`: invocation of 'Task.project' at execution time is unsupported.
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:use_project_during_execution
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/com.github.ben-manes.versions/build/reports/configuration-cache/bl5tkrvl5rezeqwbtkepxlo6/configuration-cache-report.html
+> Invocation of 'Task.project' by task ':dependencyUpdates' at execution time is unsupported.
+> Invocation of 'Task.project' by task ':dependencyUpdates' at execution time is unsupported.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+3 actionable tasks: 1 executed, 2 up-to-date
+Configuration cache entry discarded with 2 problems.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<pre>> Task :sub1:clean UP-TO-DATE
+> Task :sub2:clean UP-TO-DATE
+
+> Task :dependencyUpdates
+
+------------------------------------------------------------
+: Project Dependency Updates (report to plain text file)
+------------------------------------------------------------
+
+The following dependencies have later milestone versions:
+ - com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin [0.36.0 -> 0.38.0]
+ - junit:junit [4.10 -> 4.13.2]
+     http://junit.org
+ - log4j:log4j [1.2.14 -> 1.2.17]
+     http://logging.apache.org/log4j/1.2/
+
+Gradle release-candidate updates:
+ - Gradle: [7.0.2: UP-TO-DATE]
+
+Generated report file build/dependencyUpdates/report.txt
+
+BUILD SUCCESSFUL in 400ms
+3 actionable tasks: 1 executed, 2 up-to-date
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<pre>> Task :sub1:clean UP-TO-DATE
+> Task :sub2:clean UP-TO-DATE
+
+> Task :dependencyUpdates
+
+------------------------------------------------------------
+: Project Dependency Updates (report to plain text file)
+------------------------------------------------------------
+
+The following dependencies have later milestone versions:
+ - com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin [0.36.0 -> 0.38.0]
+ - junit:junit [4.10 -> 4.13.2]
+     http://junit.org
+ - log4j:log4j [1.2.14 -> 1.2.17]
+     http://logging.apache.org/log4j/1.2/
+
+Gradle release-candidate updates:
+ - Gradle: [6.8.3 -> 7.0.2]
+
+Generated report file build/dependencyUpdates/report.txt
+
+BUILD SUCCESSFUL in 6s
+3 actionable tasks: 1 executed, 2 up-to-date
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<pre>> Task :sub1:clean UP-TO-DATE
+> Task :sub2:clean UP-TO-DATE
+
+> Task :dependencyUpdates
+
+------------------------------------------------------------
+: Project Dependency Updates (report to plain text file)
+------------------------------------------------------------
+
+The following dependencies have later milestone versions:
+ - com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin [0.36.0 -> 0.38.0]
+ - junit:junit [4.10 -> 4.13.2]
+     http://junit.org
+ - log4j:log4j [1.2.14 -> 1.2.17]
+     http://logging.apache.org/log4j/1.2/
+
+Gradle release-candidate updates:
+ - Gradle: [5.6.4 -> 7.0.2]
+
+Generated report file build/dependencyUpdates/report.txt
+
+BUILD SUCCESSFUL in 7s
+3 actionable tasks: 1 executed, 2 up-to-date
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+</body></html>

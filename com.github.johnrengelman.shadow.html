@@ -1,0 +1,369 @@
+<html><body>
+<h1>Plugin: com.github.johnrengelman.shadow</h1>
+<h2>Version: 5.2.0</h2>
+<h5>Validation check - OK</h5>
+<pre>> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowBasePlugin
+> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowJavaPlugin
+> Task :validatePluginWithId_com_github_johnrengelman_shadow
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 8s
+3 actionable tasks: 3 executed
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean :shadowJar
+> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FAILED
+
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* What went wrong:
+A problem was found with the configuration of task ':shadowJar' (type 'ShadowJar').
+  - Type 'com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar' property 'transformers.$0.serviceEntries' is missing an input or output annotation.
+    
+    Reason: A property without annotation isn't considered during up-to-date checking.
+    
+    Possible solutions:
+      1. Add an input or output annotation.
+      2. Mark it as @Internal.
+    
+    Please refer to https://docs.gradle.org/7.0.2/userguide/validation_problems.html#missing_annotation for more details about this problem.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+Configuration cache problems found in this build.
+
+3 problems were found storing the configuration cache, 1 of which seems unique.
+- Task `:shadowJar` of type `com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar`: cannot serialize object of type 'org.gradle.api.internal.project.DefaultProject', a subtype of 'org.gradle.api.Project', as these are not supported with the configuration cache.
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:disallowed_types
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/com.github.johnrengelman.shadow/build/reports/configuration-cache/4xlohe88j9pyfzhvg6gpzdr5u/configuration-cache-report.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+==============================================================================
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 669ms
+2 actionable tasks: 2 executed
+Configuration cache entry discarded with 3 problems.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - FAIL</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem was found with the configuration of task ':shadowJar' (type 'ShadowJar').
+  - Type 'com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar' property 'transformers.$0.serviceEntries' is missing an input or output annotation.
+    
+    Reason: A property without annotation isn't considered during up-to-date checking.
+    
+    Possible solutions:
+      1. Add an input or output annotation.
+      2. Mark it as @Internal.
+    
+    Please refer to https://docs.gradle.org/7.0.2/userguide/validation_problems.html#missing_annotation for more details about this problem.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 173ms
+2 actionable tasks: 2 executed
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 3s
+2 actionable tasks: 2 executed
+</pre>
+<h5>Incremental build - OK</h5>
+<pre>> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar UP-TO-DATE
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 264ms
+1 actionable task: 1 up-to-date
+</pre>
+<h5>Build cache - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FROM-CACHE
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 174ms
+2 actionable tasks: 1 executed, 1 from cache
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar
+
+BUILD SUCCESSFUL in 3s
+2 actionable tasks: 2 executed
+</pre>
+<h5>Incremental build - OK</h5>
+<pre>> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar UP-TO-DATE
+
+BUILD SUCCESSFUL in 135ms
+1 actionable task: 1 up-to-date
+</pre>
+<h5>Build cache - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FROM-CACHE
+
+BUILD SUCCESSFUL in 161ms
+2 actionable tasks: 1 executed, 1 from cache
+</pre>
+<h2>Version: 6.1.0</h2>
+<h5>Validation check - OK</h5>
+<pre>> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowBasePlugin
+> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowJavaPlugin
+> Task :validatePluginWithId_com_github_johnrengelman_shadow
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 6s
+3 actionable tasks: 3 executed
+</pre>
+<h5>Configuration cache - OK</h5>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean :shadowJar
+> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar
+
+BUILD SUCCESSFUL in 820ms
+2 actionable tasks: 2 executed
+Configuration cache entry stored.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar
+
+BUILD SUCCESSFUL in 321ms
+2 actionable tasks: 2 executed
+</pre>
+<h5>Incremental build - OK</h5>
+<pre>> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar UP-TO-DATE
+
+BUILD SUCCESSFUL in 96ms
+1 actionable task: 1 up-to-date
+</pre>
+<h5>Build cache - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FROM-CACHE
+
+BUILD SUCCESSFUL in 210ms
+2 actionable tasks: 1 executed, 1 from cache
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+</pre>
+<h5>Incremental build - OK</h5>
+<pre>> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar UP-TO-DATE
+
+BUILD SUCCESSFUL in 172ms
+1 actionable task: 1 up-to-date
+</pre>
+<h5>Build cache - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FROM-CACHE
+
+BUILD SUCCESSFUL in 165ms
+2 actionable tasks: 1 executed, 1 from cache
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - FAIL</h5>
+<pre>
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/com.github.johnrengelman.shadow/build.gradle' line: 4
+
+* What went wrong:
+An exception occurred applying plugin request [id: 'com.github.johnrengelman.shadow', version: '6.1.0']
+> Failed to apply plugin [class 'com.github.jengelman.gradle.plugins.shadow.ShadowBasePlugin']
+   > This version of Shadow supports Gradle 6.0+ only. Please upgrade.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h2>Version: 7.0.0</h2>
+<h5>Validation check - OK</h5>
+<pre>> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowBasePlugin
+> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowJavaPlugin
+> Task :validatePluginWithId_com_github_johnrengelman_shadow
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 7s
+3 actionable tasks: 3 executed
+</pre>
+<h5>Configuration cache - OK</h5>
+<pre>Configuration cache is an incubating feature.
+Reusing configuration cache.
+> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar
+
+BUILD SUCCESSFUL in 510ms
+2 actionable tasks: 2 executed
+Configuration cache entry reused.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar
+
+BUILD SUCCESSFUL in 540ms
+2 actionable tasks: 2 executed
+</pre>
+<h5>Incremental build - OK</h5>
+<pre>> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar UP-TO-DATE
+
+BUILD SUCCESSFUL in 138ms
+1 actionable task: 1 up-to-date
+</pre>
+<h5>Build cache - OK</h5>
+<pre>> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FROM-CACHE
+
+BUILD SUCCESSFUL in 159ms
+2 actionable tasks: 1 executed, 1 from cache
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - FAIL</h5>
+<pre>
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/com.github.johnrengelman.shadow/build.gradle' line: 4
+
+* What went wrong:
+An exception occurred applying plugin request [id: 'com.github.johnrengelman.shadow', version: '7.0.0']
+> Failed to apply plugin class 'com.github.jengelman.gradle.plugins.shadow.ShadowBasePlugin'.
+   > This version of Shadow supports Gradle 7.0+ only. Please upgrade.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - FAIL</h5>
+<pre>
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/com.github.johnrengelman.shadow/build.gradle' line: 4
+
+* What went wrong:
+An exception occurred applying plugin request [id: 'com.github.johnrengelman.shadow', version: '7.0.0']
+> Failed to apply plugin [class 'com.github.jengelman.gradle.plugins.shadow.ShadowBasePlugin']
+   > This version of Shadow supports Gradle 7.0+ only. Please upgrade.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 2s
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+</body></html>
