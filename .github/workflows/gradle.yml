@@ -33,12 +33,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: verification-results
-        path: build/verification-results
-    - name: Save build-gradle-user-home
-      uses: actions/upload-artifact@v2
-      with:
-        name: build-gradle-user-home
-        path: build-gradle-user-home
+        path: build/results
     - name: Save build output
       uses: actions/upload-artifact@v2
       with:
