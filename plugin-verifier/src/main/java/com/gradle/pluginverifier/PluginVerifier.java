@@ -89,9 +89,14 @@ public class PluginVerifier {
             argumentList.add("-I");
             argumentList.add("../build-scan-init.gradle");
         }
+        argumentList.add("-I");
+        argumentList.add("../plugin-version-init.gradle");
+        argumentList.add("-DpluginId=" + plugin.getPluginId());
+        argumentList.add("-DpluginVersion=" + plugin.getPluginVersion());
+
         argumentList.add("--gradle-user-home");
         argumentList.add(gradleUserHome.getAbsolutePath());
-        argumentList.add("-PpluginVersion=" + plugin.getPluginVersion());
+
         argumentList.addAll(Arrays.asList(arguments));
 
         return GradleRunner.create()

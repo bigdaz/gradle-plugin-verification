@@ -1,7 +1,7 @@
 import com.github.jengelman.gradle.plugins.shadow.transformers.ServiceFileTransformer
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version "${pluginVersion}"
+    id 'com.github.johnrengelman.shadow'
 }
 defaultTasks("clean", "build")
 repositories {

@@ -1,6 +1,6 @@
 plugins {
     id "java-library"
-    id "com.diffplug.spotless" version "${pluginVersion}"
+    id "com.diffplug.spotless"
 }
 
 spotless {

@@ -1,0 +1,12 @@
+import org.gradle.util.GradleVersion
+
+settingsEvaluated { settings ->
+    def configCacheCompatible = GradleVersion.current() >= GradleVersion.version("7.0")
+    def pluginId = configCacheCompatible ? settings.providers.systemProperty('pluginId').forUseAtConfigurationTime().get() : System.getProperty('pluginId')
+    def pluginVersion = configCacheCompatible ? settings.providers.systemProperty('pluginVersion').forUseAtConfigurationTime().get() : System.getProperty('pluginVersion')
+    settings.pluginManagement {
+        plugins {
+            id "${pluginId}" version "${pluginVersion}"
+        }
+    }
+}
