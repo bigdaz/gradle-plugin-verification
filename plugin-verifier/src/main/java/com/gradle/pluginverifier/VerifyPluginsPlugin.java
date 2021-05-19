@@ -3,6 +3,7 @@ package com.gradle.pluginverifier;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.file.ConfigurableFileTree;
 import org.gradle.api.file.Directory;
 import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.Sync;
@@ -19,9 +20,11 @@ public class VerifyPluginsPlugin implements Plugin<Project> {
         Provider<Directory> samplesWorkingDir = project.getLayout().getBuildDirectory().dir("plugins");
         Provider<Directory> resultsDir = project.getLayout().getBuildDirectory().dir("results");
 
+        ConfigurableFileTree initScripts = project.fileTree(samplesSourceDir);
+        initScripts.include("*-init.gradle");
+
         TaskProvider<Sync> copySampleInitScripts = project.getTasks().register("copySampleInitScripts", Sync.class, sync -> {
-            sync.from(samplesSourceDir);
-            sync.include("*-init.gradle");
+            sync.from(initScripts);
             sync.into(samplesWorkingDir);
         });
 
@@ -33,6 +36,7 @@ public class VerifyPluginsPlugin implements Plugin<Project> {
                 v.getSampleWorkingDir().set(samplesWorkingDir.map(d -> d.dir(sample.getName())));
                 v.getResultsFile().set(resultsDir.map(d -> d.file(sample.getName() + ".json")));
                 v.getPublishBuildScans().set(true);
+                v.getInitScripts().from(initScripts);
             });
         }
 
