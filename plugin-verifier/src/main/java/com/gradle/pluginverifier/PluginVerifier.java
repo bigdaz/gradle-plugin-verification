@@ -1,5 +1,6 @@
 package com.gradle.pluginverifier;
 
+import org.gradle.api.file.FileSystemOperations;
 import org.gradle.testkit.runner.BuildResult;
 import org.gradle.testkit.runner.GradleRunner;
 import org.gradle.testkit.runner.TaskOutcome;
@@ -14,16 +15,22 @@ import java.util.List;
 
 public class PluginVerifier {
     private final PluginSample plugin;
+    private final File samplesWorkingDir;
     private final File gradleUserHome;
     private final boolean publishBuildScans;
+    private final FileSystemOperations fileSystemOperations;
 
-    public PluginVerifier(PluginSample plugin, File gradleUserHome, boolean publishBuildScans) {
+    public PluginVerifier(PluginSample plugin, File samplesWorkingDir, File gradleUserHome, boolean publishBuildScans, FileSystemOperations fileSystemOperations) {
         this.plugin = plugin;
+        this.samplesWorkingDir = samplesWorkingDir;
         this.gradleUserHome = gradleUserHome;
         this.publishBuildScans = publishBuildScans;
+        this.fileSystemOperations = fileSystemOperations;
     }
 
     public void runChecks(PluginVerificationReport pluginVerificationReport) {
+        copySampleToWorkingDir();
+
         PluginVersionVerification report = pluginVerificationReport.checkPluginVersion(plugin.getPluginVersion());
         checkPluginValidation(report);
         checkEagerTaskCreation(report);
@@ -33,11 +40,30 @@ public class PluginVerifier {
         }
     }
 
+    private File getSampleWorkingDir() {
+        return new File(samplesWorkingDir, "primary/" + plugin.getPluginId());
+    }
+
+    private File getSampleRelocatedDir() {
+        return new File(samplesWorkingDir, "relocated/" + plugin.getPluginId());
+    }
+
+    private void copySampleToWorkingDir() {
+        fileSystemOperations.sync(copySpec -> {
+            copySpec.from(plugin.getSampleProject());
+            copySpec.into(getSampleWorkingDir());
+        });
+        fileSystemOperations.sync(copySpec -> {
+            copySpec.from(plugin.getSampleProject());
+            copySpec.into(getSampleRelocatedDir());
+        });
+    }
+
     /**
      * Plugin validation with the latest version of Gradle.
      */
     public void checkPluginValidation(PluginVersionVerification report) {
-        BuildOutcome result = runBuild("--stacktrace", "-I", "../validate-plugin-init.gradle", "validateExternalPlugins");
+        BuildOutcome result = runBuild("--stacktrace", "-I", "../../validate-plugin-init.gradle", "validateExternalPlugins");
         report.validationCheck = buildSuccessVerificationResult(result);
     }
 
@@ -45,7 +71,7 @@ public class PluginVerifier {
      * Check plugin uses task configuration avoidance with the latest version of Gradle.
      */
     public void checkEagerTaskCreation(PluginVersionVerification report) {
-        BuildOutcome result = runBuild("-I", "../validate-plugin-init.gradle", "checkEagerTaskCreation");
+        BuildOutcome result = runBuild("-I", "../../validate-plugin-init.gradle", "checkEagerTaskCreation");
         report.eagerTaskCreationCheck = buildSuccessVerificationResult(result);
     }
 
@@ -73,6 +99,10 @@ public class PluginVerifier {
             // With clean, task should be FROM_CACHE
             result = runBuild(gradleRunner("--build-cache", "clean", task).withGradleVersion(gradleVersion));
             gradleVersionCheck.buildCacheCheck = taskOutcomeVerificationResult(result, TaskOutcome.FROM_CACHE);
+
+            // With a relocated project copy, task should be FROM_CACHE
+            result = runBuild(gradleRunner("--build-cache", task).withGradleVersion(gradleVersion).withProjectDir(getSampleRelocatedDir()));
+            gradleVersionCheck.relocatedBuildCacheCheck = taskOutcomeVerificationResult(result, TaskOutcome.FROM_CACHE);
         }
     }
 
@@ -94,10 +124,10 @@ public class PluginVerifier {
         List<String> argumentList = new ArrayList<>();
         if (publishBuildScans) {
             argumentList.add("-I");
-            argumentList.add("../build-scan-init.gradle");
+            argumentList.add("../../build-scan-init.gradle");
         }
         argumentList.add("-I");
-        argumentList.add("../plugin-version-init.gradle");
+        argumentList.add("../../plugin-version-init.gradle");
         argumentList.add("-DpluginId=" + plugin.getPluginId());
         argumentList.add("-DpluginVersion=" + plugin.getPluginVersion());
 
@@ -112,7 +142,7 @@ public class PluginVerifier {
         }
 
         return GradleRunner.create()
-                .withProjectDir(plugin.getSampleProject())
+                .withProjectDir(getSampleWorkingDir())
                 .withArguments(argumentList);
     }
 

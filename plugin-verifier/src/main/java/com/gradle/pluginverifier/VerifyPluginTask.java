@@ -38,14 +38,14 @@ public abstract class VerifyPluginTask extends DefaultTask {
     @PathSensitive(PathSensitivity.RELATIVE)
     public abstract ConfigurableFileCollection getInitScripts();
 
-    @Internal
-    public abstract DirectoryProperty getSampleWorkingDir();
-
     @Input
     public abstract Property<Boolean> getPublishBuildScans();
 
     @OutputFile
     public abstract RegularFileProperty getResultsFile();
+
+    @Internal
+    public abstract DirectoryProperty getSamplesWorkingDir();
 
     @Internal
     public abstract DirectoryProperty getSampleGradleUserHome();
@@ -61,30 +61,21 @@ public abstract class VerifyPluginTask extends DefaultTask {
 
     @TaskAction
     public void verifyPlugin() throws IOException {
-        copySampleToWorkingDir();
-
         Properties props = loadSampleProperties();
         String sampleTask = props.getProperty("task");
         List<String> pluginVersions = Arrays.stream(props.getProperty("pluginVersions").split(",")).map(String::trim).collect(Collectors.toList());
         boolean incremental = Boolean.parseBoolean(props.getProperty("incremental", "true"));
 
-        File pluginSampleDir = getSampleWorkingDir().get().getAsFile();
+        File pluginSampleDir = getSampleDir().get().getAsFile();
         String pluginId = pluginSampleDir.getName();
 
         PluginVerificationReport report = new PluginVerificationReport(pluginId);
         for (String pluginVersion : pluginVersions) {
             PluginSample pluginSample = new PluginSample(pluginSampleDir, pluginVersion, sampleTask, incremental);
-            PluginVerifier pluginVerifier = new PluginVerifier(pluginSample, getSampleGradleUserHome().get().getAsFile(), getPublishBuildScans().get());
+            PluginVerifier pluginVerifier = new PluginVerifier(pluginSample, getSamplesWorkingDir().get().getAsFile(), getSampleGradleUserHome().get().getAsFile(), getPublishBuildScans().get(), getFileSystemOperations());
             pluginVerifier.runChecks(report);
         }
         report.writeJson(getResultsFile().get().getAsFile());
-    }
-
-    private void copySampleToWorkingDir() {
-        getFileSystemOperations().copy(copySpec -> {
-            copySpec.from(getSampleDir());
-            copySpec.into(getSampleWorkingDir());
-        });
     }
 
     private Properties loadSampleProperties() {

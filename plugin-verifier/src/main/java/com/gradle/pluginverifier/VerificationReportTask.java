@@ -68,6 +68,7 @@ public abstract class VerificationReportTask extends DefaultTask {
                 printCheck(writer, "Base compatibility", gradleVersionReport.compatibilityCheck);
                 printCheck(writer, "Incremental build", gradleVersionReport.incrementalBuildCheck);
                 printCheck(writer, "Build cache", gradleVersionReport.buildCacheCheck);
+                printCheck(writer, "Build cache relocated", gradleVersionReport.relocatedBuildCacheCheck);
             }
         }
 
@@ -94,8 +95,10 @@ public abstract class VerificationReportTask extends DefaultTask {
     private Map<String, String> gradleVersionSummary(List<PluginVersionVerification.GradleVersionCompatibility> gradleVersionChecks) {
         Map<String, String> map = new LinkedHashMap<>();
         for (PluginVersionVerification.GradleVersionCompatibility gradleVersionCheck : gradleVersionChecks) {
-            if (gradleVersionCheck.buildCacheCheck != null && gradleVersionCheck.buildCacheCheck.passed) {
+            if (gradleVersionCheck.relocatedBuildCacheCheck != null && gradleVersionCheck.relocatedBuildCacheCheck.passed) {
                 map.put(gradleVersionCheck.gradleVersion, "CACHED");
+            } else if (gradleVersionCheck.buildCacheCheck != null && gradleVersionCheck.buildCacheCheck.passed) {
+                map.put(gradleVersionCheck.gradleVersion, "CACHED (RELATIVE)");
             } else if (gradleVersionCheck.incrementalBuildCheck != null && gradleVersionCheck.incrementalBuildCheck.passed) {
                 map.put(gradleVersionCheck.gradleVersion, "INCREMENTAL");
             } else if (gradleVersionCheck.compatibilityCheck.passed) {

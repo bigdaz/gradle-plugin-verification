@@ -30,6 +30,7 @@ public class PluginVersionVerification {
         public VerificationResult compatibilityCheck;
         public VerificationResult incrementalBuildCheck;
         public VerificationResult buildCacheCheck;
+        public VerificationResult relocatedBuildCacheCheck;
     }
 
     public static class VerificationResult {
