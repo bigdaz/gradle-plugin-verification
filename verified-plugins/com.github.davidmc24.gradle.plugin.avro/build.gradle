@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+    id 'com.github.davidmc24.gradle.plugin.avro'
+}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "org.apache.avro:avro:1.10.2"
+}
