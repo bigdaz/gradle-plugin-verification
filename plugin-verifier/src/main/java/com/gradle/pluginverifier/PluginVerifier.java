@@ -37,7 +37,7 @@ public class PluginVerifier {
      * Plugin validation with the latest version of Gradle.
      */
     public void checkPluginValidation(PluginVersionVerification report) {
-        BuildOutcome result = runBuild("-I", "../validate-plugin-init.gradle", "validateExternalPlugins");
+        BuildOutcome result = runBuild("--stacktrace", "-I", "../validate-plugin-init.gradle", "validateExternalPlugins");
         report.validationCheck = buildSuccessVerificationResult(result);
     }
 
