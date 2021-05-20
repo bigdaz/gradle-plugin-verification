@@ -1,0 +1,17 @@
+plugins {
+    id("java")
+    id("com.google.protobuf")
+}
+
+repositories {
+    mavenCentral()
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.13.0"
+    }
+}
+dependencies {
+    implementation "com.google.protobuf:protobuf-java:3.13.0"
+}
