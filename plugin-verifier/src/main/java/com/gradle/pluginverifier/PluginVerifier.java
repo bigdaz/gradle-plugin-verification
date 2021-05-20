@@ -114,9 +114,9 @@ public class PluginVerifier {
     private BuildOutcome runBuild(GradleRunner gradleRunner) {
         try {
             BuildResult result = gradleRunner.build();
-            return new BuildOutcome(true, result);
+            return new BuildOutcome(true, result, getScanId(gradleRunner.getProjectDir()));
         } catch (UnexpectedBuildFailure unexpectedBuildFailure) {
-            return new BuildOutcome(false, unexpectedBuildFailure.getBuildResult());
+            return new BuildOutcome(false, unexpectedBuildFailure.getBuildResult(), getScanId(gradleRunner.getProjectDir()));
         }
     }
 
@@ -149,29 +149,31 @@ public class PluginVerifier {
     private static class BuildOutcome {
         public final boolean passed;
         public final BuildResult buildResult;
+        public final String scanId;
 
-        private BuildOutcome(boolean passed, BuildResult buildResult) {
+        private BuildOutcome(boolean passed, BuildResult buildResult, String scanId) {
             this.passed = passed;
             this.buildResult = buildResult;
+            this.scanId = scanId;
         }
     }
 
     private PluginVersionVerification.VerificationResult buildSuccessVerificationResult(BuildOutcome buildOutcome) {
-        return new PluginVersionVerification.VerificationResult(buildOutcome.passed, buildOutcome.buildResult.getOutput(), getScanId());
+        return new PluginVersionVerification.VerificationResult(buildOutcome.passed, buildOutcome.buildResult.getOutput(), buildOutcome.scanId);
     }
 
     private PluginVersionVerification.VerificationResult taskOutcomeVerificationResult(BuildOutcome buildOutcome, TaskOutcome expectedOutcome) {
         String task = plugin.getTask();
         task = task.startsWith(":") ? task : ":" + task;
         boolean success = buildOutcome.buildResult.task(task).getOutcome() == expectedOutcome;
-        return new PluginVersionVerification.VerificationResult(success, buildOutcome.buildResult.getOutput(), getScanId());
+        return new PluginVersionVerification.VerificationResult(success, buildOutcome.buildResult.getOutput(), buildOutcome.scanId);
     }
 
-    private String getScanId() {
+    private String getScanId(File dir) {
         if (!publishBuildScans) {
             return null;
         }
-        File scanIdFile = new File(plugin.getSampleProject(), "build/build-scan-id.txt");
+        File scanIdFile = new File(dir, "build/build-scan-id.txt");
         try {
             return Files.readString(scanIdFile.toPath());
         } catch (IOException e) {
