@@ -1,20 +1,31 @@
 <html><body>
 <h1>Plugin: com.diffplug.spotless</h1>
-<h2>Version: 5.12.1</h2>
+<h2 id='5.12.1'>Version: 5.12.1</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/dzesawciunvqq"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/t6vpz6q3ivoi2"  target="_blank">Build scan</a>
 <pre>> Task :validatePluginWithId_com_diffplug_spotless
 > Task :validateExternalPlugins
 
-BUILD SUCCESSFUL in 16s
+BUILD SUCCESSFUL in 15s
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/dzesawciunvqq
+https://gradle.com/s/t6vpz6q3ivoi2
+
+</pre>
+<h5>Eager task creation check - OK</h5>
+<a href="https://gradle.com/s/soryx7loaj7ia"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation
+
+BUILD SUCCESSFUL in 379ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/soryx7loaj7ia
 
 </pre>
 <h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/kkkwhopesabgk"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/infpy2ew7klfa"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean spotlessJava
 > Task :clean
@@ -49,116 +60,132 @@ BUILD FAILED in 2s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/kkkwhopesabgk
+https://gradle.com/s/infpy2ew7klfa
 
 Configuration cache entry discarded with 4 problems.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/u2qfuetaljapk"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/infpy2ew7klfa"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :spotlessJava
 
-BUILD SUCCESSFUL in 569ms
+BUILD SUCCESSFUL in 499ms
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/u2qfuetaljapk
+
+Publishing failed.
+
+The response from https://scans-in.gradle.com/scans/publish/gradle/3.6.1/token was not from the build scan server.
+Your network environment may be interfering, or the service may be unavailable.
+
+If you believe this to be in error, please report this problem via https://gradle.com/help/plugin and include the following via copy/paste:
+
+----------
+Gradle version: 7.0.2
+Plugin version: 3.6.1
+Request URL: https://scans-in.gradle.com/scans/publish/gradle/3.6.1/token
+Request ID: 56b2901f-10fe-44a8-aa3d-2bdf9955b7ca
+Response status code: 502
+Response content type: text/html; charset=UTF-8
+Response server type: cloudflare
+----------
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/n5koyjyvztnc2"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/hcvdq6vlfheug"  target="_blank">Build scan</a>
 <pre>> Task :spotlessJava UP-TO-DATE
 
-BUILD SUCCESSFUL in 350ms
+BUILD SUCCESSFUL in 148ms
 1 actionable task: 1 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/n5koyjyvztnc2
+https://gradle.com/s/hcvdq6vlfheug
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/uroyb4o4kvdjy"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/zzxlhckk6gnxq"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :spotlessJava FROM-CACHE
 
-BUILD SUCCESSFUL in 388ms
+BUILD SUCCESSFUL in 292ms
 2 actionable tasks: 1 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/uroyb4o4kvdjy
+https://gradle.com/s/zzxlhckk6gnxq
 
 </pre>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/gm4kywwcj6euo"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/rvi5ruvvx7aoe"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :spotlessJava
 
-BUILD SUCCESSFUL in 9s
+BUILD SUCCESSFUL in 7s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/gm4kywwcj6euo
+https://gradle.com/s/rvi5ruvvx7aoe
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/nxtmx56xcdhp4"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/7t7kugbcr4eji"  target="_blank">Build scan</a>
 <pre>> Task :spotlessJava UP-TO-DATE
 
-BUILD SUCCESSFUL in 388ms
+BUILD SUCCESSFUL in 385ms
 1 actionable task: 1 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/nxtmx56xcdhp4
+https://gradle.com/s/7t7kugbcr4eji
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/v4qmwb67vabzg"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/3mucaqdod2hko"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :spotlessJava FROM-CACHE
 
-BUILD SUCCESSFUL in 452ms
+BUILD SUCCESSFUL in 395ms
 2 actionable tasks: 1 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/v4qmwb67vabzg
+https://gradle.com/s/3mucaqdod2hko
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/dcgfy5ppqcel6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/uxmqx7cysc2x2"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :spotlessJava
 
-BUILD SUCCESSFUL in 9s
+BUILD SUCCESSFUL in 8s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/dcgfy5ppqcel6
+https://gradle.com/s/uxmqx7cysc2x2
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/ogv7scfczwc6k"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/iuh4hdfohfljo"  target="_blank">Build scan</a>
 <pre>> Task :spotlessJava UP-TO-DATE
 
-BUILD SUCCESSFUL in 409ms
+BUILD SUCCESSFUL in 319ms
 1 actionable task: 1 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/ogv7scfczwc6k
+https://gradle.com/s/iuh4hdfohfljo
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/6ijnsonqwob2a"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/mgtbzpzujguv2"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :spotlessJava FROM-CACHE
 
-BUILD SUCCESSFUL in 350ms
+BUILD SUCCESSFUL in 396ms
 2 actionable tasks: 1 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/6ijnsonqwob2a
+https://gradle.com/s/mgtbzpzujguv2
 
 </pre>
 </body></html>

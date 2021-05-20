@@ -1,22 +1,51 @@
 <html><body>
 <h1>Plugin: com.github.johnrengelman.shadow</h1>
-<h2>Version: 5.2.0</h2>
+<h2 id='5.2.0'>Version: 5.2.0</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/suzxnqkub64dc"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/urs64u6vq236a"  target="_blank">Build scan</a>
 <pre>> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowBasePlugin
 > Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowJavaPlugin
 > Task :validatePluginWithId_com_github_johnrengelman_shadow
 > Task :validateExternalPlugins
 
-BUILD SUCCESSFUL in 8s
+BUILD SUCCESSFUL in 7s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/suzxnqkub64dc
+https://gradle.com/s/urs64u6vq236a
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/222wy5apclvii"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :knows
+  :shadowJar
+  :jar
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 294ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/222wy5apclvii
 
 </pre>
 <h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/gt7bgads3te6i"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/iabovfsylzsga"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean :shadowJar
 > Task :clean
@@ -66,13 +95,13 @@ BUILD FAILED in 1s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/gt7bgads3te6i
+https://gradle.com/s/iabovfsylzsga
 
 Configuration cache entry discarded with 3 problems.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - FAIL</h5>
-<a href="https://gradle.com/s/y7ztcmzdv2lzs"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/dpopu3e43eliq"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
@@ -98,18 +127,18 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 
 * Get more help at https://help.gradle.org
 
-BUILD FAILED in 439ms
+BUILD FAILED in 334ms
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/y7ztcmzdv2lzs
+https://gradle.com/s/dpopu3e43eliq
 
 </pre>
 <h5>Incremental build - N/A</h5>
 <h5>Build cache - N/A</h5>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/zbxk7lfgyyeuk"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/y4z3job52qqiu"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
@@ -124,11 +153,11 @@ BUILD SUCCESSFUL in 3s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/zbxk7lfgyyeuk
+https://gradle.com/s/y4z3job52qqiu
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/wufmztg3q3w34"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/jtbd44cexxmm6"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
@@ -138,15 +167,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 298ms
+BUILD SUCCESSFUL in 292ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/wufmztg3q3w34
+https://gradle.com/s/jtbd44cexxmm6
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/rcvgeamqitw7k"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/r7tkyuokyp5io"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
@@ -157,75 +186,103 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 322ms
+BUILD SUCCESSFUL in 386ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/rcvgeamqitw7k
+https://gradle.com/s/r7tkyuokyp5io
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/jjlxbzuvfz56m"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/b2caqty7pvfsc"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
 > Task :classes
 > Task :shadowJar
 
-BUILD SUCCESSFUL in 4s
+BUILD SUCCESSFUL in 3s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/jjlxbzuvfz56m
+https://gradle.com/s/b2caqty7pvfsc
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/divgnogrmfib6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/bpvcsufti2n6q"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar UP-TO-DATE
 
-BUILD SUCCESSFUL in 232ms
+BUILD SUCCESSFUL in 284ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/divgnogrmfib6
+https://gradle.com/s/bpvcsufti2n6q
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/zuqln2227q7ya"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/lx5qfcufn7x6i"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar FROM-CACHE
 
-BUILD SUCCESSFUL in 293ms
+BUILD SUCCESSFUL in 340ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/zuqln2227q7ya
+https://gradle.com/s/lx5qfcufn7x6i
 
 </pre>
-<h2>Version: 6.1.0</h2>
+<h2 id='6.1.0'>Version: 6.1.0</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/crxbnxpc7utjk"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ftrbjw3r7kttu"  target="_blank">Build scan</a>
 <pre>> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowBasePlugin
 > Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowJavaPlugin
 > Task :validatePluginWithId_com_github_johnrengelman_shadow
 > Task :validateExternalPlugins
 
-BUILD SUCCESSFUL in 6s
+BUILD SUCCESSFUL in 5s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/crxbnxpc7utjk
+https://gradle.com/s/ftrbjw3r7kttu
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/hjwhi4ie2c7ta"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :shadowJar
+  :jar
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 293ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/hjwhi4ie2c7ta
 
 </pre>
 <h5>Configuration cache - OK</h5>
-<a href="https://gradle.com/s/rzmbm2ca7ewdg"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ioertfbfmymsy"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean :shadowJar
 > Task :clean
@@ -238,105 +295,103 @@ BUILD SUCCESSFUL in 1s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/rzmbm2ca7ewdg
+https://gradle.com/s/ioertfbfmymsy
 
 Configuration cache entry stored.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/ie4vrft6ywkec"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/o3q65tl6ucf5g"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar
 
-BUILD SUCCESSFUL in 552ms
+BUILD SUCCESSFUL in 551ms
 3 actionable tasks: 2 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/ie4vrft6ywkec
+https://gradle.com/s/o3q65tl6ucf5g
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/ejvna2gmcc6vi"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/tortcm6yh5zpe"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar UP-TO-DATE
 
-BUILD SUCCESSFUL in 266ms
+BUILD SUCCESSFUL in 263ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/ejvna2gmcc6vi
+https://gradle.com/s/tortcm6yh5zpe
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/yfy4cggiqbzpa"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/gdphwbkhht2si"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar FROM-CACHE
 
-BUILD SUCCESSFUL in 439ms
+BUILD SUCCESSFUL in 389ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/yfy4cggiqbzpa
+https://gradle.com/s/gdphwbkhht2si
 
 </pre>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/czbwjsqcio3pa"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/xd76tipvkwxvc"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar
 
-BUILD SUCCESSFUL in 2s
+BUILD SUCCESSFUL in 1s
 3 actionable tasks: 2 executed, 1 from cache
 
 Publishing build scan...
-Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (2 retries remaining)...
-Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (1 retry remaining)...
-https://gradle.com/s/czbwjsqcio3pa
+https://gradle.com/s/xd76tipvkwxvc
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/27t6ad4c5maxu"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/42sta5slpw5eq"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar UP-TO-DATE
 
-BUILD SUCCESSFUL in 287ms
+BUILD SUCCESSFUL in 300ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/27t6ad4c5maxu
+https://gradle.com/s/42sta5slpw5eq
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/vzrkz74ojm7ve"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/cmnpuo74jgkyk"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar FROM-CACHE
 
-BUILD SUCCESSFUL in 312ms
+BUILD SUCCESSFUL in 277ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/vzrkz74ojm7ve
+https://gradle.com/s/cmnpuo74jgkyk
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - FAIL</h5>
-<a href="https://gradle.com/s/vpx5d6osb2c2o"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/dks522cyegg46"  target="_blank">Build scan</a>
 <pre>
 FAILURE: Build failed with an exception.
 
@@ -356,28 +411,56 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 BUILD FAILED in 1s
 
 Publishing build scan...
-https://gradle.com/s/vpx5d6osb2c2o
+https://gradle.com/s/dks522cyegg46
 
 </pre>
 <h5>Incremental build - N/A</h5>
 <h5>Build cache - N/A</h5>
-<h2>Version: 7.0.0</h2>
+<h2 id='7.0.0'>Version: 7.0.0</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/dqf4husemeums"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/nehyybdo63yo4"  target="_blank">Build scan</a>
 <pre>> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowBasePlugin
 > Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowJavaPlugin
 > Task :validatePluginWithId_com_github_johnrengelman_shadow
 > Task :validateExternalPlugins
 
-BUILD SUCCESSFUL in 8s
+BUILD SUCCESSFUL in 7s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/dqf4husemeums
+https://gradle.com/s/nehyybdo63yo4
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/mckpqcnsrndwa"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :shadowJar
+  :jar
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 207ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/mckpqcnsrndwa
 
 </pre>
 <h5>Configuration cache - OK</h5>
-<a href="https://gradle.com/s/33qipcuxcwxjq"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/vmyt57obtnrxg"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as configuration cache cannot be reused because system property 'pluginVersion' has changed.
 > Task :clean
@@ -390,58 +473,58 @@ BUILD SUCCESSFUL in 1s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/33qipcuxcwxjq
+https://gradle.com/s/vmyt57obtnrxg
 
 Configuration cache entry stored.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/eidbdpfxhw4gw"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/uzehtp5hqmlja"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar
 
-BUILD SUCCESSFUL in 598ms
+BUILD SUCCESSFUL in 488ms
 3 actionable tasks: 2 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/eidbdpfxhw4gw
+https://gradle.com/s/uzehtp5hqmlja
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/5sloqfv7mdr7i"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ypr3w2g622aj6"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar UP-TO-DATE
 
-BUILD SUCCESSFUL in 179ms
+BUILD SUCCESSFUL in 234ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/5sloqfv7mdr7i
+https://gradle.com/s/ypr3w2g622aj6
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/vjru44fejaviq"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/badncaor5m7g4"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :shadowJar FROM-CACHE
 
-BUILD SUCCESSFUL in 229ms
+BUILD SUCCESSFUL in 266ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/vjru44fejaviq
+https://gradle.com/s/badncaor5m7g4
 
 </pre>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - FAIL</h5>
-<a href="https://gradle.com/s/v34mn73v62jzu"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/n23unrbwkovf4"  target="_blank">Build scan</a>
 <pre>
 FAILURE: Build failed with an exception.
 
@@ -461,14 +544,14 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 BUILD FAILED in 1s
 
 Publishing build scan...
-https://gradle.com/s/v34mn73v62jzu
+https://gradle.com/s/n23unrbwkovf4
 
 </pre>
 <h5>Incremental build - N/A</h5>
 <h5>Build cache - N/A</h5>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - FAIL</h5>
-<a href="https://gradle.com/s/67ddzmpng2yw6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/jj5atoravamwo"  target="_blank">Build scan</a>
 <pre>
 FAILURE: Build failed with an exception.
 
@@ -488,7 +571,7 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 BUILD FAILED in 2s
 
 Publishing build scan...
-https://gradle.com/s/67ddzmpng2yw6
+https://gradle.com/s/jj5atoravamwo
 
 </pre>
 <h5>Incremental build - N/A</h5>
