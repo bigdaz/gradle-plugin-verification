@@ -3,7 +3,6 @@ package org.example;
 
 public class Library {
     public boolean someLibraryMethod() {
-        String val = "https://google.com";
         return true;
     }
 }

@@ -1,0 +1,29 @@
+plugins {
+    id "com.jfrog.artifactory" version "4.21.0"
+    id "java"
+    id "maven-publish"
+}
+version = '1.0'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+artifactory {
+    contextUrl = 'http://127.0.0.1:8081/artifactory'
+    publish {
+        publishArtifacts = false
+        publishBuildInfo = false
+        repository {
+            repoKey = 'libs-snapshot-local'
+        }
+        defaults {
+            publications('mavenJava')
+            properties = ['dev.team' : 'core']
+        }
+    }
+}
