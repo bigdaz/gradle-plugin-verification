@@ -1,0 +1,1132 @@
+<html><body>
+<h1>Plugin: com.google.protobuf</h1>
+<h2 id='0.8.10'>Version: 0.8.10</h2>
+<h5>Validation check - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'protobuf-sample'.
+> Configuration with name 'compile' not found.
+
+* Try:
+Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Exception is:
+org.gradle.api.ProjectConfigurationException: A problem occurred configuring root project 'protobuf-sample'.
+	at org.gradle.configuration.project.LifecycleProjectEvaluator.wrapException(LifecycleProjectEvaluator.java:75)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator.addConfigurationFailure(LifecycleProjectEvaluator.java:68)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator.access$400(LifecycleProjectEvaluator.java:51)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator$NotifyAfterEvaluate.run(LifecycleProjectEvaluator.java:191)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:75)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:153)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.lambda$run$1(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.internal.operations.UnmanagedBuildOperationWrapper.runWithUnmanagedSupport(UnmanagedBuildOperationWrapper.java:45)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.lambda$run$0(LifecycleProjectEvaluator.java:105)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$0(DefaultProjectStateRegistry.java:250)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$withProjectLock$3(DefaultProjectStateRegistry.java:310)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:213)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.withProjectLock(DefaultProjectStateRegistry.java:310)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMutableState(DefaultProjectStateRegistry.java:291)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyToMutableState(DefaultProjectStateRegistry.java:249)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.run(LifecycleProjectEvaluator.java:91)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:75)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:153)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.lambda$run$1(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.internal.operations.UnmanagedBuildOperationWrapper.runWithUnmanagedSupport(UnmanagedBuildOperationWrapper.java:45)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator.evaluate(LifecycleProjectEvaluator.java:63)
+	at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:723)
+	at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:150)
+	at org.gradle.execution.TaskPathProjectEvaluator.configure(TaskPathProjectEvaluator.java:41)
+	at org.gradle.execution.TaskPathProjectEvaluator.configureHierarchy(TaskPathProjectEvaluator.java:67)
+	at org.gradle.configuration.DefaultProjectsPreparer.prepareProjects(DefaultProjectsPreparer.java:46)
+	at org.gradle.configuration.BuildTreePreparingProjectsPreparer.prepareProjects(BuildTreePreparingProjectsPreparer.java:64)
+	at org.gradle.configuration.BuildOperationFiringProjectsPreparer$ConfigureBuild.run(BuildOperationFiringProjectsPreparer.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:75)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:153)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.lambda$run$1(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.internal.operations.UnmanagedBuildOperationWrapper.runWithUnmanagedSupport(UnmanagedBuildOperationWrapper.java:45)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.configuration.BuildOperationFiringProjectsPreparer.prepareProjects(BuildOperationFiringProjectsPreparer.java:40)
+	at org.gradle.initialization.DefaultGradleLauncher.prepareProjects(DefaultGradleLauncher.java:226)
+	at org.gradle.initialization.DefaultGradleLauncher.doClassicBuildStages(DefaultGradleLauncher.java:164)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:149)
+	at org.gradle.initialization.DefaultGradleLauncher.executeTasks(DefaultGradleLauncher.java:125)
+	at org.gradle.internal.invocation.GradleBuildController$1.create(GradleBuildController.java:71)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:213)
+	at org.gradle.internal.invocation.GradleBuildController.doBuild(GradleBuildController.java:67)
+	at org.gradle.internal.invocation.GradleBuildController.run(GradleBuildController.java:56)
+	at org.gradle.tooling.internal.provider.runner.BuildModelActionRunner.run(BuildModelActionRunner.java:56)
+	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+	at org.gradle.launcher.exec.BuildOutcomeReportingBuildActionRunner.run(BuildOutcomeReportingBuildActionRunner.java:66)
+	at org.gradle.tooling.internal.provider.ValidatingBuildActionRunner.run(ValidatingBuildActionRunner.java:32)
+	at org.gradle.tooling.internal.provider.FileSystemWatchingBuildActionRunner.run(FileSystemWatchingBuildActionRunner.java:90)
+	at org.gradle.launcher.exec.BuildCompletionNotifyingBuildActionRunner.run(BuildCompletionNotifyingBuildActionRunner.java:41)
+	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionRunner$3.call(RunAsBuildOperationBuildActionRunner.java:49)
+	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionRunner$3.call(RunAsBuildOperationBuildActionRunner.java:44)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:200)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:195)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:75)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:153)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:62)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.lambda$call$2(DefaultBuildOperationExecutor.java:76)
+	at org.gradle.internal.operations.UnmanagedBuildOperationWrapper.callWithUnmanagedSupport(UnmanagedBuildOperationWrapper.java:54)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:76)
+	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionRunner.run(RunAsBuildOperationBuildActionRunner.java:44)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.lambda$execute$0(InProcessBuildActionExecuter.java:59)
+	at org.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:86)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:58)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:30)
+	at org.gradle.launcher.exec.BuildTreeScopeLifecycleBuildActionExecuter.lambda$execute$0(BuildTreeScopeLifecycleBuildActionExecuter.java:34)
+	at org.gradle.internal.buildtree.BuildTreeState.run(BuildTreeState.java:53)
+	at org.gradle.launcher.exec.BuildTreeScopeLifecycleBuildActionExecuter.execute(BuildTreeScopeLifecycleBuildActionExecuter.java:33)
+	at org.gradle.launcher.exec.BuildTreeScopeLifecycleBuildActionExecuter.execute(BuildTreeScopeLifecycleBuildActionExecuter.java:28)
+	at org.gradle.tooling.internal.provider.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:104)
+	at org.gradle.tooling.internal.provider.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:55)
+	at org.gradle.tooling.internal.provider.SubscribableBuildActionExecuter.execute(SubscribableBuildActionExecuter.java:64)
+	at org.gradle.tooling.internal.provider.SubscribableBuildActionExecuter.execute(SubscribableBuildActionExecuter.java:37)
+	at org.gradle.tooling.internal.provider.SessionScopeLifecycleBuildActionExecuter.lambda$execute$0(SessionScopeLifecycleBuildActionExecuter.java:54)
+	at org.gradle.internal.session.BuildSessionState.run(BuildSessionState.java:67)
+	at org.gradle.tooling.internal.provider.SessionScopeLifecycleBuildActionExecuter.execute(SessionScopeLifecycleBuildActionExecuter.java:50)
+	at org.gradle.tooling.internal.provider.SessionScopeLifecycleBuildActionExecuter.execute(SessionScopeLifecycleBuildActionExecuter.java:36)
+	at org.gradle.tooling.internal.provider.GradleThreadBuildActionExecuter.execute(GradleThreadBuildActionExecuter.java:36)
+	at org.gradle.tooling.internal.provider.GradleThreadBuildActionExecuter.execute(GradleThreadBuildActionExecuter.java:25)
+	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:59)
+	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:31)
+	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:58)
+	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:42)
+	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:47)
+	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:31)
+	at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:65)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:39)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:29)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:35)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:78)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:75)
+	at org.gradle.util.Swapper.swap(Swapper.java:38)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:75)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:55)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+	at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:297)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+Caused by: org.gradle.api.artifacts.UnknownConfigurationException: Configuration with name 'compile' not found.
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfigurationContainer.createNotFoundException(DefaultConfigurationContainer.java:165)
+	at org.gradle.api.internal.DefaultNamedDomainObjectCollection.getByName(DefaultNamedDomainObjectCollection.java:333)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfigurationContainer.getByName(DefaultConfigurationContainer.java:155)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfigurationContainer.getByName(DefaultConfigurationContainer.java:64)
+	at org.gradle.api.internal.DefaultNamedDomainObjectCollection.getAt(DefaultNamedDomainObjectCollection.java:353)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfigurationContainer.getAt(DefaultConfigurationContainer.java:64)
+	at org.gradle.api.artifacts.ConfigurationContainer$getAt.call(Unknown Source)
+	at com.google.protobuf.gradle.ProtobufPlugin$_setupExtractIncludeProtosTask_closure21.doCall(ProtobufPlugin.groovy:369)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at org.gradle.util.ClosureBackedAction.execute(ClosureBackedAction.java:71)
+	at org.gradle.util.ConfigureUtil.configureTarget(ConfigureUtil.java:154)
+	at org.gradle.util.ConfigureUtil.configureSelf(ConfigureUtil.java:130)
+	at org.gradle.api.internal.AbstractTask.configure(AbstractTask.java:616)
+	at org.gradle.api.DefaultTask.configure(DefaultTask.java:307)
+	at org.gradle.api.DefaultTask.configure(DefaultTask.java:44)
+	at org.gradle.util.ConfigureUtil.configure(ConfigureUtil.java:103)
+	at org.gradle.util.ConfigureUtil$WrappedConfigureAction.execute(ConfigureUtil.java:166)
+	at org.gradle.api.internal.tasks.DefaultTaskContainer.create(DefaultTaskContainer.java:366)
+	at org.gradle.api.internal.tasks.DefaultTaskContainer.create(DefaultTaskContainer.java:76)
+	at org.gradle.api.internal.tasks.DefaultTaskContainer_Decorated.create(Unknown Source)
+	at org.gradle.api.internal.tasks.DefaultTaskContainer_Decorated$create$2.call(Unknown Source)
+	at com.google.protobuf.gradle.ProtobufPlugin.setupExtractIncludeProtosTask(ProtobufPlugin.groovy:365)
+	at com.google.protobuf.gradle.ProtobufPlugin.setupExtractIncludeProtosTask(ProtobufPlugin.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.google.protobuf.gradle.ProtobufPlugin.addTasksForSourceSet(ProtobufPlugin.groovy:242)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.google.protobuf.gradle.ProtobufPlugin$_addProtoTasks_closure10.doCall(ProtobufPlugin.groovy:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.google.protobuf.gradle.ProtobufPlugin.addProtoTasks(ProtobufPlugin.groovy:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.google.protobuf.gradle.ProtobufPlugin$_doApply_closure5.doCall(ProtobufPlugin.groovy:143)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at org.gradle.configuration.internal.DefaultListenerBuildOperationDecorator$BuildOperationEmittingClosure$1.lambda$run$0(DefaultListenerBuildOperationDecorator.java:180)
+	at org.gradle.configuration.internal.DefaultUserCodeApplicationContext$CurrentApplication.reapply(DefaultUserCodeApplicationContext.java:86)
+	at org.gradle.configuration.internal.DefaultListenerBuildOperationDecorator$BuildOperationEmittingClosure$1.run(DefaultListenerBuildOperationDecorator.java:177)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:75)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:153)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.lambda$run$1(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.internal.operations.UnmanagedBuildOperationWrapper.runWithUnmanagedSupport(UnmanagedBuildOperationWrapper.java:45)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.configuration.internal.DefaultListenerBuildOperationDecorator$BuildOperationEmittingClosure.doCall(DefaultListenerBuildOperationDecorator.java:174)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at org.gradle.listener.ClosureBackedMethodInvocationDispatch.dispatch(ClosureBackedMethodInvocationDispatch.java:41)
+	at org.gradle.listener.ClosureBackedMethodInvocationDispatch.dispatch(ClosureBackedMethodInvocationDispatch.java:25)
+	at org.gradle.internal.event.AbstractBroadcastDispatch.dispatch(AbstractBroadcastDispatch.java:43)
+	at org.gradle.internal.event.BroadcastDispatch$SingletonDispatch.dispatch(BroadcastDispatch.java:245)
+	at org.gradle.internal.event.BroadcastDispatch$SingletonDispatch.dispatch(BroadcastDispatch.java:157)
+	at org.gradle.internal.event.AbstractBroadcastDispatch.dispatch(AbstractBroadcastDispatch.java:61)
+	at org.gradle.internal.event.BroadcastDispatch$CompositeDispatch.dispatch(BroadcastDispatch.java:346)
+	at org.gradle.internal.event.BroadcastDispatch$CompositeDispatch.dispatch(BroadcastDispatch.java:249)
+	at org.gradle.internal.event.ListenerBroadcast.dispatch(ListenerBroadcast.java:141)
+	at org.gradle.internal.event.ListenerBroadcast.dispatch(ListenerBroadcast.java:37)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy44.afterEvaluate(Unknown Source)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator$NotifyAfterEvaluate$1.execute(LifecycleProjectEvaluator.java:183)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator$NotifyAfterEvaluate$1.execute(LifecycleProjectEvaluator.java:180)
+	at org.gradle.api.internal.project.DefaultProject.stepEvaluationListener(DefaultProject.java:1454)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator$NotifyAfterEvaluate.run(LifecycleProjectEvaluator.java:189)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:75)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:153)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.lambda$run$1(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.internal.operations.UnmanagedBuildOperationWrapper.runWithUnmanagedSupport(UnmanagedBuildOperationWrapper.java:45)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.lambda$run$0(LifecycleProjectEvaluator.java:105)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$0(DefaultProjectStateRegistry.java:250)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$withProjectLock$3(DefaultProjectStateRegistry.java:310)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:213)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.withProjectLock(DefaultProjectStateRegistry.java:310)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMutableState(DefaultProjectStateRegistry.java:291)
+	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyToMutableState(DefaultProjectStateRegistry.java:249)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.run(LifecycleProjectEvaluator.java:91)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:75)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:153)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.lambda$run$1(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.internal.operations.UnmanagedBuildOperationWrapper.runWithUnmanagedSupport(UnmanagedBuildOperationWrapper.java:45)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator.evaluate(LifecycleProjectEvaluator.java:63)
+	at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:723)
+	at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:150)
+	at org.gradle.execution.TaskPathProjectEvaluator.configure(TaskPathProjectEvaluator.java:41)
+	at org.gradle.execution.TaskPathProjectEvaluator.configureHierarchy(TaskPathProjectEvaluator.java:67)
+	at org.gradle.configuration.DefaultProjectsPreparer.prepareProjects(DefaultProjectsPreparer.java:46)
+	at org.gradle.configuration.BuildTreePreparingProjectsPreparer.prepareProjects(BuildTreePreparingProjectsPreparer.java:64)
+	at org.gradle.configuration.BuildOperationFiringProjectsPreparer$ConfigureBuild.run(BuildOperationFiringProjectsPreparer.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:75)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:153)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.lambda$run$1(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.internal.operations.UnmanagedBuildOperationWrapper.runWithUnmanagedSupport(UnmanagedBuildOperationWrapper.java:45)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:71)
+	at org.gradle.configuration.BuildOperationFiringProjectsPreparer.prepareProjects(BuildOperationFiringProjectsPreparer.java:40)
+	at org.gradle.initialization.DefaultGradleLauncher.prepareProjects(DefaultGradleLauncher.java:226)
+	at org.gradle.initialization.DefaultGradleLauncher.doClassicBuildStages(DefaultGradleLauncher.java:164)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:149)
+	at org.gradle.initialization.DefaultGradleLauncher.executeTasks(DefaultGradleLauncher.java:125)
+	at org.gradle.internal.invocation.GradleBuildController$1.create(GradleBuildController.java:71)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:213)
+	at org.gradle.internal.invocation.GradleBuildController.doBuild(GradleBuildController.java:67)
+	at org.gradle.internal.invocation.GradleBuildController.run(GradleBuildController.java:56)
+	at org.gradle.tooling.internal.provider.runner.BuildModelActionRunner.run(BuildModelActionRunner.java:56)
+	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+	at org.gradle.launcher.exec.BuildOutcomeReportingBuildActionRunner.run(BuildOutcomeReportingBuildActionRunner.java:66)
+	at org.gradle.tooling.internal.provider.ValidatingBuildActionRunner.run(ValidatingBuildActionRunner.java:32)
+	at org.gradle.tooling.internal.provider.FileSystemWatchingBuildActionRunner.run(FileSystemWatchingBuildActionRunner.java:90)
+	at org.gradle.launcher.exec.BuildCompletionNotifyingBuildActionRunner.run(BuildCompletionNotifyingBuildActionRunner.java:41)
+	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionRunner$3.call(RunAsBuildOperationBuildActionRunner.java:49)
+	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionRunner$3.call(RunAsBuildOperationBuildActionRunner.java:44)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:200)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:195)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:75)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$3.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:153)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:68)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:62)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.lambda$call$2(DefaultBuildOperationExecutor.java:76)
+	at org.gradle.internal.operations.UnmanagedBuildOperationWrapper.callWithUnmanagedSupport(UnmanagedBuildOperationWrapper.java:54)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:76)
+	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionRunner.run(RunAsBuildOperationBuildActionRunner.java:44)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.lambda$execute$0(InProcessBuildActionExecuter.java:59)
+	at org.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:86)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:58)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:30)
+	at org.gradle.launcher.exec.BuildTreeScopeLifecycleBuildActionExecuter.lambda$execute$0(BuildTreeScopeLifecycleBuildActionExecuter.java:34)
+	at org.gradle.internal.buildtree.BuildTreeState.run(BuildTreeState.java:53)
+	at org.gradle.launcher.exec.BuildTreeScopeLifecycleBuildActionExecuter.execute(BuildTreeScopeLifecycleBuildActionExecuter.java:33)
+	at org.gradle.launcher.exec.BuildTreeScopeLifecycleBuildActionExecuter.execute(BuildTreeScopeLifecycleBuildActionExecuter.java:28)
+	at org.gradle.tooling.internal.provider.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:104)
+	at org.gradle.tooling.internal.provider.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:55)
+	at org.gradle.tooling.internal.provider.SubscribableBuildActionExecuter.execute(SubscribableBuildActionExecuter.java:64)
+	at org.gradle.tooling.internal.provider.SubscribableBuildActionExecuter.execute(SubscribableBuildActionExecuter.java:37)
+	at org.gradle.tooling.internal.provider.SessionScopeLifecycleBuildActionExecuter.lambda$execute$0(SessionScopeLifecycleBuildActionExecuter.java:54)
+	at org.gradle.internal.session.BuildSessionState.run(BuildSessionState.java:67)
+	at org.gradle.tooling.internal.provider.SessionScopeLifecycleBuildActionExecuter.execute(SessionScopeLifecycleBuildActionExecuter.java:50)
+	at org.gradle.tooling.internal.provider.SessionScopeLifecycleBuildActionExecuter.execute(SessionScopeLifecycleBuildActionExecuter.java:36)
+	at org.gradle.tooling.internal.provider.GradleThreadBuildActionExecuter.execute(GradleThreadBuildActionExecuter.java:36)
+	at org.gradle.tooling.internal.provider.GradleThreadBuildActionExecuter.execute(GradleThreadBuildActionExecuter.java:25)
+	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:59)
+	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:31)
+	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:58)
+	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:42)
+	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:47)
+	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:31)
+	at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:65)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:39)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:29)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:35)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:78)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:75)
+	at org.gradle.util.Swapper.swap(Swapper.java:38)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:75)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:55)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+	at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:297)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 8s
+
+Publishing build scan...
+https://gradle.com/s/ime4xtdbs6nu2
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'protobuf-sample'.
+> Configuration with name 'compile' not found.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 206ms
+
+Publishing build scan...
+https://gradle.com/s/ybpwledvx2dje
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean :generateProto
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'protobuf-sample'.
+> Configuration with name 'compile' not found.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 468ms
+
+Publishing build scan...
+https://gradle.com/s/jhe4w6oevqavi
+
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'protobuf-sample'.
+> Configuration with name 'compile' not found.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 312ms
+
+Publishing build scan...
+https://gradle.com/s/gobukeozqufx4
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 3s
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/phfzgqjrxwvj4
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 243ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/onfszb6mocq2o
+
+</pre>
+<h5>Build cache - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 369ms
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/7qozij2osqwgu
+
+</pre>
+<h5>Build cache relocated - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 466ms
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/rbanmnear3xys
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 10s
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/stsyuf6nh3lby
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 470ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/saw4trocffrwu
+
+</pre>
+<h5>Build cache - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 486ms
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/7omxsfr4avvvq
+
+</pre>
+<h5>Build cache relocated - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 544ms
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/2dhayyg6gwqdq
+
+</pre>
+<h2 id='0.8.11'>Version: 0.8.11</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_com_google_gradle_osdetector_OsDetectorPlugin
+> Task :validatePluginWithId_com_google_protobuf
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 5s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/ibeeuwnqh4eha
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :generateProto
+  :extractProto
+  :extractIncludeProto
+  :processResources
+  :generateTestProto
+  :extractTestProto
+  :extractIncludeTestProto
+  :processTestResources
+  :compileJava
+  :validateExternalPlugins
+  :provisionGradleEnterpriseAccessKey
+  :buildScanPublishPrevious
+  :help
+  :projects
+  :tasks
+  :properties
+  :dependencyInsight
+  :dependencies
+  :buildEnvironment
+  :components
+  :model
+  :dependentComponents
+  :outgoingVariants
+  :javaToolchains
+  :prepareKotlinBuildScriptModel
+  :init
+  :wrapper
+  :validatePluginWithId_com_google_protobuf
+  :clean
+  :assemble
+  :jar
+  :check
+  :build
+  :buildNeeded
+  :buildDependents
+  :classes
+  :compileTestJava
+  :testClasses
+  :test
+  :javadoc
+  :validatePluginWithId_com_google_gradle_osdetector_OsDetectorPlugin
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 377ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/rfp2ycvgtdldw
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean :generateProto
+> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Configuration cache problems found in this build.
+
+47 problems were found storing the configuration cache, 45 of which seem unique.
+- Plugin 'com.google.protobuf': read system property 'awt.toolkit'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'idea.io.use.nio2'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'sun.cpu.isalist'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'sun.jnu.encoding'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'sun.arch.data.model'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'sun.boot.library.path'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'sun.java.command'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'jdk.debug'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'java.vm.compressedOopsMode'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'idea.home.path'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'sun.management.compiler'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'file.encoding'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'psi.incremental.reparse.depth.limit'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'java.io.tmpdir'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+- Plugin 'com.google.protobuf': read system property 'java.awt.printerjob'
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:undeclared_sys_prop_read
+plus 30 more problems. Please see the report for details.
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/com.google.protobuf/build/reports/configuration-cache/dd2h9qdsdnwtnp5acgph98vvg/configuration-cache-report.html
+> Read system property 'awt.toolkit'
+> Read system property 'idea.io.use.nio2'
+> Read system property 'sun.cpu.isalist'
+> Read system property 'sun.jnu.encoding'
+> Read system property 'sun.arch.data.model'
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 902ms
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/7p7dsyhydn4h2
+
+Configuration cache entry discarded with 47 problems.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 365ms
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/gjqkgfi6yqdzq
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 351ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/qi22gtkezpsda
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 480ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/z6bf5e63vcvvm
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 392ms
+3 actionable tasks: 2 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/d53pqityn5x74
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 1s
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (2 retries remaining)...
+Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (1 retry remaining)...
+https://gradle.com/s/cphp3n2r6luqs
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 257ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/n3pcu32ytmmey
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 345ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/fsrfhtdqsyep4
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 261ms
+3 actionable tasks: 2 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/yfpmcjzpxd4d2
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 5s
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/r4i67vvduqkq4
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 328ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/ouwdjp5torcmc
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 448ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/ee7nfjo6bionm
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 362ms
+3 actionable tasks: 2 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/rcrtzxqwsause
+
+</pre>
+<h2 id='0.8.16'>Version: 0.8.16</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_com_google_gradle_osdetector_OsDetectorPlugin
+> Task :validatePluginWithId_com_google_protobuf
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 5s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/lyi6oph3je6pu
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :generateProto
+  :extractProto
+  :extractIncludeProto
+  :processResources
+  :generateTestProto
+  :extractTestProto
+  :extractIncludeTestProto
+  :processTestResources
+  :compileJava
+  :validateExternalPlugins
+  :provisionGradleEnterpriseAccessKey
+  :buildScanPublishPrevious
+  :help
+  :projects
+  :tasks
+  :properties
+  :dependencyInsight
+  :dependencies
+  :buildEnvironment
+  :components
+  :model
+  :dependentComponents
+  :outgoingVariants
+  :javaToolchains
+  :prepareKotlinBuildScriptModel
+  :init
+  :wrapper
+  :validatePluginWithId_com_google_protobuf
+  :clean
+  :assemble
+  :jar
+  :check
+  :build
+  :buildNeeded
+  :buildDependents
+  :classes
+  :compileTestJava
+  :testClasses
+  :test
+  :javadoc
+  :validatePluginWithId_com_google_gradle_osdetector_OsDetectorPlugin
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 293ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/yrc2gj5hjq4ci
+
+</pre>
+<h5>Configuration cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean :generateProto
+> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 653ms
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/gzxo6np2xpcx2
+
+Configuration cache entry stored.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 405ms
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/2ghtpz5oojiwk
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 284ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/z5imhzbfvt2dk
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 312ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/weysdje7fre6a
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 365ms
+3 actionable tasks: 2 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/uphvzhaw3ww5g
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 1s
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/cmrw2lv4tihaa
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 363ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/r2m53joihvwws
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 399ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/a5w2touqhypuk
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 485ms
+3 actionable tasks: 2 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/ib2rxsizcxquo
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 3s
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/w27irkcva3vjc
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 326ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/azit36k2bobs2
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 316ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/fyptt63d2okjw
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 568ms
+3 actionable tasks: 2 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/6ogs6abya4qx2
+
+</pre>
+</body></html>

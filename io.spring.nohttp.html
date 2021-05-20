@@ -1,0 +1,884 @@
+<html><body>
+<h1>Plugin: io.spring.nohttp</h1>
+<h2 id='0.0.3.RELEASE'>Version: 0.0.3.RELEASE</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_io_spring_nohttp NO-SOURCE
+> Task :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCheckstylePlugin NO-SOURCE
+> Task :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCliPlugin NO-SOURCE
+> Task :validateExternalPlugins UP-TO-DATE
+
+BUILD SUCCESSFUL in 5s
+
+Publishing build scan...
+https://gradle.com/s/2c43t2utafqea
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :checkstyleNohttp
+  :validateExternalPlugins
+  :provisionGradleEnterpriseAccessKey
+  :buildScanPublishPrevious
+  :help
+  :projects
+  :tasks
+  :properties
+  :dependencyInsight
+  :dependencies
+  :buildEnvironment
+  :components
+  :model
+  :dependentComponents
+  :outgoingVariants
+  :javaToolchains
+  :prepareKotlinBuildScriptModel
+  :init
+  :wrapper
+  :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCheckstylePlugin
+  :nohttp
+  :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCliPlugin
+  :validatePluginWithId_io_spring_nohttp
+  :clean
+  :assemble
+  :check
+  :build
+  :buildNeeded
+  :buildDependents
+  :processResources
+  :compileJava
+  :classes
+  :checkstyleMain
+  :processTestResources
+  :compileTestJava
+  :testClasses
+  :checkstyleTest
+  :test
+  :javadoc
+  :jar
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 304ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/upecoysbxrrfu
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean checkstyleNohttp
+> Task :clean
+> Task :checkstyleNohttp FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':checkstyleNohttp'.
+> Cannot add config_loc to checkstyle.configProperties. Please configure the configDirectory on the checkstyle task instead.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 2s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/pszoffhon3pka
+
+Configuration cache entry stored.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':checkstyleNohttp'.
+> Cannot add config_loc to checkstyle.configProperties. Please configure the configDirectory on the checkstyle task instead.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/hg6ae33tmamoc
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 3s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/wc7pmniz6uy2g
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp UP-TO-DATE
+
+BUILD SUCCESSFUL in 337ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/g6k2cg5ftcymm
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 221ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/jbciycalxigwa
+
+</pre>
+<h5>Build cache relocated - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/zhbhkcriexo54
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 6.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/5.6.4/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 7s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/epmvqfnpfqels
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp UP-TO-DATE
+
+BUILD SUCCESSFUL in 362ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/yqlzz3phuv6bq
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 280ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/7th3wbb6qhjre
+
+</pre>
+<h5>Build cache relocated - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 6.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/5.6.4/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/h2d34575ztsrk
+
+</pre>
+<h2 id='0.0.4.RELEASE'>Version: 0.0.4.RELEASE</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_io_spring_nohttp NO-SOURCE
+> Task :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCheckstylePlugin NO-SOURCE
+> Task :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCliPlugin NO-SOURCE
+> Task :validateExternalPlugins UP-TO-DATE
+
+BUILD SUCCESSFUL in 3s
+
+Publishing build scan...
+https://gradle.com/s/mfrneoesrbwzc
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :checkstyleNohttp
+  :validateExternalPlugins
+  :provisionGradleEnterpriseAccessKey
+  :buildScanPublishPrevious
+  :help
+  :projects
+  :tasks
+  :properties
+  :dependencyInsight
+  :dependencies
+  :buildEnvironment
+  :components
+  :model
+  :dependentComponents
+  :outgoingVariants
+  :javaToolchains
+  :prepareKotlinBuildScriptModel
+  :init
+  :wrapper
+  :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCheckstylePlugin
+  :nohttp
+  :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCliPlugin
+  :validatePluginWithId_io_spring_nohttp
+  :clean
+  :assemble
+  :check
+  :build
+  :buildNeeded
+  :buildDependents
+  :processResources
+  :compileJava
+  :classes
+  :checkstyleMain
+  :processTestResources
+  :compileTestJava
+  :testClasses
+  :checkstyleTest
+  :test
+  :javadoc
+  :jar
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 261ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/jlvwxsmjbaoro
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean checkstyleNohttp
+> Task :clean
+> Task :checkstyleNohttp
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Configuration cache problems found in this build.
+
+2 problems were found storing the configuration cache, 1 of which seems unique.
+- Task `:checkstyleNohttp` of type `org.gradle.api.plugins.quality.Checkstyle`: cannot serialize object of type 'org.gradle.api.internal.project.DefaultProject', a subtype of 'org.gradle.api.Project', as these are not supported with the configuration cache.
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:disallowed_types
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/io.spring.nohttp/build/reports/configuration-cache/azm5ov59wr4m5rp8oeajxzex2/configuration-cache-report.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/fhj42gi54tpkg
+
+Configuration cache entry discarded with 2 problems.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/rgnwlebfark32
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp UP-TO-DATE
+
+BUILD SUCCESSFUL in 294ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/2oyskvhvyy3ws
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 201ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/qjhvicmtx64py
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 285ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/dgf2ltcpv2quk
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/nmrgco4ajpbhc
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp UP-TO-DATE
+
+BUILD SUCCESSFUL in 234ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/adsqqr3j23uly
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 233ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/dn6wkj4t3osce
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 326ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/bwmepidzku2l2
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 6.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/5.6.4/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 3s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/6esc37yvnbuhe
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp UP-TO-DATE
+
+BUILD SUCCESSFUL in 287ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/hv5i6khmlylom
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 267ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/lowaf2adx2nku
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 341ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/nrplvoo2wau2s
+
+</pre>
+<h2 id='0.0.7'>Version: 0.0.7</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_io_spring_nohttp
+> Task :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCheckstylePlugin
+> Task :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCliPlugin
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 7s
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/kj74h6wpxgfiu
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :nohttp
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 243ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/mlld33kp225om
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean checkstyleNohttp
+> Task :clean
+> Task :checkstyleNohttp FAILED
+
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task ':checkstyleNohttp'.
+> Cannot add config_loc to checkstyle.configProperties. Please configure the configDirectory on the checkstyle task instead.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+Configuration cache problems found in this build.
+
+1 problem was found storing the configuration cache.
+- Task `:checkstyleNohttp` of type `org.gradle.api.plugins.quality.Checkstyle`: cannot serialize object of type 'org.gradle.api.internal.project.DefaultProject', a subtype of 'org.gradle.api.Project', as these are not supported with the configuration cache.
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:disallowed_types
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/io.spring.nohttp/build/reports/configuration-cache/azm5ov59wr4m5rp8oeajxzex2/configuration-cache-report.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+==============================================================================
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/flzq7oh6qmuuc
+
+Configuration cache entry discarded with 1 problem.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':checkstyleNohttp'.
+> Cannot add config_loc to checkstyle.configProperties. Please configure the configDirectory on the checkstyle task instead.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/4yvlasjje6d3w
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp
+
+BUILD SUCCESSFUL in 2s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/qlshhjlzr4c4i
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp UP-TO-DATE
+
+BUILD SUCCESSFUL in 148ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/v2wdznsd42jfe
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 276ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/ywog5nvl2q6qc
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 256ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/imsqdrjufvdcu
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':checkstyleNohttp'.
+> java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 10s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/luprrvrnzqwy4
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+<h2 id='0.0.8'>Version: 0.0.8</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_io_spring_nohttp
+> Task :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCheckstylePlugin
+> Task :validatePluginWithId_io_spring_nohttp_gradle_NoHttpCliPlugin
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 2s
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/njebydaqzbslc
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :nohttp
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 241ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/ewrhrssjpiyhy
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean checkstyleNohttp
+> Task :clean
+> Task :checkstyleNohttp
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Configuration cache problems found in this build.
+
+1 problem was found storing the configuration cache.
+- Task `:checkstyleNohttp` of type `org.gradle.api.plugins.quality.Checkstyle`: cannot serialize object of type 'org.gradle.api.internal.project.DefaultProject', a subtype of 'org.gradle.api.Project', as these are not supported with the configuration cache.
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:disallowed_types
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/io.spring.nohttp/build/reports/configuration-cache/azm5ov59wr4m5rp8oeajxzex2/configuration-cache-report.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/wpykyh674pilg
+
+Configuration cache entry discarded with 1 problem.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/bb6jyww3s7nm6
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp UP-TO-DATE
+
+BUILD SUCCESSFUL in 230ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/ilcw3vcop4sti
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 194ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (2 retries remaining)...
+https://gradle.com/s/gksmruckeiym4
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 275ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/mzxszy27fix44
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/7rsionxqdym6w
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp UP-TO-DATE
+
+BUILD SUCCESSFUL in 180ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/aiahikr2cskze
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 214ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/nhxe753f3jgee
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :checkstyleNohttp FROM-CACHE
+
+BUILD SUCCESSFUL in 245ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/o7yrjgb3om2y6
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - FAIL</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :checkstyleNohttp FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':checkstyleNohttp'.
+> java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 2s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/72sbnugdqsf76
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+</body></html>

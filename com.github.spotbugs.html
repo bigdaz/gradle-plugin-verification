@@ -1,45 +1,35 @@
 <html><body>
 <h1>Plugin: com.github.spotbugs</h1>
 <h2 id='4.6.0'>Version: 4.6.0</h2>
-<h5>Validation check - FAIL</h5>
+<h5>Validation check - OK</h5>
 <a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
-<pre>Daemon will be stopped at the end of the build after running out of JVM memory
+<pre>> Task :validatePluginWithId_com_github_spotbugs
+> Task :validatePluginWithId_com_github_spotbugs_snom_SpotBugsBasePlugin
+> Task :validateExternalPlugins
 
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Metaspace
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
-
-* Get more help at https://help.gradle.org
-
-BUILD FAILED in 26s
+BUILD SUCCESSFUL in 38s
+2 actionable tasks: 2 executed
 
 Publishing build scan...
-
-WARNING: Error invoking build scan buildScanPublished action
-	The root project is not yet available for build.
-https://gradle.com/s/kuaa7gi467jne
+https://gradle.com/s/xxxssjxjdbkhq
 
 </pre>
 <h5>Eager task creation check - OK</h5>
-<a href="https://gradle.com/s/wcbcrtsr3mhhi"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :checkEagerTaskCreation
 
-BUILD SUCCESSFUL in 23s
+BUILD SUCCESSFUL in 254ms
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/wcbcrtsr3mhhi
+https://gradle.com/s/pamnn77yx26vi
 
 </pre>
 <h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/4ewod6x3vw7su"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean :spotbugsMain
-> Task :clean UP-TO-DATE
+> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
 > Task :classes
@@ -54,7 +44,7 @@ Configuration cache problems found in this build.
 - Task `:spotbugsMain` of type `com.github.spotbugs.snom.SpotBugsTask`: invocation of 'Task.project' at execution time is unsupported.
   See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:use_project_during_execution
 
-See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/com.github.spotbugs/build/reports/configuration-cache/41uqdxv2ldl6eg0g8u34vcx9u/configuration-cache-report.html
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/com.github.spotbugs/build/reports/configuration-cache/41uqdxv2ldl6eg0g8u34vcx9u/configuration-cache-report.html
 > Invocation of 'Task.project' by task ':spotbugsMain' at execution time is unsupported.
 > Invocation of 'Task.project' by task ':spotbugsMain' at execution time is unsupported.
 > Invocation of 'Task.project' by task ':spotbugsMain' at execution time is unsupported.
@@ -66,17 +56,18 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 
 * Get more help at https://help.gradle.org
 
-BUILD FAILED in 10s
-3 actionable tasks: 2 executed, 1 up-to-date
+BUILD FAILED in 11s
+3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/4ewod6x3vw7su
+Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (2 retries remaining)...
+https://gradle.com/s/gvx2gdb4o6rus
 
 Configuration cache entry discarded with 7 problems.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/xmg5gpks3muho"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
@@ -87,127 +78,168 @@ BUILD SUCCESSFUL in 1s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (2 retries remaining)...
-https://gradle.com/s/xmg5gpks3muho
+https://gradle.com/s/wjnyjdhlpn2wu
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/gj5ubcjayuis4"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :spotbugsMain UP-TO-DATE
 
-BUILD SUCCESSFUL in 362ms
+BUILD SUCCESSFUL in 242ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/gj5ubcjayuis4
+https://gradle.com/s/vlzp6jce5nppe
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/tlsqpqc7sbmoy"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :spotbugsMain FROM-CACHE
 
-BUILD SUCCESSFUL in 276ms
+BUILD SUCCESSFUL in 343ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/tlsqpqc7sbmoy
+https://gradle.com/s/5i2bddze74uce
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain FROM-CACHE
+
+BUILD SUCCESSFUL in 246ms
+2 actionable tasks: 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/racvtrzunmxyc
 
 </pre>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/p3fwnw53cybqs"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
 > Task :classes
 > Task :spotbugsMain
 
-BUILD SUCCESSFUL in 31s
+BUILD SUCCESSFUL in 41s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/p3fwnw53cybqs
+https://gradle.com/s/w4mza7kw2c5xs
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/n4ts7yr25mxbk"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :spotbugsMain UP-TO-DATE
 
-BUILD SUCCESSFUL in 443ms
+BUILD SUCCESSFUL in 327ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/n4ts7yr25mxbk
+https://gradle.com/s/t7euolucsg74w
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/4wl6jaoepkd7k"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :spotbugsMain FROM-CACHE
 
-BUILD SUCCESSFUL in 295ms
+BUILD SUCCESSFUL in 336ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/4wl6jaoepkd7k
+https://gradle.com/s/wavxguoj5mpkw
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain FROM-CACHE
+
+BUILD SUCCESSFUL in 317ms
+2 actionable tasks: 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/w6dmxadnveogs
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/ehkgg7svc2sqc"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
 > Task :classes
 > Task :spotbugsMain
 
-BUILD SUCCESSFUL in 29s
+BUILD SUCCESSFUL in 45s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/ehkgg7svc2sqc
+https://gradle.com/s/oojralpkytsqc
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/wvm6puxvvtpvi"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :spotbugsMain UP-TO-DATE
 
-BUILD SUCCESSFUL in 273ms
+BUILD SUCCESSFUL in 442ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/wvm6puxvvtpvi
+https://gradle.com/s/3ujhptnzuqesi
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/7iaz6a5mfg6ii"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :spotbugsMain FROM-CACHE
 
-BUILD SUCCESSFUL in 194ms
+BUILD SUCCESSFUL in 382ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/7iaz6a5mfg6ii
+https://gradle.com/s/pxs6p5brlbfze
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ERROR"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain FROM-CACHE
+
+BUILD SUCCESSFUL in 331ms
+2 actionable tasks: 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/td7mjrgxxdgxu
 
 </pre>
 </body></html>
