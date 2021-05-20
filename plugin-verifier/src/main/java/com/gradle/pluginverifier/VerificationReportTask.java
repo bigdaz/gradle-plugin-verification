@@ -95,18 +95,28 @@ public abstract class VerificationReportTask extends DefaultTask {
     private Map<String, String> gradleVersionSummary(List<PluginVersionVerification.GradleVersionCompatibility> gradleVersionChecks) {
         Map<String, String> map = new LinkedHashMap<>();
         for (PluginVersionVerification.GradleVersionCompatibility gradleVersionCheck : gradleVersionChecks) {
-            if (gradleVersionCheck.relocatedBuildCacheCheck != null && gradleVersionCheck.relocatedBuildCacheCheck.passed) {
-                map.put(gradleVersionCheck.gradleVersion, "CACHED");
-            } else if (gradleVersionCheck.buildCacheCheck != null && gradleVersionCheck.buildCacheCheck.passed) {
-                map.put(gradleVersionCheck.gradleVersion, "CACHED (RELATIVE)");
-            } else if (gradleVersionCheck.incrementalBuildCheck != null && gradleVersionCheck.incrementalBuildCheck.passed) {
-                map.put(gradleVersionCheck.gradleVersion, "INCREMENTAL");
-            } else if (gradleVersionCheck.compatibilityCheck.passed) {
-                map.put(gradleVersionCheck.gradleVersion, "OK");
-            } else {
-                map.put(gradleVersionCheck.gradleVersion, "FAIL");
-            }
+            map.put(gradleVersionCheck.gradleVersion, describeCompatibility(gradleVersionCheck));
         }
         return map;
+    }
+
+    private String describeCompatibility(PluginVersionVerification.GradleVersionCompatibility gradleVersionCompatibility) {
+        if (gradleVersionCompatibility.compatibilityCheck == null || !gradleVersionCompatibility.compatibilityCheck.passed) {
+            return "FAIL";
+        }
+        if (gradleVersionCompatibility.incrementalBuildCheck == null) {
+            // Not incremental
+            return "OK";
+        }
+        if (!gradleVersionCompatibility.incrementalBuildCheck.passed) {
+            return "NOT UP-TO-DATE";
+        }
+        if (gradleVersionCompatibility.buildCacheCheck == null || !gradleVersionCompatibility.buildCacheCheck.passed) {
+            return "UP-TO-DATE";
+        }
+        if (gradleVersionCompatibility.relocatedBuildCacheCheck == null || !gradleVersionCompatibility.relocatedBuildCacheCheck.passed) {
+            return "CACHED (relative)";
+        }
+        return "CACHED";
     }
 }
