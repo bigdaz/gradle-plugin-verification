@@ -45,7 +45,9 @@ void configureExtension(extension) {
             termsOfServiceAgree = "yes"
 
             buildScanPublished { buildScan ->
-                def scanFile = new File(gradle.getRootProject().getProjectDir(), "build-scan-id.txt")
+                def buildDir = gradle.getRootProject().getBuildDir()
+                buildDir.mkdirs()
+                def scanFile = new File(buildDir, "build-scan-id.txt")
                 scanFile.text = buildScan.buildScanId
             }
         }

@@ -141,7 +141,7 @@ public class PluginVerifier {
         if (!publishBuildScans) {
             return null;
         }
-        File scanIdFile = new File(plugin.getSampleProject(), "build-scan-id.txt");
+        File scanIdFile = new File(plugin.getSampleProject(), "build/build-scan-id.txt");
         try {
             return Files.readString(scanIdFile.toPath());
         } catch (IOException e) {
