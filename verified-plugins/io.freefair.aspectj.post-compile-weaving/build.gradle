@@ -1,0 +1,14 @@
+plugins {
+    id "java"
+    id "io.freefair.aspectj.post-compile-weaving"
+}
+
+repositories {
+    mavenCentral()
+}
+
+compileJava {
+    ajc {
+        classpath.setFrom configurations.aspectj
+     }
+}
