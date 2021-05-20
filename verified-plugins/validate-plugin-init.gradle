@@ -1,3 +1,20 @@
-allprojects {
+rootProject {
     pluginManager.apply("validate-external-gradle-plugin")
+
+    def configuredTasksList = []
+
+    tasks.configureEach {
+        if (it.name == "checkEagerTaskCreation") {
+            return
+        }
+        configuredTasksList << it.getPath() + "\n"
+    }
+
+    tasks.register("checkEagerTaskCreation") {
+        doLast {
+            if (!configuredTasksList.empty) {
+                throw new RuntimeException("Tasks are created eagerly by plugin: \n" + configuredTasksList.join())
+            }
+        }
+    }
 }

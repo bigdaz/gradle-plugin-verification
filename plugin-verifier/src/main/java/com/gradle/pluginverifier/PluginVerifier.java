@@ -26,6 +26,7 @@ public class PluginVerifier {
     public void runChecks(PluginVerificationReport pluginVerificationReport) {
         PluginVersionVerification report = pluginVerificationReport.checkPluginVersion(plugin.getPluginVersion());
         checkPluginValidation(report);
+        checkEagerTaskCreation(report);
         checkConfigurationCache(report);
         for (String gradleVersion : GradleVersions.getAllTested()) {
             checkGradleVersionCompatibility(gradleVersion, report);
@@ -34,7 +35,6 @@ public class PluginVerifier {
 
     /**
      * Plugin validation with the latest version of Gradle.
-     * @param report
      */
     public void checkPluginValidation(PluginVersionVerification report) {
         BuildOutcome result = runBuild("-I", "../validate-plugin-init.gradle", "validateExternalPlugins");
@@ -42,8 +42,15 @@ public class PluginVerifier {
     }
 
     /**
+     * Check plugin uses task configuration avoidance with the latest version of Gradle.
+     */
+    public void checkEagerTaskCreation(PluginVersionVerification report) {
+        BuildOutcome result = runBuild("-I", "../validate-plugin-init.gradle", "checkEagerTaskCreation");
+        report.eagerTaskCreationCheck = buildSuccessVerificationResult(result);
+    }
+
+    /**
      * Check configuration-cache validation with the latest version of Gradle.
-     * @param report
      */
     public void checkConfigurationCache(PluginVersionVerification report) {
         BuildOutcome result = runBuild("--configuration-cache", "--no-build-cache", "clean", plugin.getTask());
@@ -98,6 +105,11 @@ public class PluginVerifier {
         argumentList.add(gradleUserHome.getAbsolutePath());
 
         argumentList.addAll(Arrays.asList(arguments));
+
+        // Don't bother running 'clean' for non-incremental tasks
+        if (!plugin.isIncremental()) {
+            argumentList.remove("clean");
+        }
 
         return GradleRunner.create()
                 .withProjectDir(plugin.getSampleProject())

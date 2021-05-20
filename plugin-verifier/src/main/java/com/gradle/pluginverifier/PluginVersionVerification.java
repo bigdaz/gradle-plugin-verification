@@ -6,6 +6,7 @@ import java.util.List;
 public class PluginVersionVerification {
     public final String pluginVersion;
     public VerificationResult validationCheck;
+    public VerificationResult eagerTaskCreationCheck;
     public VerificationResult configurationCacheCheck;
     public List<GradleVersionCompatibility> gradleVersionChecks = new ArrayList<>();
 

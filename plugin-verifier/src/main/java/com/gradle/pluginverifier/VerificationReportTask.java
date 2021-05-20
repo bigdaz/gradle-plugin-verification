@@ -34,14 +34,14 @@ public abstract class VerificationReportTask extends DefaultTask {
                 "<body>");
         writer.println("<h1>Plugin compatibility report</h1>");
         writer.println("<table>" +
-                "<tr><th>Plugin</th><th>Annotations</th><th>Config Cache</th><th>Gradle 7.0.2</th><th>Gradle 6.8.3</th><th>gradle 5.6.4</th></tr>");
+                "<tr><th>Plugin</th><th>Annotations</th><th>Task Config Avoidance</th><th>Config Cache</th><th>Gradle 7.0.2</th><th>Gradle 6.8.3</th><th>gradle 5.6.4</th></tr>");
 
         File[] resultFiles = getResultFiles().get().getAsFile().listFiles();
         for (File resultFile : Arrays.stream(resultFiles).sorted().collect(Collectors.toList())) {
             PluginVerificationReport pluginReport = new Gson().fromJson(Files.newReader(resultFile, Charset.defaultCharset()), PluginVerificationReport.class);
             writeDetailedPluginReport(pluginReport);
             for (PluginVersionVerification versionReport : pluginReport.pluginVersions) {
-                writer.println("<tr><td><a href=\"" + pluginReport.pluginId + ".html\">" + pluginReport.pluginId + ":" + versionReport.pluginVersion+ "</a></td>" + passed(versionReport.validationCheck) + passed(versionReport.configurationCacheCheck));
+                writer.println("<tr><td><a href=\"" + pluginReport.pluginId + ".html#" + versionReport.pluginVersion + "\">" + pluginReport.pluginId + ":" + versionReport.pluginVersion+ "</a></td>" + passed(versionReport.validationCheck) + passed(versionReport.eagerTaskCreationCheck) + passed(versionReport.configurationCacheCheck));
                 Map<String, String> gradleVersionSummary = gradleVersionSummary(versionReport.gradleVersionChecks);
                 writer.println("<td>" + gradleVersionSummary.get("7.0.2") + "</td><td>" + gradleVersionSummary.get("6.8.3") + "</td><td>" + gradleVersionSummary.get("5.6.4") + "</td></tr>");
             }
@@ -58,8 +58,9 @@ public abstract class VerificationReportTask extends DefaultTask {
 
         writer.println("<h1>Plugin: " + pluginReport.pluginId + "</h1>");
         for (PluginVersionVerification versionReport : pluginReport.pluginVersions) {
-            writer.println("<h2>Version: " + versionReport.pluginVersion + "</h2>");
+            writer.println("<h2 id='" + versionReport.pluginVersion + "'>Version: " + versionReport.pluginVersion + "</h2>");
             printCheck(writer, "Validation check", versionReport.validationCheck);
+            printCheck(writer, "Eager task creation check", versionReport.eagerTaskCreationCheck);
             printCheck(writer, "Configuration cache", versionReport.configurationCacheCheck);
 
             for (PluginVersionVerification.GradleVersionCompatibility gradleVersionReport : versionReport.gradleVersionChecks) {
