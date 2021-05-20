@@ -40,12 +40,16 @@ public class VerifyPluginsPlugin implements Plugin<Project> {
             });
         }
 
-        TaskProvider<Task> verifyPlugins = project.getTasks().register("verifyPlugins", v -> v.dependsOn(project.getTasks().withType(VerifyPluginTask.class)));
+        TaskProvider<Task> verifyAllPlugins = project.getTasks().register("verifyAllPlugins", v -> v.dependsOn(project.getTasks().withType(VerifyPluginTask.class)));
 
-        project.getTasks().register("report", VerificationReportTask.class, v -> {
-            v.dependsOn(verifyPlugins);
+        TaskProvider<VerificationReportTask> verificationReport = project.getTasks().register("verificationReport", VerificationReportTask.class, v -> {
+            v.mustRunAfter(project.getTasks().withType(VerifyPluginTask.class));
             v.getResultFiles().set(resultsDir);
             v.getReportDir().set(project.getLayout().getBuildDirectory().dir("report"));
+        });
+
+        project.getTasks().register("verifyPlugins", t -> {
+            t.dependsOn(verifyAllPlugins, verificationReport);
         });
     }
 }
