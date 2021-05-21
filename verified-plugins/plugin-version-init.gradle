@@ -9,4 +9,10 @@ settingsEvaluated { settings ->
             id "${pluginId}" version "${pluginVersion}"
         }
     }
+
+    // Make projectId and projectVersion available to build scripts
+    gradle.beforeProject { p ->
+        p.ext.pluginId = pluginId
+        p.ext.pluginVersion = pluginVersion
+    }
 }
