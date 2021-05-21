@@ -2,31 +2,31 @@
 <h1>Plugin: com.github.spotbugs</h1>
 <h2 id='4.6.0'>Version: 4.6.0</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/xudnxnnsugq4s"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/bkmtrjxbbmp2k"  target="_blank">Build scan</a>
 <pre>> Task :validatePluginWithId_com_github_spotbugs
 > Task :validatePluginWithId_com_github_spotbugs_snom_SpotBugsBasePlugin
 > Task :validateExternalPlugins
 
-BUILD SUCCESSFUL in 37s
+BUILD SUCCESSFUL in 27s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/xudnxnnsugq4s
+https://gradle.com/s/bkmtrjxbbmp2k
 
 </pre>
 <h5>Eager task creation check - OK</h5>
-<a href="https://gradle.com/s/4xhn6qrcjceve"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/2erk4evybqj6q"  target="_blank">Build scan</a>
 <pre>> Task :checkEagerTaskCreation
 
-BUILD SUCCESSFUL in 286ms
+BUILD SUCCESSFUL in 274ms
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/4xhn6qrcjceve
+https://gradle.com/s/2erk4evybqj6q
 
 </pre>
 <h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/rghqv74tv7bnq"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/xjhykm5yajp7w"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean :spotbugsMain
 > Task :clean
@@ -56,17 +56,17 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 
 * Get more help at https://help.gradle.org
 
-BUILD FAILED in 9s
+BUILD FAILED in 13s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/rghqv74tv7bnq
+https://gradle.com/s/xjhykm5yajp7w
 
 Configuration cache entry discarded with 7 problems.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/zdokucacp3dmu"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/3qdecnjq7akla"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
@@ -77,168 +77,168 @@ BUILD SUCCESSFUL in 1s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/zdokucacp3dmu
+https://gradle.com/s/3qdecnjq7akla
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/zwuoyxbg52t5w"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/2bnt7vm7kjnhm"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :spotbugsMain UP-TO-DATE
 
-BUILD SUCCESSFUL in 317ms
+BUILD SUCCESSFUL in 328ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/zwuoyxbg52t5w
+https://gradle.com/s/2bnt7vm7kjnhm
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/536pynlv75h5c"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/5egp7y4rgwjv2"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain FROM-CACHE
+
+BUILD SUCCESSFUL in 376ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/5egp7y4rgwjv2
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/7lq4c7qrcti4c"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain FROM-CACHE
+
+BUILD SUCCESSFUL in 318ms
+2 actionable tasks: 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/7lq4c7qrcti4c
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/qtnzb4ez4apha"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+> Task :spotbugsMain
+
+BUILD SUCCESSFUL in 31s
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/qtnzb4ez4apha
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/of2fwdoqq73uy"  target="_blank">Build scan</a>
+<pre>> Task :compileJava UP-TO-DATE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain UP-TO-DATE
+
+BUILD SUCCESSFUL in 294ms
+2 actionable tasks: 2 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/of2fwdoqq73uy
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/bldr7raetzbuu"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain FROM-CACHE
+
+BUILD SUCCESSFUL in 222ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/bldr7raetzbuu
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/agixdjgzh77aw"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain FROM-CACHE
+
+BUILD SUCCESSFUL in 233ms
+2 actionable tasks: 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/agixdjgzh77aw
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/m3e7dm3jkixru"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+> Task :spotbugsMain
+
+BUILD SUCCESSFUL in 29s
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/m3e7dm3jkixru
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/blddwnojpd6dm"  target="_blank">Build scan</a>
+<pre>> Task :compileJava UP-TO-DATE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain UP-TO-DATE
+
+BUILD SUCCESSFUL in 345ms
+2 actionable tasks: 2 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/blddwnojpd6dm
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/p4jgwkpcalcpg"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :spotbugsMain FROM-CACHE
+
+BUILD SUCCESSFUL in 245ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/p4jgwkpcalcpg
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/hil6uqslhasrq"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :spotbugsMain FROM-CACHE
 
 BUILD SUCCESSFUL in 303ms
-3 actionable tasks: 1 executed, 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/536pynlv75h5c
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/wn4fjr3q4ibky"  target="_blank">Build scan</a>
-<pre>> Task :compileJava FROM-CACHE
-> Task :processResources NO-SOURCE
-> Task :classes UP-TO-DATE
-> Task :spotbugsMain FROM-CACHE
-
-BUILD SUCCESSFUL in 282ms
 2 actionable tasks: 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/wn4fjr3q4ibky
-
-</pre>
-<h3>Gradle Version: 6.8.3</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/tnpl6l4yxfl2i"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava
-> Task :processResources NO-SOURCE
-> Task :classes
-> Task :spotbugsMain
-
-BUILD SUCCESSFUL in 39s
-3 actionable tasks: 3 executed
-
-Publishing build scan...
-https://gradle.com/s/tnpl6l4yxfl2i
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/nxwrac3nk2wr4"  target="_blank">Build scan</a>
-<pre>> Task :compileJava UP-TO-DATE
-> Task :processResources NO-SOURCE
-> Task :classes UP-TO-DATE
-> Task :spotbugsMain UP-TO-DATE
-
-BUILD SUCCESSFUL in 298ms
-2 actionable tasks: 2 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/nxwrac3nk2wr4
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/2hrw776gse3i6"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava FROM-CACHE
-> Task :processResources NO-SOURCE
-> Task :classes UP-TO-DATE
-> Task :spotbugsMain FROM-CACHE
-
-BUILD SUCCESSFUL in 224ms
-3 actionable tasks: 1 executed, 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/2hrw776gse3i6
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/56fslyeznmpxe"  target="_blank">Build scan</a>
-<pre>> Task :compileJava FROM-CACHE
-> Task :processResources NO-SOURCE
-> Task :classes UP-TO-DATE
-> Task :spotbugsMain FROM-CACHE
-
-BUILD SUCCESSFUL in 281ms
-2 actionable tasks: 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/56fslyeznmpxe
-
-</pre>
-<h3>Gradle Version: 5.6.4</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/jdnc2pbmwo7ca"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava
-> Task :processResources NO-SOURCE
-> Task :classes
-> Task :spotbugsMain
-
-BUILD SUCCESSFUL in 37s
-3 actionable tasks: 3 executed
-
-Publishing build scan...
-https://gradle.com/s/jdnc2pbmwo7ca
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/cdqrwsyxde6na"  target="_blank">Build scan</a>
-<pre>> Task :compileJava UP-TO-DATE
-> Task :processResources NO-SOURCE
-> Task :classes UP-TO-DATE
-> Task :spotbugsMain UP-TO-DATE
-
-BUILD SUCCESSFUL in 184ms
-2 actionable tasks: 2 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/cdqrwsyxde6na
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/d4dmuwx3ijnny"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava FROM-CACHE
-> Task :processResources NO-SOURCE
-> Task :classes UP-TO-DATE
-> Task :spotbugsMain FROM-CACHE
-
-BUILD SUCCESSFUL in 250ms
-3 actionable tasks: 1 executed, 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/d4dmuwx3ijnny
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/7duwxxpwgzpw4"  target="_blank">Build scan</a>
-<pre>> Task :compileJava FROM-CACHE
-> Task :processResources NO-SOURCE
-> Task :classes UP-TO-DATE
-> Task :spotbugsMain FROM-CACHE
-
-BUILD SUCCESSFUL in 333ms
-2 actionable tasks: 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/7duwxxpwgzpw4
+https://gradle.com/s/hil6uqslhasrq
 
 </pre>
 </body></html>

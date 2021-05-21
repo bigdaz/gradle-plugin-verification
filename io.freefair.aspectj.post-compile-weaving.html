@@ -2,21 +2,20 @@
 <h1>Plugin: io.freefair.aspectj.post-compile-weaving</h1>
 <h2 id='5.0.0'>Version: 5.0.0</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/tbygvxw7cizx6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/xby3l5rejdxdw"  target="_blank">Build scan</a>
 <pre>> Task :validatePluginWithId_io_freefair_aspectj_post-compile-weaving
 > Task :validatePluginWithId_io_freefair_gradle_plugins_aspectj_AspectJBasePlugin
 > Task :validateExternalPlugins
 
-BUILD SUCCESSFUL in 4s
+BUILD SUCCESSFUL in 1s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/tbygvxw7cizx6
+https://gradle.com/s/xby3l5rejdxdw
 
-Daemon will be stopped at the end of the build after running out of JVM memory
 </pre>
 <h5>Eager task creation check - FAIL</h5>
-<a href="https://gradle.com/s/bexhjmibbmdxm"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/m6hb4h7mup4sw"  target="_blank">Build scan</a>
 <pre>> Task :checkEagerTaskCreation FAILED
 
 FAILURE: Build failed with an exception.
@@ -35,446 +34,15 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 
 * Get more help at https://help.gradle.org
 
-BUILD FAILED in 6s
+BUILD FAILED in 179ms
 1 actionable task: 1 executed
 
 Publishing build scan...
-Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (2 retries remaining)...
-https://gradle.com/s/bexhjmibbmdxm
+https://gradle.com/s/m6hb4h7mup4sw
 
 </pre>
 <h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/fvtr7w2wa2wy4"  target="_blank">Build scan</a>
-<pre>Configuration cache is an incubating feature.
-Calculating task graph as no configuration cache is available for tasks: clean compileJava
-> Task :clean
-> Task :compileJava
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Configuration cache problems found in this build.
-
-1 problem was found storing the configuration cache.
-- Task `:compileJava` of type `org.gradle.api.tasks.compile.JavaCompile`: invocation of 'Task.project' at execution time is unsupported.
-  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:use_project_during_execution
-
-See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/io.freefair.aspectj.post-compile-weaving/build/reports/configuration-cache/2h44mxayg2a8e66qmka2wbd46/configuration-cache-report.html
-> Invocation of 'Task.project' by task ':compileJava' at execution time is unsupported.
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
-
-* Get more help at https://help.gradle.org
-
-BUILD FAILED in 7s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (2 retries remaining)...
-Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (1 retry remaining)...
-https://gradle.com/s/fvtr7w2wa2wy4
-
-Configuration cache entry discarded with 1 problem.
-</pre>
-<h3>Gradle Version: 7.0.2</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/2keq2i6nblcuu"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava
-
-BUILD SUCCESSFUL in 2s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/2keq2i6nblcuu
-
-</pre>
-<h5>Incremental build - FAIL</h5>
-<a href="https://gradle.com/s/uwakdzso7ppiw"  target="_blank">Build scan</a>
-<pre>> Task :compileJava
-
-BUILD SUCCESSFUL in 2s
-1 actionable task: 1 executed
-
-Publishing build scan...
-https://gradle.com/s/uwakdzso7ppiw
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/xr263kb56j35c"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 378ms
-2 actionable tasks: 1 executed, 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/xr263kb56j35c
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/x3xlbam2hds5k"  target="_blank">Build scan</a>
-<pre>> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 369ms
-1 actionable task: 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/x3xlbam2hds5k
-
-</pre>
-<h3>Gradle Version: 6.8.3</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/2oruki3epqfoq"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava
-
-BUILD SUCCESSFUL in 3s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/2oruki3epqfoq
-
-</pre>
-<h5>Incremental build - FAIL</h5>
-<a href="https://gradle.com/s/7ggozyk7ibjeu"  target="_blank">Build scan</a>
-<pre>> Task :compileJava
-
-BUILD SUCCESSFUL in 2s
-1 actionable task: 1 executed
-
-Publishing build scan...
-https://gradle.com/s/7ggozyk7ibjeu
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/bao2c6mo3awby"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 150ms
-2 actionable tasks: 1 executed, 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/bao2c6mo3awby
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/drqmr6h774sce"  target="_blank">Build scan</a>
-<pre>> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 274ms
-1 actionable task: 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/drqmr6h774sce
-
-</pre>
-<h3>Gradle Version: 5.6.4</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/kzwogn5gidpfo"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava
-
-BUILD SUCCESSFUL in 6s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/kzwogn5gidpfo
-
-</pre>
-<h5>Incremental build - FAIL</h5>
-<a href="https://gradle.com/s/ygurmww4ndmxa"  target="_blank">Build scan</a>
-<pre>> Task :compileJava
-
-BUILD SUCCESSFUL in 2s
-1 actionable task: 1 executed
-
-Publishing build scan...
-https://gradle.com/s/ygurmww4ndmxa
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/bhmqhgulokgbw"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 216ms
-2 actionable tasks: 1 executed, 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/bhmqhgulokgbw
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/oajyosn2jp6yo"  target="_blank">Build scan</a>
-<pre>> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 264ms
-1 actionable task: 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/oajyosn2jp6yo
-
-</pre>
-<h2 id='5.0.1'>Version: 5.0.1</h2>
-<h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/w4yffhxnrk6ua"  target="_blank">Build scan</a>
-<pre>> Task :validatePluginWithId_io_freefair_aspectj_post-compile-weaving
-> Task :validatePluginWithId_io_freefair_gradle_plugins_aspectj_AspectJBasePlugin
-> Task :validateExternalPlugins
-
-BUILD SUCCESSFUL in 5s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/w4yffhxnrk6ua
-
-</pre>
-<h5>Eager task creation check - FAIL</h5>
-<a href="https://gradle.com/s/xuvf5kriap2po"  target="_blank">Build scan</a>
-<pre>> Task :checkEagerTaskCreation FAILED
-
-FAILURE: Build failed with an exception.
-
-* Where:
-Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
-
-* What went wrong:
-Execution failed for task ':checkEagerTaskCreation'.
-> Tasks are created eagerly by plugin: 
-  :compileJava
-
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
-
-* Get more help at https://help.gradle.org
-
-BUILD FAILED in 231ms
-1 actionable task: 1 executed
-
-Publishing build scan...
-https://gradle.com/s/xuvf5kriap2po
-
-</pre>
-<h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/76r5ivo5zwwys"  target="_blank">Build scan</a>
-<pre>Configuration cache is an incubating feature.
-Calculating task graph as no configuration cache is available for tasks: clean compileJava
-> Task :clean
-> Task :compileJava
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Configuration cache problems found in this build.
-
-1 problem was found storing the configuration cache.
-- Task `:compileJava` of type `org.gradle.api.tasks.compile.JavaCompile`: invocation of 'Task.project' at execution time is unsupported.
-  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:use_project_during_execution
-
-See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/io.freefair.aspectj.post-compile-weaving/build/reports/configuration-cache/2h44mxayg2a8e66qmka2wbd46/configuration-cache-report.html
-> Invocation of 'Task.project' by task ':compileJava' at execution time is unsupported.
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
-
-* Get more help at https://help.gradle.org
-
-BUILD FAILED in 2s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/76r5ivo5zwwys
-
-Configuration cache entry discarded with 1 problem.
-</pre>
-<h3>Gradle Version: 7.0.2</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/2bqwawqp24r32"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava
-
-BUILD SUCCESSFUL in 2s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/2bqwawqp24r32
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/kdiqk7iqt4vqm"  target="_blank">Build scan</a>
-<pre>> Task :compileJava UP-TO-DATE
-
-BUILD SUCCESSFUL in 323ms
-1 actionable task: 1 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/kdiqk7iqt4vqm
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/gmzas2yoptpbg"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 275ms
-2 actionable tasks: 1 executed, 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/gmzas2yoptpbg
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/b2cfnb7dqssxi"  target="_blank">Build scan</a>
-<pre>> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 336ms
-1 actionable task: 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/b2cfnb7dqssxi
-
-</pre>
-<h3>Gradle Version: 6.8.3</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/qqy3bv22mleji"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava
-
-BUILD SUCCESSFUL in 2s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/qqy3bv22mleji
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/olhl42oemtdrm"  target="_blank">Build scan</a>
-<pre>> Task :compileJava UP-TO-DATE
-
-BUILD SUCCESSFUL in 153ms
-1 actionable task: 1 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/olhl42oemtdrm
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/lim2fsiwkimhu"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 240ms
-2 actionable tasks: 1 executed, 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/lim2fsiwkimhu
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/7xktvi7g7k3ec"  target="_blank">Build scan</a>
-<pre>> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 304ms
-1 actionable task: 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/7xktvi7g7k3ec
-
-</pre>
-<h3>Gradle Version: 5.6.4</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/kzdfw3zaxmqs2"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava
-
-BUILD SUCCESSFUL in 4s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/kzdfw3zaxmqs2
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/gcfdl7kubmpny"  target="_blank">Build scan</a>
-<pre>> Task :compileJava UP-TO-DATE
-
-BUILD SUCCESSFUL in 201ms
-1 actionable task: 1 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/gcfdl7kubmpny
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/vpogbug3b35pc"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 198ms
-2 actionable tasks: 1 executed, 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/vpogbug3b35pc
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/lfc6p322kzaz2"  target="_blank">Build scan</a>
-<pre>> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 185ms
-1 actionable task: 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/lfc6p322kzaz2
-
-</pre>
-<h2 id='5.3.3.3'>Version: 5.3.3.3</h2>
-<h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/7ienbsahzhqb6"  target="_blank">Build scan</a>
-<pre>> Task :validatePluginWithId_io_freefair_aspectj_post-compile-weaving
-> Task :validatePluginWithId_io_freefair_gradle_plugins_aspectj_AspectJBasePlugin
-> Task :validateExternalPlugins
-
-BUILD SUCCESSFUL in 2s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/7ienbsahzhqb6
-
-</pre>
-<h5>Eager task creation check - FAIL</h5>
-<a href="https://gradle.com/s/hxsdxcdfmfc7i"  target="_blank">Build scan</a>
-<pre>> Task :checkEagerTaskCreation FAILED
-
-FAILURE: Build failed with an exception.
-
-* Where:
-Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
-
-* What went wrong:
-Execution failed for task ':checkEagerTaskCreation'.
-> Tasks are created eagerly by plugin: 
-  :compileJava
-
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
-
-* Get more help at https://help.gradle.org
-
-BUILD FAILED in 264ms
-1 actionable task: 1 executed
-
-Publishing build scan...
-https://gradle.com/s/hxsdxcdfmfc7i
-
-</pre>
-<h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/p2kqk3x7vcge2"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/sgvpmei7t2rrg"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean compileJava
 > Task :clean
@@ -501,13 +69,13 @@ BUILD FAILED in 3s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/p2kqk3x7vcge2
+https://gradle.com/s/sgvpmei7t2rrg
 
 Configuration cache entry discarded with 1 problem.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/bip2rceaprdwo"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/7ig6ump73n4ba"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 
@@ -515,46 +83,260 @@ BUILD SUCCESSFUL in 2s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/bip2rceaprdwo
+https://gradle.com/s/7ig6ump73n4ba
 
 </pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/pbcu2g4o25ufo"  target="_blank">Build scan</a>
-<pre>> Task :compileJava UP-TO-DATE
+<h5>Incremental build - FAIL</h5>
+<a href="https://gradle.com/s/2gyqrmi5avdos"  target="_blank">Build scan</a>
+<pre>> Task :compileJava
 
-BUILD SUCCESSFUL in 202ms
-1 actionable task: 1 up-to-date
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/pbcu2g4o25ufo
+https://gradle.com/s/2gyqrmi5avdos
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/5gq4yxvcholeo"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/6iggnpxeq76ds"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 296ms
+BUILD SUCCESSFUL in 174ms
 2 actionable tasks: 1 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/5gq4yxvcholeo
+https://gradle.com/s/6iggnpxeq76ds
 
 </pre>
 <h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/nbiqfcegyi6pk"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/otmtw5kh3phb4"  target="_blank">Build scan</a>
 <pre>> Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 367ms
+BUILD SUCCESSFUL in 205ms
 1 actionable task: 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/nbiqfcegyi6pk
+https://gradle.com/s/otmtw5kh3phb4
 
 </pre>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/4il73us44ajt2"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/5uqzzcnwzbjz2"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava
+
+BUILD SUCCESSFUL in 3s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/5uqzzcnwzbjz2
+
+</pre>
+<h5>Incremental build - FAIL</h5>
+<a href="https://gradle.com/s/bj7o4fg5hbkru"  target="_blank">Build scan</a>
+<pre>> Task :compileJava
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/bj7o4fg5hbkru
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/igu2oyghxlgye"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 230ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/igu2oyghxlgye
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/xbmqswumtkwyg"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 242ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/xbmqswumtkwyg
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/i2gbxqjhhrkz4"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava
+
+BUILD SUCCESSFUL in 3s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/i2gbxqjhhrkz4
+
+</pre>
+<h5>Incremental build - FAIL</h5>
+<a href="https://gradle.com/s/bas377u5yy74u"  target="_blank">Build scan</a>
+<pre>> Task :compileJava
+
+BUILD SUCCESSFUL in 2s
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/bas377u5yy74u
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/zhctregdst5dk"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 148ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/zhctregdst5dk
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/tfpdlv7iktdl2"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 132ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/tfpdlv7iktdl2
+
+</pre>
+<h2 id='5.0.1'>Version: 5.0.1</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/ww36fz4yvjxwu"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_io_freefair_aspectj_post-compile-weaving
+> Task :validatePluginWithId_io_freefair_gradle_plugins_aspectj_AspectJBasePlugin
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/ww36fz4yvjxwu
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/ybwiuwvojwibq"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :compileJava
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 183ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/ybwiuwvojwibq
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/w6efjkaim3wkq"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean compileJava
+> Task :clean
+> Task :compileJava
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Configuration cache problems found in this build.
+
+1 problem was found storing the configuration cache.
+- Task `:compileJava` of type `org.gradle.api.tasks.compile.JavaCompile`: invocation of 'Task.project' at execution time is unsupported.
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:use_project_during_execution
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/io.freefair.aspectj.post-compile-weaving/build/reports/configuration-cache/2h44mxayg2a8e66qmka2wbd46/configuration-cache-report.html
+> Invocation of 'Task.project' by task ':compileJava' at execution time is unsupported.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 2s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/w6efjkaim3wkq
+
+Configuration cache entry discarded with 1 problem.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/hlf4xexrgep56"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/hlf4xexrgep56
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/hvld6lmfki5nc"  target="_blank">Build scan</a>
+<pre>> Task :compileJava UP-TO-DATE
+
+BUILD SUCCESSFUL in 154ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/hvld6lmfki5nc
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/r2x5cdwshatrk"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 180ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/r2x5cdwshatrk
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/m4nrr6lanhagc"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 266ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/m4nrr6lanhagc
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/3kc33vr57u2w4"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 
@@ -562,88 +344,302 @@ BUILD SUCCESSFUL in 2s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/4il73us44ajt2
+https://gradle.com/s/3kc33vr57u2w4
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/s2qdkxdyqasgo"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ih2p56e6afzge"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 
-BUILD SUCCESSFUL in 150ms
+BUILD SUCCESSFUL in 170ms
 1 actionable task: 1 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/s2qdkxdyqasgo
+https://gradle.com/s/ih2p56e6afzge
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/akgsc7vhrm3x2"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/sfhpr5hfumdeg"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 158ms
+BUILD SUCCESSFUL in 167ms
 2 actionable tasks: 1 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/akgsc7vhrm3x2
+https://gradle.com/s/sfhpr5hfumdeg
 
 </pre>
 <h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/54k2xjckn6kwk"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/mtiyki5ljrw5u"  target="_blank">Build scan</a>
 <pre>> Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 158ms
+BUILD SUCCESSFUL in 215ms
 1 actionable task: 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/54k2xjckn6kwk
+https://gradle.com/s/mtiyki5ljrw5u
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/uzjakortkdqa4"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ptbdkcwyvocno"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 
-BUILD SUCCESSFUL in 6s
+BUILD SUCCESSFUL in 2s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/uzjakortkdqa4
+https://gradle.com/s/ptbdkcwyvocno
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/bcrchdmlmtpda"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/j3djrll6bbh24"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 
-BUILD SUCCESSFUL in 190ms
+BUILD SUCCESSFUL in 128ms
 1 actionable task: 1 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/bcrchdmlmtpda
+https://gradle.com/s/j3djrll6bbh24
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/6oid5hti6k2ky"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/wmpjyjbuikxoq"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 154ms
+BUILD SUCCESSFUL in 161ms
 2 actionable tasks: 1 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/6oid5hti6k2ky
+https://gradle.com/s/wmpjyjbuikxoq
 
 </pre>
 <h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/oxwcdsubwxbwq"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/t664ndur7zqms"  target="_blank">Build scan</a>
 <pre>> Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 134ms
+BUILD SUCCESSFUL in 163ms
 1 actionable task: 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/oxwcdsubwxbwq
+https://gradle.com/s/t664ndur7zqms
+
+</pre>
+<h2 id='5.3.3.3'>Version: 5.3.3.3</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/3ikt7gzycw452"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_io_freefair_aspectj_post-compile-weaving
+> Task :validatePluginWithId_io_freefair_gradle_plugins_aspectj_AspectJBasePlugin
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 816ms
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/3ikt7gzycw452
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/3b4mkncjaoluy"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :compileJava
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 137ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/3b4mkncjaoluy
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/wjuquanulwfoe"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean compileJava
+> Task :clean
+> Task :compileJava
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Configuration cache problems found in this build.
+
+1 problem was found storing the configuration cache.
+- Task `:compileJava` of type `org.gradle.api.tasks.compile.JavaCompile`: invocation of 'Task.project' at execution time is unsupported.
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:use_project_during_execution
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/io.freefair.aspectj.post-compile-weaving/build/reports/configuration-cache/2h44mxayg2a8e66qmka2wbd46/configuration-cache-report.html
+> Invocation of 'Task.project' by task ':compileJava' at execution time is unsupported.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 2s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/wjuquanulwfoe
+
+Configuration cache entry discarded with 1 problem.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/jdea46uc4gex4"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava
+
+BUILD SUCCESSFUL in 2s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/jdea46uc4gex4
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/sub5jfvl4w37i"  target="_blank">Build scan</a>
+<pre>> Task :compileJava UP-TO-DATE
+
+BUILD SUCCESSFUL in 186ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/sub5jfvl4w37i
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/olblirpaus2fk"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 145ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/olblirpaus2fk
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/3x46s6d4uh3ck"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 180ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/3x46s6d4uh3ck
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/djyqi2fnzyz72"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava
+
+BUILD SUCCESSFUL in 2s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/djyqi2fnzyz72
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/gihmxedjxbax2"  target="_blank">Build scan</a>
+<pre>> Task :compileJava UP-TO-DATE
+
+BUILD SUCCESSFUL in 180ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/gihmxedjxbax2
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/t2a2r7gkcgqfa"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 234ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/t2a2r7gkcgqfa
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/o4ueggy6xdhee"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 237ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/o4ueggy6xdhee
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/7kxel77dlluaw"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava
+
+BUILD SUCCESSFUL in 3s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/7kxel77dlluaw
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/xw7f2ias3k2ku"  target="_blank">Build scan</a>
+<pre>> Task :compileJava UP-TO-DATE
+
+BUILD SUCCESSFUL in 224ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/xw7f2ias3k2ku
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/26sen7rzmdkr4"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 128ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/26sen7rzmdkr4
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/pmkjia45hwsri"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 146ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/pmkjia45hwsri
 
 </pre>
 </body></html>
