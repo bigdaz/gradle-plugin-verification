@@ -31,7 +31,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ~/build/gradle-user-home/caches
-        key: ${{ runner.os }}-gradle-build-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}-hashFiles('verified-plugins')
+        key: ${{ runner.os }}-gradle-build-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('verified-plugins/**') }}
         restore-keys: ${{ runner.os }}-gradle-build-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
 
     - name: Build with Gradle
