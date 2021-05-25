@@ -2,31 +2,31 @@
 <h1>Plugin: com.github.davidmc24.gradle.plugin.avro</h1>
 <h2 id='1.0.0'>Version: 1.0.0</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/yrbdsvst7l6ni"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/bkgwdp22556js"  target="_blank">Build scan</a>
 <pre>> Task :validatePluginWithId_com_github_davidmc24_gradle_plugin_avro
 > Task :validatePluginWithId_com_github_davidmc24_gradle_plugin_avro_AvroBasePlugin
 > Task :validateExternalPlugins
 
-BUILD SUCCESSFUL in 541ms
+BUILD SUCCESSFUL in 786ms
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/yrbdsvst7l6ni
+https://gradle.com/s/bkgwdp22556js
 
 </pre>
 <h5>Eager task creation check - OK</h5>
-<a href="https://gradle.com/s/wbncwlt66aj7u"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/aa2qmjslvvabq"  target="_blank">Build scan</a>
 <pre>> Task :checkEagerTaskCreation
 
-BUILD SUCCESSFUL in 185ms
+BUILD SUCCESSFUL in 242ms
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/wbncwlt66aj7u
+https://gradle.com/s/aa2qmjslvvabq
 
 </pre>
 <h5>Configuration cache - OK</h5>
-<a href="https://gradle.com/s/dxfsse4hn4qx6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ta6jibwb3rcvo"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean compileJava
 > Task :clean
@@ -38,13 +38,220 @@ BUILD SUCCESSFUL in 1s
 3 actionable tasks: 3 executed
 
 Publishing build scan...
-https://gradle.com/s/dxfsse4hn4qx6
+https://gradle.com/s/ta6jibwb3rcvo
 
 Configuration cache entry stored.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/t76vj5kxr6bly"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/26kcn344aovpe"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava FROM-CACHE
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 316ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/26kcn344aovpe
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/n2ns5jk3s5d7i"  target="_blank">Build scan</a>
+<pre>> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+
+BUILD SUCCESSFUL in 447ms
+2 actionable tasks: 2 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/n2ns5jk3s5d7i
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/uyownpmmocz2q"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava FROM-CACHE
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 365ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/uyownpmmocz2q
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/dlahfktmsatco"  target="_blank">Build scan</a>
+<pre>> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava FROM-CACHE
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 395ms
+2 actionable tasks: 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/dlahfktmsatco
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/h4xhefflzpnzw"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava FROM-CACHE
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 854ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/h4xhefflzpnzw
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ndibtpwc25dl6"  target="_blank">Build scan</a>
+<pre>> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+
+BUILD SUCCESSFUL in 362ms
+2 actionable tasks: 2 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/ndibtpwc25dl6
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/lelfa7jedp7bs"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava FROM-CACHE
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 334ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/lelfa7jedp7bs
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ucoijmwe45pck"  target="_blank">Build scan</a>
+<pre>> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava FROM-CACHE
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 330ms
+2 actionable tasks: 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/ucoijmwe45pck
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/6j2j7mizsrxgm"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava FROM-CACHE
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 815ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/6j2j7mizsrxgm
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/ihzljccn7m6d4"  target="_blank">Build scan</a>
+<pre>> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+
+BUILD SUCCESSFUL in 343ms
+2 actionable tasks: 2 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/ihzljccn7m6d4
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/lzgijzmybwdug"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava FROM-CACHE
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 268ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/lzgijzmybwdug
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/u4kcnupjwxgbi"  target="_blank">Build scan</a>
+<pre>> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava FROM-CACHE
+> Task :compileJava FROM-CACHE
+
+BUILD SUCCESSFUL in 317ms
+2 actionable tasks: 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/u4kcnupjwxgbi
+
+</pre>
+<h2 id='1.2.0'>Version: 1.2.0</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/2iui32nmfc7b4"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_com_github_davidmc24_gradle_plugin_avro
+> Task :validatePluginWithId_com_github_davidmc24_gradle_plugin_avro_AvroBasePlugin
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 694ms
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/2iui32nmfc7b4
+
+</pre>
+<h5>Eager task creation check - OK</h5>
+<a href="https://gradle.com/s/b4s2dxhkwk6bq"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation
+
+BUILD SUCCESSFUL in 226ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/b4s2dxhkwk6bq
+
+</pre>
+<h5>Configuration cache - OK</h5>
+<a href="https://gradle.com/s/wbtcngqfmlxyg"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean compileJava
+> Task :clean
+> Task :generateAvroProtocol NO-SOURCE
+> Task :generateAvroJava
+> Task :compileJava
+
+BUILD SUCCESSFUL in 1s
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/wbtcngqfmlxyg
+
+Configuration cache entry stored.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/tj7xk23j36axc"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava FROM-CACHE
@@ -54,364 +261,157 @@ BUILD SUCCESSFUL in 269ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/t76vj5kxr6bly
+https://gradle.com/s/tj7xk23j36axc
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/6lazhm4hkfiiu"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/xxx4zmfzv7rsa"  target="_blank">Build scan</a>
 <pre>> Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava UP-TO-DATE
 > Task :compileJava UP-TO-DATE
 
-BUILD SUCCESSFUL in 378ms
+BUILD SUCCESSFUL in 280ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/6lazhm4hkfiiu
+https://gradle.com/s/xxx4zmfzv7rsa
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/cg3hvna7ebvtw"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/3qe3gaqugh2c2"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava FROM-CACHE
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 267ms
+BUILD SUCCESSFUL in 303ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/cg3hvna7ebvtw
+https://gradle.com/s/3qe3gaqugh2c2
 
 </pre>
 <h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/5sjgzopjjwu7a"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/iwo6rwh3ydqxk"  target="_blank">Build scan</a>
 <pre>> Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava FROM-CACHE
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 338ms
+BUILD SUCCESSFUL in 312ms
 2 actionable tasks: 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/5sjgzopjjwu7a
+https://gradle.com/s/iwo6rwh3ydqxk
 
 </pre>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/a7e6cjqpogtqo"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ngdqkubt4f3f4"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava FROM-CACHE
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 743ms
+BUILD SUCCESSFUL in 572ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/a7e6cjqpogtqo
+https://gradle.com/s/ngdqkubt4f3f4
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/g6ybtolc4lnme"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/palolnyrkm7lg"  target="_blank">Build scan</a>
 <pre>> Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava UP-TO-DATE
 > Task :compileJava UP-TO-DATE
 
-BUILD SUCCESSFUL in 321ms
+BUILD SUCCESSFUL in 346ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/g6ybtolc4lnme
+https://gradle.com/s/palolnyrkm7lg
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/rkgzwllr5lggw"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/hymufu7oncu6q"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava FROM-CACHE
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 272ms
+BUILD SUCCESSFUL in 391ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/rkgzwllr5lggw
+https://gradle.com/s/hymufu7oncu6q
 
 </pre>
 <h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/cixzamph7s3ic"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/sthksxnh3h7mc"  target="_blank">Build scan</a>
 <pre>> Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava FROM-CACHE
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 416ms
+BUILD SUCCESSFUL in 326ms
 2 actionable tasks: 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/cixzamph7s3ic
+https://gradle.com/s/sthksxnh3h7mc
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/gsuyweh2mgx56"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/c2qk2okcsbvwi"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava FROM-CACHE
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 701ms
+BUILD SUCCESSFUL in 427ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/gsuyweh2mgx56
+https://gradle.com/s/c2qk2okcsbvwi
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/sqpoubchvshwc"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/rrfxqfd3dtsja"  target="_blank">Build scan</a>
 <pre>> Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava UP-TO-DATE
 > Task :compileJava UP-TO-DATE
 
-BUILD SUCCESSFUL in 273ms
+BUILD SUCCESSFUL in 282ms
 2 actionable tasks: 2 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/sqpoubchvshwc
+https://gradle.com/s/rrfxqfd3dtsja
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/rn6m4g66tiyfa"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/pbp7vctwfw27u"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava FROM-CACHE
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 266ms
+BUILD SUCCESSFUL in 301ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/rn6m4g66tiyfa
+https://gradle.com/s/pbp7vctwfw27u
 
 </pre>
 <h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/72hyy5ntoxz6m"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/a3chlgsmsel44"  target="_blank">Build scan</a>
 <pre>> Task :generateAvroProtocol NO-SOURCE
 > Task :generateAvroJava FROM-CACHE
 > Task :compileJava FROM-CACHE
 
-BUILD SUCCESSFUL in 250ms
+BUILD SUCCESSFUL in 188ms
 2 actionable tasks: 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/72hyy5ntoxz6m
-
-</pre>
-<h2 id='1.2.0'>Version: 1.2.0</h2>
-<h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/vmssrgytg7sgy"  target="_blank">Build scan</a>
-<pre>> Task :validatePluginWithId_com_github_davidmc24_gradle_plugin_avro
-> Task :validatePluginWithId_com_github_davidmc24_gradle_plugin_avro_AvroBasePlugin
-> Task :validateExternalPlugins
-
-BUILD SUCCESSFUL in 449ms
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/vmssrgytg7sgy
-
-</pre>
-<h5>Eager task creation check - OK</h5>
-<a href="https://gradle.com/s/enq2rxfgmadcs"  target="_blank">Build scan</a>
-<pre>> Task :checkEagerTaskCreation
-
-BUILD SUCCESSFUL in 175ms
-1 actionable task: 1 executed
-
-Publishing build scan...
-https://gradle.com/s/enq2rxfgmadcs
-
-</pre>
-<h5>Configuration cache - OK</h5>
-<a href="https://gradle.com/s/wphhmaarelt26"  target="_blank">Build scan</a>
-<pre>Configuration cache is an incubating feature.
-Calculating task graph as no configuration cache is available for tasks: clean compileJava
-> Task :clean
-> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava
-> Task :compileJava
-
-BUILD SUCCESSFUL in 1s
-3 actionable tasks: 3 executed
-
-Publishing build scan...
-https://gradle.com/s/wphhmaarelt26
-
-Configuration cache entry stored.
-</pre>
-<h3>Gradle Version: 7.0.2</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/m7o5uh66mbbxm"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava FROM-CACHE
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 253ms
-3 actionable tasks: 1 executed, 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/m7o5uh66mbbxm
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/22h4wzuohal6e"  target="_blank">Build scan</a>
-<pre>> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava UP-TO-DATE
-> Task :compileJava UP-TO-DATE
-
-BUILD SUCCESSFUL in 199ms
-2 actionable tasks: 2 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/22h4wzuohal6e
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/yexqb63qrxmia"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava FROM-CACHE
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 281ms
-3 actionable tasks: 1 executed, 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/yexqb63qrxmia
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/vrtygfvzmnq42"  target="_blank">Build scan</a>
-<pre>> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava FROM-CACHE
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 226ms
-2 actionable tasks: 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/vrtygfvzmnq42
-
-</pre>
-<h3>Gradle Version: 6.8.3</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/nvz2h4e6rlnmm"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava FROM-CACHE
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 453ms
-3 actionable tasks: 1 executed, 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/nvz2h4e6rlnmm
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/artby5qtvobem"  target="_blank">Build scan</a>
-<pre>> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava UP-TO-DATE
-> Task :compileJava UP-TO-DATE
-
-BUILD SUCCESSFUL in 221ms
-2 actionable tasks: 2 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/artby5qtvobem
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/c57z7k462avo4"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava FROM-CACHE
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 209ms
-3 actionable tasks: 1 executed, 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/c57z7k462avo4
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/dhjcxe36wa4ri"  target="_blank">Build scan</a>
-<pre>> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava FROM-CACHE
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 325ms
-2 actionable tasks: 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/dhjcxe36wa4ri
-
-</pre>
-<h3>Gradle Version: 5.6.4</h3>
-<h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/rei4soheluqn4"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava FROM-CACHE
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 414ms
-3 actionable tasks: 1 executed, 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/rei4soheluqn4
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/yvmsw7prchgi4"  target="_blank">Build scan</a>
-<pre>> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava UP-TO-DATE
-> Task :compileJava UP-TO-DATE
-
-BUILD SUCCESSFUL in 251ms
-2 actionable tasks: 2 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/yvmsw7prchgi4
-
-</pre>
-<h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/y73lfzwp76mmc"  target="_blank">Build scan</a>
-<pre>> Task :clean
-> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava FROM-CACHE
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 263ms
-3 actionable tasks: 1 executed, 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/y73lfzwp76mmc
-
-</pre>
-<h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/if3vt5amykcws"  target="_blank">Build scan</a>
-<pre>> Task :generateAvroProtocol NO-SOURCE
-> Task :generateAvroJava FROM-CACHE
-> Task :compileJava FROM-CACHE
-
-BUILD SUCCESSFUL in 246ms
-2 actionable tasks: 2 from cache
-
-Publishing build scan...
-https://gradle.com/s/if3vt5amykcws
+https://gradle.com/s/a3chlgsmsel44
 
 </pre>
 </body></html>
