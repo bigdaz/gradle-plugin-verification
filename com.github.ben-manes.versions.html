@@ -1,0 +1,172 @@
+<html><body>
+<h1>Plugin: com.github.ben-manes.versions</h1>
+<h2 id='0.36.0'>Version: 0.36.0</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/uaeneolrgeb24"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_com_github_ben-manes_versions
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 3s
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/uaeneolrgeb24
+
+</pre>
+<h5>Eager task creation check - OK</h5>
+<a href="https://gradle.com/s/sbn6a62bg3cyc"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation
+
+BUILD SUCCESSFUL in 194ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/sbn6a62bg3cyc
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/dphhshu4e7ekk"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: :dependencyUpdates
+
+> Task :dependencyUpdates
+
+------------------------------------------------------------
+: Project Dependency Updates (report to plain text file)
+------------------------------------------------------------
+
+The following dependencies have later milestone versions:
+ - com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin [0.36.0 -> 0.38.0]
+ - junit:junit [4.10 -> 4.13.2]
+     http://junit.org
+ - log4j:log4j [1.2.14 -> 1.2.17]
+     http://logging.apache.org/log4j/1.2/
+
+Gradle release-candidate updates:
+ - Gradle: [7.0.2: UP-TO-DATE]
+
+Generated report file build/dependencyUpdates/report.txt
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Configuration cache problems found in this build.
+
+2 problems were found storing the configuration cache, 1 of which seems unique.
+- Task `:dependencyUpdates` of type `com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask`: invocation of 'Task.project' at execution time is unsupported.
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:use_project_during_execution
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/com.github.ben-manes.versions/build/reports/configuration-cache/6kzz5u5439mr58telkwpfo3ks/configuration-cache-report.html
+> Invocation of 'Task.project' by task ':dependencyUpdates' at execution time is unsupported.
+> Invocation of 'Task.project' by task ':dependencyUpdates' at execution time is unsupported.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 2s
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/dphhshu4e7ekk
+
+Configuration cache entry discarded with 2 problems.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/p7vt3w5yostdu"  target="_blank">Build scan</a>
+<pre>
+> Task :dependencyUpdates
+
+------------------------------------------------------------
+: Project Dependency Updates (report to plain text file)
+------------------------------------------------------------
+
+The following dependencies have later milestone versions:
+ - com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin [0.36.0 -> 0.38.0]
+ - junit:junit [4.10 -> 4.13.2]
+     http://junit.org
+ - log4j:log4j [1.2.14 -> 1.2.17]
+     http://logging.apache.org/log4j/1.2/
+
+Gradle release-candidate updates:
+ - Gradle: [7.0.2: UP-TO-DATE]
+
+Generated report file build/dependencyUpdates/report.txt
+
+BUILD SUCCESSFUL in 956ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/p7vt3w5yostdu
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/au76uiko4ijj4"  target="_blank">Build scan</a>
+<pre>
+> Task :dependencyUpdates
+
+------------------------------------------------------------
+: Project Dependency Updates (report to plain text file)
+------------------------------------------------------------
+
+The following dependencies have later milestone versions:
+ - com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin [0.36.0 -> 0.38.0]
+ - junit:junit [4.10 -> 4.13.2]
+     http://junit.org
+ - log4j:log4j [1.2.14 -> 1.2.17]
+     http://logging.apache.org/log4j/1.2/
+
+Gradle release-candidate updates:
+ - Gradle: [6.8.3 -> 7.0.2]
+
+Generated report file build/dependencyUpdates/report.txt
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/au76uiko4ijj4
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/j7bbnk2ynbrim"  target="_blank">Build scan</a>
+<pre>
+> Task :dependencyUpdates
+
+------------------------------------------------------------
+: Project Dependency Updates (report to plain text file)
+------------------------------------------------------------
+
+The following dependencies have later milestone versions:
+ - com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin [0.36.0 -> 0.38.0]
+ - junit:junit [4.10 -> 4.13.2]
+     http://junit.org
+ - log4j:log4j [1.2.14 -> 1.2.17]
+     http://logging.apache.org/log4j/1.2/
+
+Gradle release-candidate updates:
+ - Gradle: [5.6.4 -> 7.0.2]
+
+Generated report file build/dependencyUpdates/report.txt
+
+BUILD SUCCESSFUL in 5s
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/j7bbnk2ynbrim
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+</body></html>
