@@ -27,6 +27,12 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
 
+    - name: Cache test Gradle home
+      uses: actions/cache@v2
+      with:
+        path: ~/build/gradle-user-home/caches
+        key: ${{ runner.os }}-gradle-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+
     - name: Build with Gradle
       run: ./gradlew verifyPlugins --scan
     - name: Save verification results
