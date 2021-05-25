@@ -7,6 +7,7 @@ import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.TaskAction;
 import org.gradle.internal.impldep.com.google.common.io.Files;
+import org.gradle.util.GradleVersion;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,14 +28,19 @@ public abstract class VerificationReportTask extends DefaultTask {
 
     @TaskAction
     public void generate() throws FileNotFoundException {
+        List<String> gradleVersions = GradleVersions.getAllTested();
         File reportFile = getReportDir().file("index.html").get().getAsFile();
         PrintWriter writer = new PrintWriter(reportFile);
         writer.println("<html>" +
                 "<head><style>table, th, td {border: 1px solid black;}</style></head>" +
                 "<body>");
         writer.println("<h1>Plugin compatibility report</h1>");
-        writer.println("<table>" +
-                "<tr><th>Plugin</th><th>Annotations</th><th>Task Config Avoidance</th><th>Config Cache</th><th>Gradle 7.0.2</th><th>Gradle 6.8.3</th><th>gradle 5.6.4</th></tr>");
+        writer.print("<table>" +
+                "<tr><th>Plugin</th><th>Annotations</th><th>Task Config Avoidance</th><th>Config Cache</th>");
+        for (String gradleVersion : gradleVersions) {
+            writer.print("<th>Gradle " + gradleVersion + "</th>");
+        }
+        writer.println("</tr>");
 
         File[] resultFiles = getResultFiles().get().getAsFile().listFiles();
         for (File resultFile : Arrays.stream(resultFiles).sorted().collect(Collectors.toList())) {
@@ -43,7 +49,10 @@ public abstract class VerificationReportTask extends DefaultTask {
             for (PluginVersionVerification versionReport : pluginReport.pluginVersions) {
                 writer.println("<tr><td><a href=\"" + pluginReport.pluginId + ".html#" + versionReport.pluginVersion + "\">" + pluginReport.pluginId + ":" + versionReport.pluginVersion+ "</a></td>" + passed(versionReport.validationCheck) + passed(versionReport.eagerTaskCreationCheck) + passed(versionReport.configurationCacheCheck));
                 Map<String, String> gradleVersionSummary = gradleVersionSummary(versionReport.gradleVersionChecks);
-                writer.println("<td>" + gradleVersionSummary.get("7.0.2") + "</td><td>" + gradleVersionSummary.get("6.8.3") + "</td><td>" + gradleVersionSummary.get("5.6.4") + "</td></tr>");
+                for (String gradleVersion : gradleVersions) {
+                    writer.print("<td>" + gradleVersionSummary.get(gradleVersion) + "</td>");
+                }
+                writer.println("</tr>");
             }
         }
         writer.println("</table>");
