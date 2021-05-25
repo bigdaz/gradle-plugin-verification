@@ -2,7 +2,7 @@
 <h1>Plugin: io.quarkus</h1>
 <h2 id='1.13.4.Final'>Version: 1.13.4.Final</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/ipxbgucwj66zi"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/jwd3q7mzd57fs"  target="_blank">Build scan</a>
 <pre>> Task :validatePluginWithId_io_quarkus
 > Task :validateExternalPlugins
 
@@ -10,11 +10,11 @@ BUILD SUCCESSFUL in 1s
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/ipxbgucwj66zi
+https://gradle.com/s/jwd3q7mzd57fs
 
 </pre>
 <h5>Eager task creation check - FAIL</h5>
-<a href="https://gradle.com/s/ajy7fdpkfp3ka"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/xaztvzonlus5s"  target="_blank">Build scan</a>
 <pre>> Task :checkEagerTaskCreation FAILED
 
 FAILURE: Build failed with an exception.
@@ -51,15 +51,15 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 
 * Get more help at https://help.gradle.org
 
-BUILD FAILED in 381ms
+BUILD FAILED in 389ms
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/ajy7fdpkfp3ka
+https://gradle.com/s/xaztvzonlus5s
 
 </pre>
 <h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/qlyon4rdbyucg"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/woanf2u37l4r4"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean quarkusBuild
 > Task :clean
@@ -104,54 +104,13 @@ BUILD FAILED in 4s
 6 actionable tasks: 6 executed
 
 Publishing build scan...
-https://gradle.com/s/qlyon4rdbyucg
+https://gradle.com/s/woanf2u37l4r4
 
 Configuration cache entry discarded with 10 problems.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/cevazk5ttb77q"  target="_blank">Build scan</a>
-<pre>> Task :clean
-
-> Task :quarkusGenerateCode
-preparing quarkus application
-
-> Task :compileJava FROM-CACHE
-> Task :processResources
-> Task :classes
-> Task :jar
-
-> Task :quarkusBuild
-building quarkus jar
-
-BUILD SUCCESSFUL in 3s
-6 actionable tasks: 5 executed, 1 from cache
-
-Publishing build scan...
-https://gradle.com/s/cevazk5ttb77q
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/dbozbfcnum65y"  target="_blank">Build scan</a>
-<pre>
-> Task :quarkusGenerateCode
-preparing quarkus application
-
-> Task :compileJava UP-TO-DATE
-> Task :processResources UP-TO-DATE
-> Task :classes UP-TO-DATE
-> Task :jar UP-TO-DATE
-> Task :quarkusBuild UP-TO-DATE
-
-BUILD SUCCESSFUL in 920ms
-5 actionable tasks: 1 executed, 4 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/dbozbfcnum65y
-
-</pre>
-<h5>Build cache - FAIL</h5>
-<a href="https://gradle.com/s/gwr554oiatrzo"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/jk2cj5w2zzqhw"  target="_blank">Build scan</a>
 <pre>> Task :clean
 
 > Task :quarkusGenerateCode
@@ -169,11 +128,52 @@ BUILD SUCCESSFUL in 2s
 6 actionable tasks: 5 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/gwr554oiatrzo
+https://gradle.com/s/jk2cj5w2zzqhw
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/zy34pvixdqgty"  target="_blank">Build scan</a>
+<pre>
+> Task :quarkusGenerateCode
+preparing quarkus application
+
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :jar UP-TO-DATE
+> Task :quarkusBuild UP-TO-DATE
+
+BUILD SUCCESSFUL in 950ms
+5 actionable tasks: 1 executed, 4 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/zy34pvixdqgty
+
+</pre>
+<h5>Build cache - FAIL</h5>
+<a href="https://gradle.com/s/boombfl2gulou"  target="_blank">Build scan</a>
+<pre>> Task :clean
+
+> Task :quarkusGenerateCode
+preparing quarkus application
+
+> Task :compileJava FROM-CACHE
+> Task :processResources
+> Task :classes
+> Task :jar
+
+> Task :quarkusBuild
+building quarkus jar
+
+BUILD SUCCESSFUL in 2s
+6 actionable tasks: 5 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/boombfl2gulou
 
 </pre>
 <h5>Build cache relocated - FAIL</h5>
-<a href="https://gradle.com/s/u2nt5of5moi4o"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/mo64m6x3daitq"  target="_blank">Build scan</a>
 <pre>
 > Task :quarkusGenerateCode
 preparing quarkus application
@@ -190,12 +190,12 @@ BUILD SUCCESSFUL in 2s
 5 actionable tasks: 4 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/u2nt5of5moi4o
+https://gradle.com/s/mo64m6x3daitq
 
 </pre>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/fwu2isn22able"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/oenqi37sn26jm"  target="_blank">Build scan</a>
 <pre>> Task :clean
 
 > Task :quarkusGenerateCode
@@ -213,11 +213,11 @@ BUILD SUCCESSFUL in 3s
 6 actionable tasks: 5 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/fwu2isn22able
+https://gradle.com/s/oenqi37sn26jm
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/po2zh5uu5gfa4"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/o2nkpckteqi76"  target="_blank">Build scan</a>
 <pre>
 > Task :quarkusGenerateCode
 preparing quarkus application
@@ -232,11 +232,11 @@ BUILD SUCCESSFUL in 1s
 5 actionable tasks: 1 executed, 4 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/po2zh5uu5gfa4
+https://gradle.com/s/o2nkpckteqi76
 
 </pre>
 <h5>Build cache - FAIL</h5>
-<a href="https://gradle.com/s/fruyyo5cm77s6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/tekndbujvmocc"  target="_blank">Build scan</a>
 <pre>> Task :clean
 
 > Task :quarkusGenerateCode
@@ -250,15 +250,15 @@ preparing quarkus application
 > Task :quarkusBuild
 building quarkus jar
 
-BUILD SUCCESSFUL in 3s
+BUILD SUCCESSFUL in 2s
 6 actionable tasks: 5 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/fruyyo5cm77s6
+https://gradle.com/s/tekndbujvmocc
 
 </pre>
 <h5>Build cache relocated - FAIL</h5>
-<a href="https://gradle.com/s/jcbi6cqgwu4ss"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/bhzrnlrusyorg"  target="_blank">Build scan</a>
 <pre>
 > Task :quarkusGenerateCode
 preparing quarkus application
@@ -275,12 +275,12 @@ BUILD SUCCESSFUL in 2s
 5 actionable tasks: 4 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/jcbi6cqgwu4ss
+https://gradle.com/s/bhzrnlrusyorg
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/22of3jvx3fic4"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/mnw5kwwj34wqg"  target="_blank">Build scan</a>
 <pre>> Task :clean
 
 > Task :quarkusGenerateCode
@@ -298,11 +298,11 @@ BUILD SUCCESSFUL in 3s
 6 actionable tasks: 5 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/22of3jvx3fic4
+https://gradle.com/s/mnw5kwwj34wqg
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/betfsa4udqbpc"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/c4ad64fgv657m"  target="_blank">Build scan</a>
 <pre>
 > Task :quarkusGenerateCode
 preparing quarkus application
@@ -313,15 +313,15 @@ preparing quarkus application
 > Task :jar UP-TO-DATE
 > Task :quarkusBuild UP-TO-DATE
 
-BUILD SUCCESSFUL in 1s
+BUILD SUCCESSFUL in 981ms
 5 actionable tasks: 1 executed, 4 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/betfsa4udqbpc
+https://gradle.com/s/c4ad64fgv657m
 
 </pre>
 <h5>Build cache - FAIL</h5>
-<a href="https://gradle.com/s/lssltru2qo62a"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/z7hxrvwp7xklo"  target="_blank">Build scan</a>
 <pre>> Task :clean
 
 > Task :quarkusGenerateCode
@@ -339,11 +339,11 @@ BUILD SUCCESSFUL in 2s
 6 actionable tasks: 5 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/lssltru2qo62a
+https://gradle.com/s/z7hxrvwp7xklo
 
 </pre>
 <h5>Build cache relocated - FAIL</h5>
-<a href="https://gradle.com/s/elsgpdu6h373o"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/7oomxkbkhuh4s"  target="_blank">Build scan</a>
 <pre>
 > Task :quarkusGenerateCode
 preparing quarkus application
@@ -360,7 +360,7 @@ BUILD SUCCESSFUL in 2s
 5 actionable tasks: 4 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/elsgpdu6h373o
+https://gradle.com/s/7oomxkbkhuh4s
 
 </pre>
 </body></html>
