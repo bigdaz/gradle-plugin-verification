@@ -2,21 +2,21 @@
 <h1>Plugin: proguard.gradle</h1>
 <h2 id='7.0.1'>Version: 7.0.1</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/seim7uljszgbo"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/u5hmv26z5dlx4"  target="_blank">Build scan</a>
 <pre>> Task :validateExternalPlugins UP-TO-DATE
 
 Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 50s
+BUILD SUCCESSFUL in 21s
 
 Publishing build scan...
-https://gradle.com/s/seim7uljszgbo
+https://gradle.com/s/u5hmv26z5dlx4
 
 </pre>
 <h5>Eager task creation check - FAIL</h5>
-<a href="https://gradle.com/s/vomwvk4v65cyc"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/mikqu7kqez4zs"  target="_blank">Build scan</a>
 <pre>> Task :checkEagerTaskCreation FAILED
 
 FAILURE: Build failed with an exception.
@@ -29,7 +29,6 @@ Execution failed for task ':checkEagerTaskCreation'.
 > Tasks are created eagerly by plugin: 
   :jar
 
-
 * Try:
 Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
 
@@ -39,15 +38,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD FAILED in 588ms
+BUILD FAILED in 230ms
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/vomwvk4v65cyc
+https://gradle.com/s/mikqu7kqez4zs
 
 </pre>
 <h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/e5pjhizoqn6we"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/4d3tyaeanx2y2"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean proguard
 > Task :clean
@@ -141,13 +140,13 @@ BUILD FAILED in 2s
 4 actionable tasks: 4 executed
 
 Publishing build scan...
-https://gradle.com/s/e5pjhizoqn6we
+https://gradle.com/s/4d3tyaeanx2y2
 
 Configuration cache entry discarded with 2 problems.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - FAIL</h5>
-<a href="https://gradle.com/s/k3evmbikko3qq"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/w7o7xoq3fkhkk"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
@@ -214,11 +213,11 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD FAILED in 733ms
+BUILD FAILED in 302ms
 4 actionable tasks: 4 executed
 
 Publishing build scan...
-https://gradle.com/s/k3evmbikko3qq
+https://gradle.com/s/w7o7xoq3fkhkk
 
 </pre>
 <h5>Incremental build - N/A</h5>
@@ -226,7 +225,7 @@ https://gradle.com/s/k3evmbikko3qq
 <h5>Build cache relocated - N/A</h5>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/nbncnkiyhwoju"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/tv3g2dorhryec"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
@@ -238,15 +237,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 46s
+BUILD SUCCESSFUL in 25s
 4 actionable tasks: 4 executed
 
 Publishing build scan...
-https://gradle.com/s/nbncnkiyhwoju
+https://gradle.com/s/tv3g2dorhryec
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/nbncnkiyhwoju"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ugucl4sjrzjom"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
@@ -257,28 +256,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 549ms
+BUILD SUCCESSFUL in 334ms
 3 actionable tasks: 3 up-to-date
 
 Publishing build scan...
-Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (2 retries remaining)...
-Publishing build scan failed due to network error 'java.net.SocketTimeoutException: Read timed out' (1 retry remaining)...
-
-A network error occurred.
-
-If you require assistance with this problem, please report it via https://gradle.com/help/plugin and include the following information via copy/paste.
-
-----------
-Gradle version: 6.8.3
-Plugin version: 3.6.1
-Request URL: https://scans-in.gradle.com/scans/publish/gradle/3.6.1/token
-Request ID: 03eeb6f7-dc74-4bb4-a522-2c857b4c5796
-Exception: java.net.SocketTimeoutException: Read timed out
-----------
+https://gradle.com/s/ugucl4sjrzjom
 
 </pre>
 <h5>Build cache - FAIL</h5>
-<a href="https://gradle.com/s/sceltn7l7e55e"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/rrfhf5sm5q57q"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
@@ -290,15 +276,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 660ms
+BUILD SUCCESSFUL in 1s
 4 actionable tasks: 3 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/sceltn7l7e55e
+https://gradle.com/s/rrfhf5sm5q57q
 
 </pre>
 <h5>Build cache relocated - FAIL</h5>
-<a href="https://gradle.com/s/s6eax42eyskp6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/jkkgp7632ljks"  target="_blank">Build scan</a>
 <pre>> Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
@@ -309,16 +295,16 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 991ms
+BUILD SUCCESSFUL in 1s
 3 actionable tasks: 2 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/s6eax42eyskp6
+https://gradle.com/s/jkkgp7632ljks
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/izg43zffw6b7o"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/4m3wb256hju22"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava
 > Task :processResources NO-SOURCE
@@ -326,30 +312,30 @@ https://gradle.com/s/s6eax42eyskp6
 > Task :jar
 > Task :proguard
 
-BUILD SUCCESSFUL in 35s
+BUILD SUCCESSFUL in 17s
 4 actionable tasks: 4 executed
 
 Publishing build scan...
-https://gradle.com/s/izg43zffw6b7o
+https://gradle.com/s/4m3wb256hju22
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/mqkw76oeaskwu"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/mirn45dzipddi"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :jar UP-TO-DATE
 > Task :proguard UP-TO-DATE
 
-BUILD SUCCESSFUL in 480ms
+BUILD SUCCESSFUL in 318ms
 3 actionable tasks: 3 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/mqkw76oeaskwu
+https://gradle.com/s/mirn45dzipddi
 
 </pre>
 <h5>Build cache - FAIL</h5>
-<a href="https://gradle.com/s/lqq6umrrl46l2"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/63n4v7vtn35qw"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
@@ -357,31 +343,31 @@ https://gradle.com/s/mqkw76oeaskwu
 > Task :jar
 > Task :proguard
 
-BUILD SUCCESSFUL in 864ms
+BUILD SUCCESSFUL in 942ms
 4 actionable tasks: 3 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/lqq6umrrl46l2
+https://gradle.com/s/63n4v7vtn35qw
 
 </pre>
 <h5>Build cache relocated - FAIL</h5>
-<a href="https://gradle.com/s/gujubeiy7swye"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/5n6q5xvkjtndg"  target="_blank">Build scan</a>
 <pre>> Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :jar
 > Task :proguard
 
-BUILD SUCCESSFUL in 916ms
+BUILD SUCCESSFUL in 1s
 3 actionable tasks: 2 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/gujubeiy7swye
+https://gradle.com/s/5n6q5xvkjtndg
 
 </pre>
 <h2 id='7.1.0-beta4'>Version: 7.1.0-beta4</h2>
 <h5>Validation check - OK</h5>
-<a href="https://gradle.com/s/7pdzcyhem2h6c"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/tycsn24nzgaig"  target="_blank">Build scan</a>
 <pre>> Task :validateExternalPlugins UP-TO-DATE
 
 Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
@@ -391,11 +377,11 @@ See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:comm
 BUILD SUCCESSFUL in 2s
 
 Publishing build scan...
-https://gradle.com/s/7pdzcyhem2h6c
+https://gradle.com/s/tycsn24nzgaig
 
 </pre>
 <h5>Eager task creation check - FAIL</h5>
-<a href="https://gradle.com/s/ar36xhz7kofda"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/4mu3tybllyxlq"  target="_blank">Build scan</a>
 <pre>> Task :checkEagerTaskCreation FAILED
 
 FAILURE: Build failed with an exception.
@@ -408,7 +394,6 @@ Execution failed for task ':checkEagerTaskCreation'.
 > Tasks are created eagerly by plugin: 
   :jar
 
-
 * Try:
 Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
 
@@ -418,15 +403,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD FAILED in 376ms
+BUILD FAILED in 201ms
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/ar36xhz7kofda
+https://gradle.com/s/4mu3tybllyxlq
 
 </pre>
 <h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/n6kcyteipmppq"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/erayoatubrc3w"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean proguard
 > Task :clean
@@ -464,17 +449,17 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD FAILED in 2s
+BUILD FAILED in 3s
 4 actionable tasks: 4 executed
 
 Publishing build scan...
-https://gradle.com/s/n6kcyteipmppq
+https://gradle.com/s/erayoatubrc3w
 
 Configuration cache entry discarded with 5 problems.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/ah4zz72zuk4oy"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/yezs3ztxq3bss"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
@@ -486,15 +471,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 974ms
+BUILD SUCCESSFUL in 1s
 4 actionable tasks: 3 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/ah4zz72zuk4oy
+https://gradle.com/s/yezs3ztxq3bss
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/35v7il4tbb6vs"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/4rx7a6fxw4yee"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
@@ -505,15 +490,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 218ms
+BUILD SUCCESSFUL in 290ms
 3 actionable tasks: 3 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/35v7il4tbb6vs
+https://gradle.com/s/4rx7a6fxw4yee
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/y5ddx2erv347u"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/qhlg23bxaxrvm"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
@@ -525,15 +510,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 310ms
+BUILD SUCCESSFUL in 225ms
 4 actionable tasks: 2 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/y5ddx2erv347u
+https://gradle.com/s/qhlg23bxaxrvm
 
 </pre>
 <h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/t2cycfv2v4iwe"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/hhbfrpzglhxgc"  target="_blank">Build scan</a>
 <pre>> Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
@@ -544,16 +529,16 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/7.0.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 366ms
+BUILD SUCCESSFUL in 336ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/t2cycfv2v4iwe
+https://gradle.com/s/hhbfrpzglhxgc
 
 </pre>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/b6kwuruqse4z4"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/nyy7hwbwn2q5k"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
@@ -565,15 +550,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 2s
+BUILD SUCCESSFUL in 4s
 4 actionable tasks: 3 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/b6kwuruqse4z4
+https://gradle.com/s/nyy7hwbwn2q5k
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/c2tbdfn4rfgg6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/rnhdvzn6luenm"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
@@ -584,15 +569,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 477ms
+BUILD SUCCESSFUL in 390ms
 3 actionable tasks: 3 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/c2tbdfn4rfgg6
+https://gradle.com/s/rnhdvzn6luenm
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/2clzlbx6b6bcw"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/f65at64hh2qxo"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
@@ -604,15 +589,15 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 328ms
+BUILD SUCCESSFUL in 547ms
 4 actionable tasks: 2 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/2clzlbx6b6bcw
+https://gradle.com/s/f65at64hh2qxo
 
 </pre>
 <h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/3ff7224xvdjow"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/rqx2gn6mgak7a"  target="_blank">Build scan</a>
 <pre>> Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
@@ -623,16 +608,16 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 417ms
+BUILD SUCCESSFUL in 322ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/3ff7224xvdjow
+https://gradle.com/s/rqx2gn6mgak7a
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/uylw7jaadrijs"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/mqpqs73hjmwym"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
@@ -640,30 +625,30 @@ https://gradle.com/s/3ff7224xvdjow
 > Task :jar
 > Task :proguard
 
-BUILD SUCCESSFUL in 2s
+BUILD SUCCESSFUL in 3s
 4 actionable tasks: 3 executed, 1 from cache
 
 Publishing build scan...
-https://gradle.com/s/uylw7jaadrijs
+https://gradle.com/s/mqpqs73hjmwym
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/q7tq4iiijpni6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/c6vipuz7dzvvm"  target="_blank">Build scan</a>
 <pre>> Task :compileJava UP-TO-DATE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :jar UP-TO-DATE
 > Task :proguard UP-TO-DATE
 
-BUILD SUCCESSFUL in 320ms
+BUILD SUCCESSFUL in 203ms
 3 actionable tasks: 3 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/q7tq4iiijpni6
+https://gradle.com/s/c6vipuz7dzvvm
 
 </pre>
 <h5>Build cache - OK</h5>
-<a href="https://gradle.com/s/uptktjyqoaxjq"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/rjpx3micurqhu"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
@@ -671,26 +656,26 @@ https://gradle.com/s/q7tq4iiijpni6
 > Task :jar
 > Task :proguard FROM-CACHE
 
-BUILD SUCCESSFUL in 276ms
+BUILD SUCCESSFUL in 207ms
 4 actionable tasks: 2 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/uptktjyqoaxjq
+https://gradle.com/s/rjpx3micurqhu
 
 </pre>
 <h5>Build cache relocated - OK</h5>
-<a href="https://gradle.com/s/2tnx642aqsyl4"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/4a2s2n4wiqbha"  target="_blank">Build scan</a>
 <pre>> Task :compileJava FROM-CACHE
 > Task :processResources NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :jar
 > Task :proguard FROM-CACHE
 
-BUILD SUCCESSFUL in 471ms
+BUILD SUCCESSFUL in 441ms
 3 actionable tasks: 1 executed, 2 from cache
 
 Publishing build scan...
-https://gradle.com/s/2tnx642aqsyl4
+https://gradle.com/s/4a2s2n4wiqbha
 
 </pre>
 </body></html>
