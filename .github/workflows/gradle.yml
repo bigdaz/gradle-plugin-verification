@@ -32,8 +32,8 @@ jobs:
       uses: actions/cache@v2
       with:
         path: build/gradle-user-home/caches
-        key: ${{ runner.os }}-gradle-build-v2-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('verified-plugins/**') }}
-        restore-keys: ${{ runner.os }}-gradle-build-v2-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}-
+        key: ${{ runner.os }}-gradle-build-v3-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('verified-plugins/**') }}
+        restore-keys: ${{ runner.os }}-gradle-build-v3-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}-
 
     - name: Build with Gradle
       run: ./gradlew :verify_com_diffplug_spotless verificationReport --scan
