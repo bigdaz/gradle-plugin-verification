@@ -1,4 +1,4 @@
-name: Java CI with Gradle
+name: Test caching of build dependencies
 
 on:
   push:
@@ -31,8 +31,8 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ~/build/gradle-user-home/caches
-        key: ${{ runner.os }}-gradle-build-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('verified-plugins/**') }}
-        restore-keys: ${{ runner.os }}-gradle-build-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+        key: ${{ runner.os }}-gradle-build-v1-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('verified-plugins/**') }}
+        restore-keys: ${{ runner.os }}-gradle-build-v1-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}-
 
     - name: Build with Gradle
       run: ./gradlew :verify_com_diffplug_spotless verificationReport --scan
