@@ -34,7 +34,7 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
 
     - name: Build with Gradle
-      run: ./gradlew verifyPlugins --scan
+      run: ./gradlew :verify_com_diffplug_spotless verificationReport --scan
     - name: Save verification results
       uses: actions/upload-artifact@v2
       with:
