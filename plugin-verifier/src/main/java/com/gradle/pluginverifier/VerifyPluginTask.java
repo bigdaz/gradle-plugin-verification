@@ -13,6 +13,7 @@ import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.Internal;
+import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.PathSensitive;
 import org.gradle.api.tasks.PathSensitivity;
@@ -41,8 +42,8 @@ public abstract class VerifyPluginTask extends DefaultTask {
     @Input
     public abstract Property<Boolean> getPublishBuildScans();
 
-    @OutputFile
-    public abstract RegularFileProperty getResultsFile();
+    @OutputDirectory
+    public abstract DirectoryProperty getResultsDir();
 
     @Internal
     public abstract DirectoryProperty getSamplesWorkingDir();
@@ -69,13 +70,18 @@ public abstract class VerifyPluginTask extends DefaultTask {
         File pluginSampleDir = getSampleDir().get().getAsFile();
         String pluginId = pluginSampleDir.getName();
 
-        PluginVerificationReport report = new PluginVerificationReport(pluginId);
+        File pluginResultsDir = getResultsDir().dir(pluginId).get().getAsFile();
+
         for (String pluginVersion : pluginVersions) {
+            PluginVersionVerification report = new PluginVersionVerification(pluginId, pluginVersion);
             PluginSample pluginSample = new PluginSample(pluginSampleDir, pluginVersion, sampleTask, incremental);
             PluginVerifier pluginVerifier = new PluginVerifier(pluginSample, getSamplesWorkingDir().get().getAsFile(), getSampleGradleUserHome().get().getAsFile(), getPublishBuildScans().get(), getFileSystemOperations());
             pluginVerifier.runChecks(report);
+
+            // TODO:DAZ Avoid regenerating existing result file.
+            File reportFile = new File(pluginResultsDir, pluginId + "_" + pluginVersion + ".json");
+            report.toJson(reportFile);
         }
-        report.writeJson(getResultsFile().get().getAsFile());
     }
 
     private Properties loadSampleProperties() {

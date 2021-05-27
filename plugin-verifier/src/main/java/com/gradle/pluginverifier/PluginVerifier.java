@@ -28,10 +28,9 @@ public class PluginVerifier {
         this.fileSystemOperations = fileSystemOperations;
     }
 
-    public void runChecks(PluginVerificationReport pluginVerificationReport) {
+    public void runChecks(PluginVersionVerification report) {
         copySampleToWorkingDir();
 
-        PluginVersionVerification report = pluginVerificationReport.checkPluginVersion(plugin.getPluginVersion());
         checkPluginValidation(report);
         checkEagerTaskCreation(report);
         checkConfigurationCache(report);

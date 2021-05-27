@@ -34,7 +34,7 @@ public class VerifyPluginsPlugin implements Plugin<Project> {
                 v.dependsOn(copySampleInitScripts);
                 v.getSampleDir().set(sample);
                 v.getSamplesWorkingDir().set(samplesWorkingDir);
-                v.getResultsFile().set(resultsDir.map(d -> d.file(sample.getName() + ".json")));
+                v.getResultsDir().set(resultsDir);
                 v.getPublishBuildScans().set(true);
                 v.getInitScripts().from(initScripts);
             });
