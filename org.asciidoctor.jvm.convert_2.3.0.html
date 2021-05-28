@@ -2,7 +2,7 @@
 <h1>Plugin: org.asciidoctor.jvm.convert</h1>
 <h2 id='2.3.0'>Version: 2.3.0</h2>
 <h5>Validation check - FAIL</h5>
-<a href="https://gradle.com/s/wwwwjmkzrr2ry"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/mar5der3p3atg"  target="_blank">Build scan</a>
 <pre>> Task :validatePluginWithId_org_asciidoctor_gradle_base_AsciidoctorBasePlugin
 > Task :validatePluginWithId_org_asciidoctor_gradle_jvm_AsciidoctorJBasePlugin FAILED
 
@@ -520,26 +520,26 @@ See https://docs.gradle.org/7.0.2/userguide/more_about_tasks.html#sec:task_input
 
 * Get more help at https://help.gradle.org
 
-BUILD FAILED in 644ms
+BUILD FAILED in 848ms
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/wwwwjmkzrr2ry
+https://gradle.com/s/mar5der3p3atg
 
 </pre>
 <h5>Eager task creation check - OK</h5>
-<a href="https://gradle.com/s/mbwam2c43nzp2"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/ev6kaxutnisfq"  target="_blank">Build scan</a>
 <pre>> Task :checkEagerTaskCreation
 
-BUILD SUCCESSFUL in 102ms
+BUILD SUCCESSFUL in 128ms
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/mbwam2c43nzp2
+https://gradle.com/s/ev6kaxutnisfq
 
 </pre>
 <h5>Configuration cache - FAIL</h5>
-<a href="https://gradle.com/s/adgpoh6oqultu"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/bneeyg2culgxc"  target="_blank">Build scan</a>
 <pre>Configuration cache is an incubating feature.
 Calculating task graph as no configuration cache is available for tasks: clean :asciidoctor
 > Task :clean
@@ -564,17 +564,17 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 
 * Get more help at https://help.gradle.org
 
-BUILD FAILED in 228ms
+BUILD FAILED in 402ms
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/adgpoh6oqultu
+https://gradle.com/s/bneeyg2culgxc
 
 Configuration cache entry stored.
 </pre>
 <h3>Gradle Version: 7.0.2</h3>
 <h5>Base compatibility - FAIL</h5>
-<a href="https://gradle.com/s/7szu77why3y5q"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/54uqppofrheem"  target="_blank">Build scan</a>
 <pre>> Task :clean
 > Task :asciidoctor FAILED
 
@@ -597,11 +597,11 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 
 * Get more help at https://help.gradle.org
 
-BUILD FAILED in 154ms
+BUILD FAILED in 197ms
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/7szu77why3y5q
+https://gradle.com/s/54uqppofrheem
 
 </pre>
 <h5>Incremental build - N/A</h5>
@@ -609,7 +609,44 @@ https://gradle.com/s/7szu77why3y5q
 <h5>Build cache relocated - N/A</h5>
 <h3>Gradle Version: 6.8.3</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/tm2t4l26jq6fi"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/zlwqieuvcpmqk"  target="_blank">Build scan</a>
+<pre>> Task :clean
+
+> Task :asciidoctor
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.reflection.CachedClass (file:/home/runner/.gradle/wrapper/dists/gradle-6.8.3-bin/7ykxq50lst7lb7wx1nijpicxn/gradle-6.8.3/lib/groovy-all-1.3-2.5.12.jar) to method java.lang.Object.finalize()
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.reflection.CachedClass
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 5s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/zlwqieuvcpmqk
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/zceo2d2ofemcu"  target="_blank">Build scan</a>
+<pre>> Task :asciidoctor UP-TO-DATE
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 175ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/zceo2d2ofemcu
+
+</pre>
+<h5>Build cache - FAIL</h5>
+<a href="https://gradle.com/s/vgvvqtliyhnhm"  target="_blank">Build scan</a>
 <pre>> Task :clean
 
 > Task :asciidoctor
@@ -627,48 +664,11 @@ BUILD SUCCESSFUL in 4s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/tm2t4l26jq6fi
-
-</pre>
-<h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/k6ew2fchr3uwg"  target="_blank">Build scan</a>
-<pre>> Task :asciidoctor UP-TO-DATE
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-Use '--warning-mode all' to show the individual deprecation warnings.
-See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
-
-BUILD SUCCESSFUL in 119ms
-1 actionable task: 1 up-to-date
-
-Publishing build scan...
-https://gradle.com/s/k6ew2fchr3uwg
-
-</pre>
-<h5>Build cache - FAIL</h5>
-<a href="https://gradle.com/s/z2tpkvtppuvbs"  target="_blank">Build scan</a>
-<pre>> Task :clean
-
-> Task :asciidoctor
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by org.codehaus.groovy.reflection.CachedClass (file:/home/runner/.gradle/wrapper/dists/gradle-6.8.3-bin/7ykxq50lst7lb7wx1nijpicxn/gradle-6.8.3/lib/groovy-all-1.3-2.5.12.jar) to method java.lang.Object.finalize()
-WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.reflection.CachedClass
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-Use '--warning-mode all' to show the individual deprecation warnings.
-See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
-
-BUILD SUCCESSFUL in 3s
-2 actionable tasks: 2 executed
-
-Publishing build scan...
-https://gradle.com/s/z2tpkvtppuvbs
+https://gradle.com/s/vgvvqtliyhnhm
 
 </pre>
 <h5>Build cache relocated - FAIL</h5>
-<a href="https://gradle.com/s/brh4d27sjdmga"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/pi552ldvzecfa"  target="_blank">Build scan</a>
 <pre>
 > Task :asciidoctor
 WARNING: An illegal reflective access operation has occurred
@@ -681,16 +681,16 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 Use '--warning-mode all' to show the individual deprecation warnings.
 See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 3s
+BUILD SUCCESSFUL in 4s
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/brh4d27sjdmga
+https://gradle.com/s/pi552ldvzecfa
 
 </pre>
 <h3>Gradle Version: 5.6.4</h3>
 <h5>Base compatibility - OK</h5>
-<a href="https://gradle.com/s/iaumnubwgtwiq"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/qz2n3b6tvrtlc"  target="_blank">Build scan</a>
 <pre>> Task :clean
 
 > Task :asciidoctor
@@ -700,26 +700,26 @@ WARNING: Please consider reporting this to the maintainers of org.codehaus.groov
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
 
-BUILD SUCCESSFUL in 3s
+BUILD SUCCESSFUL in 4s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/iaumnubwgtwiq
+https://gradle.com/s/qz2n3b6tvrtlc
 
 </pre>
 <h5>Incremental build - OK</h5>
-<a href="https://gradle.com/s/3rlawdhf3njys"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/kmng2oera6ltw"  target="_blank">Build scan</a>
 <pre>> Task :asciidoctor UP-TO-DATE
 
-BUILD SUCCESSFUL in 125ms
+BUILD SUCCESSFUL in 87ms
 1 actionable task: 1 up-to-date
 
 Publishing build scan...
-https://gradle.com/s/3rlawdhf3njys
+https://gradle.com/s/kmng2oera6ltw
 
 </pre>
 <h5>Build cache - FAIL</h5>
-<a href="https://gradle.com/s/qijouomvbfxvm"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/uyclmkro6ekyo"  target="_blank">Build scan</a>
 <pre>> Task :clean
 
 > Task :asciidoctor
@@ -729,15 +729,15 @@ WARNING: Please consider reporting this to the maintainers of org.codehaus.groov
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
 
-BUILD SUCCESSFUL in 3s
+BUILD SUCCESSFUL in 4s
 2 actionable tasks: 2 executed
 
 Publishing build scan...
-https://gradle.com/s/qijouomvbfxvm
+https://gradle.com/s/uyclmkro6ekyo
 
 </pre>
 <h5>Build cache relocated - FAIL</h5>
-<a href="https://gradle.com/s/arlekcukanuc6"  target="_blank">Build scan</a>
+<a href="https://gradle.com/s/5nqsxmzmozjc4"  target="_blank">Build scan</a>
 <pre>
 > Task :asciidoctor
 WARNING: An illegal reflective access operation has occurred
@@ -746,11 +746,11 @@ WARNING: Please consider reporting this to the maintainers of org.codehaus.groov
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
 
-BUILD SUCCESSFUL in 3s
+BUILD SUCCESSFUL in 4s
 1 actionable task: 1 executed
 
 Publishing build scan...
-https://gradle.com/s/arlekcukanuc6
+https://gradle.com/s/5nqsxmzmozjc4
 
 </pre>
 </body></html>
