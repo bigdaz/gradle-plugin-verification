@@ -1,0 +1,206 @@
+<html><body>
+<h1>Plugin: org.asciidoctor.jvm.convert</h1>
+<h2 id='3.3.2'>Version: 3.3.2</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/w7qkbdagrvo2s"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_org_asciidoctor_gradle_base_AsciidoctorBasePlugin
+> Task :validatePluginWithId_org_asciidoctor_gradle_jvm_AsciidoctorJBasePlugin
+> Task :validatePluginWithId_org_asciidoctor_jvm_convert
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 576ms
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/w7qkbdagrvo2s
+
+</pre>
+<h5>Eager task creation check - OK</h5>
+<a href="https://gradle.com/s/acvjor4q2zepq"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation
+
+BUILD SUCCESSFUL in 114ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/acvjor4q2zepq
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/qye3wit7gxco6"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean :asciidoctor
+> Task :clean
+> Task :asciidoctor
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Configuration cache problems found in this build.
+
+43 problems were found storing the configuration cache, 1 of which seems unique.
+- Task `:asciidoctor` of type `org.asciidoctor.gradle.jvm.AsciidoctorTask`: invocation of 'Task.project' at execution time is unsupported.
+  See https://docs.gradle.org/7.0.2/userguide/configuration_cache.html#config_cache:requirements:use_project_during_execution
+
+See the complete report at file:///home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/org.asciidoctor.jvm.convert/build/reports/configuration-cache/dcl02z9qg3a0sa8rsdwr7qpep/configuration-cache-report.html
+> Invocation of 'Task.project' by task ':asciidoctor' at execution time is unsupported.
+> Invocation of 'Task.project' by task ':asciidoctor' at execution time is unsupported.
+> Invocation of 'Task.project' by task ':asciidoctor' at execution time is unsupported.
+> Invocation of 'Task.project' by task ':asciidoctor' at execution time is unsupported.
+> Invocation of 'Task.project' by task ':asciidoctor' at execution time is unsupported.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 4s
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/qye3wit7gxco6
+
+Configuration cache entry discarded with 43 problems.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/cnnrdebne553m"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :asciidoctor FROM-CACHE
+
+BUILD SUCCESSFUL in 175ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/cnnrdebne553m
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/7a55w6k3ksenu"  target="_blank">Build scan</a>
+<pre>> Task :asciidoctor UP-TO-DATE
+
+BUILD SUCCESSFUL in 114ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/7a55w6k3ksenu
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/imiumhzq737fo"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :asciidoctor FROM-CACHE
+
+BUILD SUCCESSFUL in 208ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/imiumhzq737fo
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/j4vcxwu7gnkys"  target="_blank">Build scan</a>
+<pre>> Task :asciidoctor FROM-CACHE
+
+BUILD SUCCESSFUL in 151ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/j4vcxwu7gnkys
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/xrmcticmgbkhm"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :asciidoctor FROM-CACHE
+
+BUILD SUCCESSFUL in 408ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/xrmcticmgbkhm
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/u5c5thm2rwkxs"  target="_blank">Build scan</a>
+<pre>> Task :asciidoctor UP-TO-DATE
+
+BUILD SUCCESSFUL in 113ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/u5c5thm2rwkxs
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/qequeczyhveh2"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :asciidoctor FROM-CACHE
+
+BUILD SUCCESSFUL in 199ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/qequeczyhveh2
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/qmk7tudkg3tk4"  target="_blank">Build scan</a>
+<pre>> Task :asciidoctor FROM-CACHE
+
+BUILD SUCCESSFUL in 147ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/qmk7tudkg3tk4
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/fiezrpto3bcdk"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :asciidoctor FROM-CACHE
+
+BUILD SUCCESSFUL in 375ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/fiezrpto3bcdk
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/p52gqgwcpcfxe"  target="_blank">Build scan</a>
+<pre>> Task :asciidoctor UP-TO-DATE
+
+BUILD SUCCESSFUL in 84ms
+1 actionable task: 1 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/p52gqgwcpcfxe
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/fyn2qkfesw7zg"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :asciidoctor FROM-CACHE
+
+BUILD SUCCESSFUL in 161ms
+2 actionable tasks: 1 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/fyn2qkfesw7zg
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/5255an5sw34si"  target="_blank">Build scan</a>
+<pre>> Task :asciidoctor FROM-CACHE
+
+BUILD SUCCESSFUL in 176ms
+1 actionable task: 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/5255an5sw34si
+
+</pre>
+</body></html>

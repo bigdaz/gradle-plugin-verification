@@ -1,0 +1,280 @@
+<html><body>
+<h1>Plugin: org.jenkins-ci.jpi</h1>
+<h2 id='0.38.0'>Version: 0.38.0</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/czdskmsfvss4e"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_org_jenkins-ci_jpi
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 863ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/czdskmsfvss4e
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/yvzglfe5h52uc"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :clean
+  :jar
+  :sourcesJar
+  :javadocJar
+  :javadoc
+  :generateMetadataFileForMavenJpiPublication
+  :publish
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 182ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/yvzglfe5h52uc
+
+</pre>
+<h5>Configuration cache - FAIL</h5>
+<a href="https://gradle.com/s/s32mbtn523wmi"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean jpi
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not determine the dependencies of task ':jpi'.
+> Could not create task ':war'.
+   > Could not create task ':generateLicenseInfo'.
+      > Could not get unknown property 'compileConfigurationName' for source set 'main' of type org.gradle.api.internal.tasks.DefaultSourceSet.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 300ms
+
+Publishing build scan...
+https://gradle.com/s/s32mbtn523wmi
+
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - FAIL</h5>
+<a href="https://gradle.com/s/h5rk44ltsmr7k"  target="_blank">Build scan</a>
+<pre>
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not determine the dependencies of task ':jpi'.
+> Could not create task ':war'.
+   > Could not create task ':generateLicenseInfo'.
+      > Could not get unknown property 'compileConfigurationName' for source set 'main' of type org.gradle.api.internal.tasks.DefaultSourceSet.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 216ms
+
+Publishing build scan...
+https://gradle.com/s/h5rk44ltsmr7k
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/dilfab26oz7eo"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :localizer
+> Task :compileJava NO-SOURCE
+> Task :compileGroovy NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :configureManifest
+> Task :generateLicenseInfo
+> Task :jar
+> Task :war
+> Task :jpi
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1s
+6 actionable tasks: 6 executed
+
+Publishing build scan...
+https://gradle.com/s/dilfab26oz7eo
+
+</pre>
+<h5>Incremental build - FAIL</h5>
+<a href="https://gradle.com/s/h6f3jbdqudfxq"  target="_blank">Build scan</a>
+<pre>> Task :localizer UP-TO-DATE
+> Task :compileJava NO-SOURCE
+> Task :compileGroovy NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :configureManifest
+> Task :generateLicenseInfo UP-TO-DATE
+> Task :jar
+> Task :war
+> Task :jpi
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 342ms
+5 actionable tasks: 3 executed, 2 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/h6f3jbdqudfxq
+
+</pre>
+<h5>Build cache - FAIL</h5>
+<a href="https://gradle.com/s/mahvnhdu44nom"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :localizer
+> Task :compileJava NO-SOURCE
+> Task :compileGroovy NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :configureManifest
+> Task :generateLicenseInfo
+> Task :jar
+> Task :war
+> Task :jpi
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 369ms
+6 actionable tasks: 6 executed
+
+Publishing build scan...
+https://gradle.com/s/mahvnhdu44nom
+
+</pre>
+<h5>Build cache relocated - FAIL</h5>
+<a href="https://gradle.com/s/fjdbuzfxxrhwy"  target="_blank">Build scan</a>
+<pre>> Task :localizer
+> Task :compileJava NO-SOURCE
+> Task :compileGroovy NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :configureManifest
+> Task :generateLicenseInfo
+> Task :jar
+> Task :war
+> Task :jpi
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.8.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 504ms
+5 actionable tasks: 5 executed
+
+Publishing build scan...
+https://gradle.com/s/fjdbuzfxxrhwy
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/vxsngvi3mu7fq"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :localizer
+> Task :compileJava NO-SOURCE
+> Task :compileGroovy NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :configureManifest
+> Task :generateLicenseInfo
+> Task :jar
+> Task :war
+> Task :jpi
+
+BUILD SUCCESSFUL in 1s
+6 actionable tasks: 6 executed
+
+Publishing build scan...
+https://gradle.com/s/vxsngvi3mu7fq
+
+</pre>
+<h5>Incremental build - FAIL</h5>
+<a href="https://gradle.com/s/rz5qyhe3zyrgw"  target="_blank">Build scan</a>
+<pre>> Task :localizer UP-TO-DATE
+> Task :compileJava NO-SOURCE
+> Task :compileGroovy NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :configureManifest
+> Task :generateLicenseInfo UP-TO-DATE
+> Task :jar
+> Task :war
+> Task :jpi
+
+BUILD SUCCESSFUL in 388ms
+5 actionable tasks: 3 executed, 2 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/rz5qyhe3zyrgw
+
+</pre>
+<h5>Build cache - FAIL</h5>
+<a href="https://gradle.com/s/i25dgxfukrgrg"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :localizer
+> Task :compileJava NO-SOURCE
+> Task :compileGroovy NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :configureManifest
+> Task :generateLicenseInfo
+> Task :jar
+> Task :war
+> Task :jpi
+
+BUILD SUCCESSFUL in 435ms
+6 actionable tasks: 6 executed
+
+Publishing build scan...
+https://gradle.com/s/i25dgxfukrgrg
+
+</pre>
+<h5>Build cache relocated - FAIL</h5>
+<a href="https://gradle.com/s/p6lhsprw3sfkk"  target="_blank">Build scan</a>
+<pre>> Task :localizer
+> Task :compileJava NO-SOURCE
+> Task :compileGroovy NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :configureManifest
+> Task :generateLicenseInfo
+> Task :jar
+> Task :war
+> Task :jpi
+
+BUILD SUCCESSFUL in 326ms
+5 actionable tasks: 5 executed
+
+Publishing build scan...
+https://gradle.com/s/p6lhsprw3sfkk
+
+</pre>
+</body></html>

@@ -1,0 +1,265 @@
+<html><body>
+<h1>Plugin: com.google.protobuf</h1>
+<h2 id='0.8.16'>Version: 0.8.16</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/bzmqamzan5tvy"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_com_google_gradle_osdetector_OsDetectorPlugin
+> Task :validatePluginWithId_com_google_protobuf
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 739ms
+2 actionable tasks: 2 executed
+
+Publishing build scan...
+https://gradle.com/s/bzmqamzan5tvy
+
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/ig3mlrcnh3tqi"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :generateProto
+  :extractProto
+  :extractIncludeProto
+  :processResources
+  :generateTestProto
+  :extractTestProto
+  :extractIncludeTestProto
+  :processTestResources
+  :compileJava
+  :validateExternalPlugins
+  :provisionGradleEnterpriseAccessKey
+  :buildScanPublishPrevious
+  :help
+  :projects
+  :tasks
+  :properties
+  :dependencyInsight
+  :dependencies
+  :buildEnvironment
+  :components
+  :model
+  :dependentComponents
+  :outgoingVariants
+  :javaToolchains
+  :prepareKotlinBuildScriptModel
+  :init
+  :wrapper
+  :validatePluginWithId_com_google_protobuf
+  :clean
+  :assemble
+  :jar
+  :check
+  :build
+  :buildNeeded
+  :buildDependents
+  :classes
+  :compileTestJava
+  :testClasses
+  :test
+  :javadoc
+  :validatePluginWithId_com_google_gradle_osdetector_OsDetectorPlugin
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 211ms
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/ig3mlrcnh3tqi
+
+</pre>
+<h5>Configuration cache - OK</h5>
+<a href="https://gradle.com/s/xt2pvvg7t32ci"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean :generateProto
+> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto
+
+BUILD SUCCESSFUL in 454ms
+4 actionable tasks: 4 executed
+
+Publishing build scan...
+https://gradle.com/s/xt2pvvg7t32ci
+
+Configuration cache entry stored.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/xbnju4drvkahg"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 343ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/xbnju4drvkahg
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/vng7v6jgrqtf6"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 237ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/vng7v6jgrqtf6
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/mmf52smg555nu"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 345ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/mmf52smg555nu
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/zcykqvnn73vds"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 299ms
+3 actionable tasks: 2 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/zcykqvnn73vds
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/jamkq62dgl6aq"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 654ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/jamkq62dgl6aq
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/o5sxn5mnkw7b6"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 222ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/o5sxn5mnkw7b6
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/liku5dkd3oixk"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 230ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/liku5dkd3oixk
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/d7w3oya75l54q"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 277ms
+3 actionable tasks: 2 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/d7w3oya75l54q
+
+</pre>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/as5qsdqfqx7c4"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 552ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/as5qsdqfqx7c4
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/shdh47nsoffby"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto UP-TO-DATE
+> Task :extractProto UP-TO-DATE
+> Task :generateProto UP-TO-DATE
+
+BUILD SUCCESSFUL in 231ms
+3 actionable tasks: 3 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/shdh47nsoffby
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/wn4nnzpiqzb24"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 239ms
+4 actionable tasks: 3 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/wn4nnzpiqzb24
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/ktgpjx5izlgmq"  target="_blank">Build scan</a>
+<pre>> Task :extractIncludeProto
+> Task :extractProto
+> Task :generateProto FROM-CACHE
+
+BUILD SUCCESSFUL in 265ms
+3 actionable tasks: 2 executed, 1 from cache
+
+Publishing build scan...
+https://gradle.com/s/ktgpjx5izlgmq
+
+</pre>
+</body></html>

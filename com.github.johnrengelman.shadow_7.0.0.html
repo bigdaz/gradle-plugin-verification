@@ -1,0 +1,179 @@
+<html><body>
+<h1>Plugin: com.github.johnrengelman.shadow</h1>
+<h2 id='7.0.0'>Version: 7.0.0</h2>
+<h5>Validation check - OK</h5>
+<a href="https://gradle.com/s/wfcho75etu3ma"  target="_blank">Build scan</a>
+<pre>> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowBasePlugin
+> Task :validatePluginWithId_com_github_jengelman_gradle_plugins_shadow_ShadowJavaPlugin
+> Task :validatePluginWithId_com_github_johnrengelman_shadow
+> Task :validateExternalPlugins
+
+BUILD SUCCESSFUL in 5s
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/wfcho75etu3ma
+
+Daemon will be stopped at the end of the build after running out of JVM memory
+</pre>
+<h5>Eager task creation check - FAIL</h5>
+<a href="https://gradle.com/s/xcbbg4sjcwibg"  target="_blank">Build scan</a>
+<pre>> Task :checkEagerTaskCreation FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/validate-plugin-init.gradle' line: 16
+
+* What went wrong:
+Execution failed for task ':checkEagerTaskCreation'.
+> Tasks are created eagerly by plugin: 
+  :shadowJar
+  :jar
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 5s
+1 actionable task: 1 executed
+
+Publishing build scan...
+https://gradle.com/s/xcbbg4sjcwibg
+
+</pre>
+<h5>Configuration cache - OK</h5>
+<a href="https://gradle.com/s/cyf5e6f7gnplw"  target="_blank">Build scan</a>
+<pre>Configuration cache is an incubating feature.
+Calculating task graph as no configuration cache is available for tasks: clean :shadowJar
+> Task :clean
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+> Task :shadowJar
+
+BUILD SUCCESSFUL in 2s
+3 actionable tasks: 3 executed
+
+Publishing build scan...
+https://gradle.com/s/cyf5e6f7gnplw
+
+Configuration cache entry stored.
+</pre>
+<h3>Gradle Version: 7.0.2</h3>
+<h5>Base compatibility - OK</h5>
+<a href="https://gradle.com/s/ulzumgff2rexe"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FROM-CACHE
+
+BUILD SUCCESSFUL in 410ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/ulzumgff2rexe
+
+</pre>
+<h5>Incremental build - OK</h5>
+<a href="https://gradle.com/s/tvtge6f3vvt2u"  target="_blank">Build scan</a>
+<pre>> Task :compileJava UP-TO-DATE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar UP-TO-DATE
+
+BUILD SUCCESSFUL in 330ms
+2 actionable tasks: 2 up-to-date
+
+Publishing build scan...
+https://gradle.com/s/tvtge6f3vvt2u
+
+</pre>
+<h5>Build cache - OK</h5>
+<a href="https://gradle.com/s/htkoyrreze5rg"  target="_blank">Build scan</a>
+<pre>> Task :clean
+> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FROM-CACHE
+
+BUILD SUCCESSFUL in 385ms
+3 actionable tasks: 1 executed, 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/htkoyrreze5rg
+
+</pre>
+<h5>Build cache relocated - OK</h5>
+<a href="https://gradle.com/s/xytccon55zheg"  target="_blank">Build scan</a>
+<pre>> Task :compileJava FROM-CACHE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :shadowJar FROM-CACHE
+
+BUILD SUCCESSFUL in 399ms
+2 actionable tasks: 2 from cache
+
+Publishing build scan...
+https://gradle.com/s/xytccon55zheg
+
+</pre>
+<h3>Gradle Version: 6.8.3</h3>
+<h5>Base compatibility - FAIL</h5>
+<a href="https://gradle.com/s/jcaxydysai2xi"  target="_blank">Build scan</a>
+<pre>
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/com.github.johnrengelman.shadow/build.gradle' line: 4
+
+* What went wrong:
+An exception occurred applying plugin request [id: 'com.github.johnrengelman.shadow', version: '7.0.0']
+> Failed to apply plugin class 'com.github.jengelman.gradle.plugins.shadow.ShadowBasePlugin'.
+   > This version of Shadow supports Gradle 7.0+ only. Please upgrade.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 175ms
+
+Publishing build scan...
+https://gradle.com/s/jcaxydysai2xi
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+<h3>Gradle Version: 5.6.4</h3>
+<h5>Base compatibility - FAIL</h5>
+<a href="https://gradle.com/s/xavvn5szfcixa"  target="_blank">Build scan</a>
+<pre>
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/home/runner/work/gradle-plugin-verification/gradle-plugin-verification/build/plugins/primary/com.github.johnrengelman.shadow/build.gradle' line: 4
+
+* What went wrong:
+An exception occurred applying plugin request [id: 'com.github.johnrengelman.shadow', version: '7.0.0']
+> Failed to apply plugin [class 'com.github.jengelman.gradle.plugins.shadow.ShadowBasePlugin']
+   > This version of Shadow supports Gradle 7.0+ only. Please upgrade.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 233ms
+
+Publishing build scan...
+https://gradle.com/s/xavvn5szfcixa
+
+</pre>
+<h5>Incremental build - N/A</h5>
+<h5>Build cache - N/A</h5>
+<h5>Build cache relocated - N/A</h5>
+</body></html>
