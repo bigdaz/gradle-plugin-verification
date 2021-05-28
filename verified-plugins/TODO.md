@@ -19,6 +19,10 @@
   - Requires android
 - [org.jlleitschuh.gradle.ktlint](https://plugins.gradle.org/plugin/org.jlleitschuh.gradle.ktlint)
   - Also [org.jlleitschuh.gradle.ktlint-idea](https://plugins.gradle.org/plugin/org.jlleitschuh.gradle.ktlint-idea)
+- [nu.studer.jooq](https://plugins.gradle.org/plugin/nu.studer.jooq)
+- [nu.studer.rocker](https://plugins.gradle.org/plugin/nu.studer.rocker)
+- [nu.studer.credentials](https://plugins.gradle.org/plugin/nu.studer.credentials)
+- [com.felipefzdz.gradle.shellcheck](https://plugins.gradle.org/plugin/com.felipefzdz.gradle.shellcheck)
 
 ### Plugins with hosted Gradle Enterprise instances
 
